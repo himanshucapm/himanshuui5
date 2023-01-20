@@ -1,4 +1,4 @@
-- 👋 Hi, I’m Ankit
-- 👀 I’m interested in Data Science
-- 🌱 I’m currently learning to be a Data Analyst
-- 📫 Reach me at devdevankit@gmail.com
+- 👋 Hi, I’m Himanshu Agarwal
+- 👀 I’m interested in SAP Ui5 and Fiori along with BTP and Cloud
+- 🌱 I’m currently learning to be a BTP Consultant
+- 📫 Reach me at zhimanshu.agarwal@gmail.com
