@@ -1,0 +1,33 @@
+.sapUiFormTitle 
+{
+	color:black !important;
+	font-weight:bold !important;
+}
+.sapMTitle
+{
+	font-weight:bold !important;
+}
+.sapMListTbl .sapMLabel {
+    padding-top: 1px;
+    font-size: 0.875rem;
+    color: #4d4d53;
+    font-weight: bold !important;
+}
+
+.copa_sec table tbody tr:nth-child(odd){
+	background:#f9f9f9;
+}
+ 
+.sapMPanelContent:not(.sapMPanelBGTransparent) {
+    border-bottom: 0px solid #ebebeb;
+}
+
+.sapMPanelContent {
+    padding: 0rem;
+    box-sizing: border-box;
+    overflow: auto;
+    white-space: normal;
+}
+.sapUiSizeCompact .sapMTB.sapMListHdrTBar {
+    height: 2rem;
+}

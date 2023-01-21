@@ -1,0 +1,56 @@
+.pageTitle .sapMTitleStyleAuto {
+    font-size: 1rem;
+    color: Black; 
+     font-weight:bold !important; 
+} 
+ .fontWight {
+    font-weight: bold;
+    color: #2b059c;
+} 
+.pad{
+    padding: 0.2rem 0.2rem;
+}
+.tblgrid .sapMListTblCell {
+    vertical-align: middle;
+    border: 1px solid #cdcdcd;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px; 
+}
+.dealer{
+    color: black;
+    font-size: 0.875rem;
+    font-family: inherit;
+    font-weight: bold;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: text;
+}
+.sapMIBar-CTX .sapMTitle {
+    color: black;
+    font-size: 15px;
+    font-weight: bold !important;
+    text-shadow: 0 0 0.125rem #ffffff;
+} 
+.sapMListTbl th {
+    background: cornsilk;
+    border-bottom: 1px solid #e5e5e5;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px; 
+}
+.tblgrid1 .sapMListTblCell {
+    vertical-align: middle;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px; 
+}
+.sapFactsheetUtiLabel, .sapMListTbl .sapMLabel {
+    color: black;
+    font-weight: bold !important;
+}
