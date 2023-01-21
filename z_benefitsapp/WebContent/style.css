@@ -1,0 +1,215 @@
+
+/*----CSS START FROM START OF THE APPLICATION----*/
+.left_panel_list li{
+	padding:0.5rem 0.75rem !important;
+}
+.left_panel_list li:nth-child(even){
+	background:#eff4f9;
+}
+.left_panel_list li .sapMLIBContent .sapMObjLTopRow .sapMObjLNumberDiv{
+	padding-left:0rem;
+	width:50%;
+}
+.left_panel_list li .sapMLIBContent .sapMObjLTopRow .sapMObjLNumberDiv .sapMObjLNumber{
+ 	white-space: initial;
+ 	width:70%;
+ 	float:left;
+ 	font-size:15px;
+ 	text-align:left;
+}
+.left_panel_list li .sapMLIBContent .sapMObjLTopRow .sapMObjLNumberDiv .sapMObjLNumberStateNone{
+ 	white-space: initial;
+ 	width:100%;
+ 	float:left;
+ 	text-align:right;
+}
+
+.left_panel_list li .sapMLIBContent .sapMObjLTopRow .sapMTextMaxLine{
+	font-size: 17px;
+    font-weight: bold;
+    line-height: 19px;
+}
+
+.left_panel_list li .sapMLIBContent .sapMObjLBottomRow .sapMObjLAttrRow{
+	padding-top:0rem !important;
+}
+.left_panel_list li .sapMLIBContent .sapMObjLBottomRow .sapMObjLAttrRow .sapMObjLAttrDiv{
+	width:100% !important;
+}
+.left_panel_list li .sapMLIBContent .sapMObjLBottomRow .sapMObjLAttrRow .sapMObjLAttrDiv .sapMObjectAttributeDiv span{
+	white-space:initial;
+}
+
+.left_panel_list li .sapMLIBContent .sapMObjLBottomRow .sapMObjLAttrRow .sapMObjLStatusDiv:nth-child(even){
+	display:none;
+}
+.left_panel_list li .sapMLIBContent .sapMObjLBottomRow .sapMObjLAttrRow .sapMObjLStatusDiv .sapMObjStatus{
+	white-space:initial;
+	text-align:left;
+}
+.red {
+    background-color: rgba(249, 68, 22, 0.71) !important;
+}
+
+/*----CSS START FROM START OF THE APPLICATION----*/
+.addDialogMassUpdate{
+	width:40% !important;
+}
+/*-----add mass Update dialog css start-----*/
+
+.addDialogMassUpdate .sapMDialogScrollCont label{
+	width:30%;
+}
+
+.addDialogMassUpdate .sapMDialogScrollCont .sapMComboBox{
+	width:70%;
+}
+.addDialogMassUpdate .sapMDialogScrollCont .sapMInput{
+	width:70% !important;
+}
+.addDialogMassUpdate .sapMDialogScrollCont .sapMDP{
+	width:70% !important;
+}
+/*-----add partner dialog css start-----*/
+
+.addDialogPartner .sapMDialogScrollCont label{
+	width:20%;
+}
+
+.addDialogPartner .sapMDialogScrollCont .sapMComboBox{
+	width:80%;
+}
+.addDialogPartner .sapMDialogScrollCont .sapMInput{
+	width:80% !important;
+}
+/*-----add partner dialog css end-----*/
+
+
+.update_pg #__dialog0-dialog-cont .sapMListTblCell{
+	padding:0px;
+	vertical-align:middle;
+}
+.update_pg{
+	width:40%;
+	height:275px !important;
+	overflow:auto;
+	padding-top:2.5rem !important;
+}
+.update_pg header#__dialog0-subHeader{
+	display:none;
+}
+.update_pg #status{
+	width:100% !important;
+}
+.update_pg .sapMDialogScrollCont{
+	padding:0.2rem 1rem;
+}
+.update_pg #__dialog0-dialog-cont .sapMListTblCell .sapUiSmallMarginBottom{
+	margin-bottom:0rem !important;
+}
+
+@media only screen and (max-width: 600px) and (min-width: 320px)  {
+.srch_cust table tr td .sapMListTblSubCnt{
+		padding:0rem 1rem;
+	}
+.update_pg .sapMDialogScrollCont{
+	padding:0.2rem 0.5rem;
+}
+.update_pg table .sapMListTblCell{
+	padding:5px !important;
+	vertical-align:middle !important;
+}
+.update_pg table .sapMListTblCell .sapUiSmallMarginBottom{
+	margin-bottom:0rem !important;
+}
+.update_pg{
+	padding-top:3rem !important;
+}
+.update_pg #__dialog2-subHeader{
+	display:none !important;
+}
+
+}
+/* **************************************************************************************************** */
+.sapMLabel {
+    color: #000000;
+    font-size: 0.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+}
+.sapUiForm .sapUiFormTitle {
+    border-width: 0.06rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #000000;
+    height: 2rem;
+    line-height: 2rem;
+}
+.copa_sec table thead tr th{
+	background:#d5e7f3;
+	text-align:center !important;
+	border:1px solid #ddd; /*SS*/
+}
+.tblgrid .sapMListTblCell {
+    vertical-align: middle;
+    background: #e5e5e2;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    
+}
+.tblgrid2 .sapMListTblCell {
+    vertical-align: middle;
+    border: 1.1px solid #f5eaea;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}  
+.sapUiSizeCompact .sapUiFormContainerTitle>.sapUiFormTitle {
+    height: 0rem !important;
+    line-height: 2rem; 
+}
+
+.clRaceType{
+	margin-left: 45px;
+}
+
+.clFicYear{
+	margin-left: 8px;
+}
+.clStatus{
+	margin-left: 16px;
+}
+.clLocation{
+margin-left: 41px;
+}
+
+.classcell.sapMText.sapMTextMaxWidth.sapUiSelectable{
+	font-size: smaller;
+}
+
+tr[data-myCustColor="A"]{	 
+  background: #c3edc3 !important;
+}
+
+tr[data-myCustColor="P"]{	
+  background: #f7d2b6 !important;
+}
+tr[data-myCustColor="R"]{	
+  background: #f59e9e !important;
+}
+
+/* tr[data-myCustColor="I"]{	
+  background: #bfd8f7 !important;
+} 
+ */
+tr[data-myCustColor="M"]{	
+  background: #efe6b9 !important;
+} 
+
+tr[data-myCustColor2]{	
+  background: #c3edc3 !important;
+} 
+

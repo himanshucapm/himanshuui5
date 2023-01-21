@@ -1,0 +1,43 @@
+<core:FragmentDefinition xmlns="sap.m"
+  xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form">
+  <Dialog id="idMailConfirmationDialog" title="Fill up patient details"
+    class="sapUiPopupWithPadding">
+    <content>
+      <f:SimpleForm minWidth="1024" maxContainerCols="2"
+        editable="false" layout="ResponsiveGridLayout" labelSpanL="3"
+        labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1">
+        <f:content>
+          <Label text="{i18n>PatientName}" design="Bold">
+          </Label>
+          <Select id="selectPatientId" class="sapUiSmallMarginBottom" items="{/}">
+            <core:Item key="{Name}" text="{Name}" />
+          </Select>
+          <Label text="{i18n>Date}" design="Bold">
+          </Label>
+          <DatePicker id="datePickerId" displayFormat="long"
+            valueFormat="yyyy-MM-dd" placeholder="select date" />
+          <Label text="{i18n>Time}" design="Bold">
+          </Label>
+          <TimePicker id="timePickerId" valueFormat="HH:mm:ss"
+            displayFormat="hh:mm a" change="" placeholder="select time" />
+          <Label text="{i18n>HospitalName}" design="Bold">
+          </Label>
+          <Input id="hospitalNameId" maxLength="80" placeholder="Enter Hospital name location">
+          </Input>
+          <Label text="{i18n>Illness}" design="Bold">
+          </Label>
+          <TextArea id="illnessId" maxLength="220" placeholder="Enter description of the illness">
+          </TextArea>
+        </f:content>
+      </f:SimpleForm>
+    </content>
+    <beginButton>
+      <Button text="Ok" press="onPressSubmit">
+      </Button>
+    </beginButton>
+    <endButton>
+      <Button text="Cancel" press="dialogMailClose">
+      </Button>
+    </endButton>
+  </Dialog>
+</core:FragmentDefinition>

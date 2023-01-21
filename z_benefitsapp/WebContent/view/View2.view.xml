@@ -1,0 +1,332 @@
+<mvc:View 
+	controllerName="zexpoinvoice.controller.View2" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	displayBlock="true" 
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:l="sap.ui.layout"
+	 xmlns:t="sap.ui.table"
+	xmlns:f="sap.ui.layout.form">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}" class="pageTitle" enableScrolling="true">
+				<content>
+			
+			<IconTabBar id="idheaderinfo" expanded="true" select="selectedTab"
+						class="sapUiResponsiveContentPadding iconTabBar">
+	<items>
+
+<IconTabFilter iconColor="Positive" design="Bold" text="Header details" key="HeaderInfo">
+							    
+<f:SimpleForm id="IdHeader" minWidth="1024" maxContainerCols="1" editable="true" layout="ResponsiveGridLayout" title=""
+		labelSpanL="7" labelSpanM="6" emptySpanL="0" emptySpanM="0" columnsL="3" columnsM="3" visible="true" class="hide leftLabel">
+	<f:content>
+		<core:Title id="Hd_1" text="Create Profoma Invoice" class="hide" />
+			
+			<Label text="Customer No" design="Bold"/>
+			<Input id="IdCustomer"  maxLength="30" value="" />
+			
+			<Label text="PO Number" design="Bold"/>
+			<Input id="idPONumber" />
+	
+			 <Label text="PO Date" design="Bold"/>
+			 <Input id="IdPODate" />
+		
+		<core:Title id="HD_2" text="" />
+		
+			<Label  text="Order Ref" design="Bold"/>
+			<Text id="IdOrderRef"  />
+			
+			<Label text="Payment Term" design="Bold"/>
+			<Text id="IdPaymentTerm" />
+			
+			<Label text="Currency" design="Bold"/>
+			<Text id="IdCurrency"/>
+			
+		<core:Title id="HD_3" text="" />
+		
+			<Label  text="Inspection Requirements" design="Bold"/>
+			<Text id="IdInspRequirements"  />
+			
+			<Label text="Certifications Requirements" design="Bold"/>
+			<Text id="IdCertiRequirements" />
+			
+			<Label text="Tyre Making Requirements" design="Bold"/>
+			<Text id="IdTyreMakeRequirements"/>
+				    	
+		</f:content>
+	</f:SimpleForm><!-- 
+
+<Panel id="longTestPanel" visible="false">
+		     <TextArea rows="2" width="100%" maxLength="132"  id="longTxt" value="" />
+</Panel>
+
+<t:Table id="idRaceTable"  title="" selectionMode="None" visibleRowCountMode="Fixed"
+				                     visibleRowCount="0" width="50%">
+				       <t:toolbar>
+							<Toolbar >
+							<Title text="RACE Amount Breakup"></Title>
+								<ToolbarSpacer />
+								<Button icon="sap-icon://add"
+	 								press="addNewItem" tooltip="Add Item" type="Accept"/>
+							</Toolbar>
+						</t:toolbar>
+						<t:columns>
+							<t:Column width="40%" hAlign="Center">
+								<Label text="Plant" design="Bold"/>
+								<t:template>
+									<Input id="id_Input_RaceType_WL" type="Text" showSuggestion="true" showValueHelp="true" 
+										       valueHelpOnly="true" valueHelpRequest="onTyreLocationHelp" 
+										       visible="true" value="{RaceType}" tooltip="{RaceType}"/>
+							</t:template>
+						</t:Column>
+					<t:Column width="40%" hAlign="Center">
+						<Label text="Amount (in Lakhs)" design="Bold"/>
+						<t:template>
+						  <Input enabled="false" value="{RaceAmount}"></Input>
+						</t:template>
+					</t:Column>
+					
+					<t:Column width="10%" hAlign="Center">
+						<Label text="" design="Bold"/>
+						<t:template>
+							<Button id="idRaceAmountTblAddBtn" icon="sap-icon://washing-machine"
+							        press="onAddRaceAmount" tooltip="Add Amount" type="Emphasized"/>
+						</t:template>
+					</t:Column>
+					</t:columns>
+					<t:Column width="10%" hAlign="Center">
+						<Label text="" design="Bold"/>
+						<t:template>
+							<Button id="idRaceAmountTblDelBtn" icon="sap-icon://delete"
+							        press="onRemoveRace" tooltip="Delete Item" type="Reject"/>
+						</t:template>
+					</t:Column>
+					
+</t:Table>
+ -->
+</IconTabFilter>
+
+<IconTabFilter iconColor="Positive" text="Approval Status" key="ApprovalInfo">
+
+
+			<Table id="idApproverTable">
+    <headerToolbar>
+      <Toolbar>
+        <Title text="Approver Status" level="H2"/>
+      </Toolbar>
+    </headerToolbar>
+    <columns>
+      <Column
+        minScreenWidth="Tablet"
+        demandPopin="true"
+        hAlign="Center">
+        <Text text="Designation"/>
+      </Column>
+      <Column
+        minScreenWidth="Tablet"
+        demandPopin="true"
+        hAlign="Center">
+        <Text text="Comments" />
+      </Column>
+      <Column
+        minScreenWidth="Tablet"
+        width="10em"
+        demandPopin="true"
+        hAlign="Center">
+        <Text text="Amount" />
+      </Column>
+    </columns>
+    <items>
+      <ColumnListItem>
+        <cells>
+          
+          	<Input
+            value="{Pernr}" enabled="false"/>
+            <Input
+            value="{ItemText}" enabled="false"/>
+              <Input
+            value="{RaceApprovalAmount} Rs(in Lakhs)" enabled="false"/> 
+       
+        </cells>
+      </ColumnListItem>
+    </items>
+  </Table>
+			
+</IconTabFilter>
+
+<IconTabFilter iconColor="Positive" text="Total cost" key="CostInfo">
+								
+<f:SimpleForm id="TRTOTALCOSTFormEdit" minWidth="1024" maxContainerCols="2" editable="true" layout="ResponsiveGridLayout" title=""
+		labelSpanL="5" labelSpanM="5" emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="2" visible="true">
+		<f:content>
+			<core:Title id="TC_1" text="TOTAL COST INVOLVED (IN LAKHS)"/>
+			
+			
+			<Label id="landed_cost" text="Landed Cost at JK" design="Bold"/>
+			<Input  id="landed_costInp" type="Number" enabled="true" value="" liveChange="liveTotalcost"/>
+			
+			<Label id="other_Expenses" text="Any Other Expenses" design="Bold"/>
+			<Input  id="other_ExpensesInp" type="Number" enabled="true" value="" liveChange="liveTotalcost"/>
+			
+			<Label id="operative_Expenses" text="Pre-Operative Expenses" design="Bold"/>
+			<Input  id="operative_ExpensesInp" type="Number" enabled="true" value="" liveChange="liveTotalcost"/>
+			
+			<Label id="Erection_Commissioning" text="Erection and Commissioning" design="Bold"/>
+			<Input  id="Erection_CommissioningInp" type="Number" enabled="true" value="" liveChange="liveTotalcost"/>
+			
+			<Label id="Contigency_Expense" text="Contigency Expense" design="Bold"/>
+			<Input  id="Contigency_ExpenseInp" type="Number" enabled="true" value="" liveChange="liveTotalcost"/>
+			
+			<Label id="Total_Cost" text="Total Cost Involved" design="Bold"/>
+			<Input  id="Total_CostInp" enabled="false" value=""/>
+	
+		</f:content>
+	</f:SimpleForm>
+							
+</IconTabFilter>
+
+<IconTabFilter iconColor="Positive" text="Gain/Saving" key="GainInfo">
+							    
+							    <Table id="idGainTable" 
+    items="{Displaymodel>/NavToGain/results}">
+    <headerToolbar>
+      <Toolbar>
+        <Title text="Gain and Savings" level="H2"/>
+      </Toolbar>
+    </headerToolbar>
+    <columns>
+      <Column
+        minScreenWidth="Tablet"
+        demandPopin="true"
+        width="10em"
+        hAlign="Center">
+        <Text text="Item Number" />
+      </Column>
+      <Column
+        minScreenWidth="Tablet"
+        demandPopin="true"
+        hAlign="Center">
+        <Text text="Item Description" />
+      </Column>
+      <Column
+        minScreenWidth="Tablet"
+        demandPopin="true"
+        hAlign="Center">
+        <Text text="Item text" />
+      </Column>
+    </columns>
+    <items>
+      <ColumnListItem>
+        <cells>
+          
+          	<Input
+            value="{Displaymodel>ItemNo}" enabled="false"/>
+            <Input
+            value="{Displaymodel>ItemDescription}" enabled="false"/>
+              <Input
+            value="{Displaymodel>ItemText}" maxLength="80" enabled="true"/>
+       
+        </cells>
+      </ColumnListItem>
+    </items>
+  </Table>
+							
+</IconTabFilter>
+							
+
+				</items>
+			</IconTabBar>
+							
+ 
+<!-- ***************************************************************************************************************************************** -->
+	<!-- 	<Table id="idStationary1" class="tblgrid" showNoData="false">
+			<columns>
+				<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="2em">
+					<CheckBox id="idCheckBox" select="onSelect" selected="false" />
+	 			</Column>
+	 			<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="5em">
+					<Label text="Req. No." tooltip="Request Number" />
+	 			</Column>
+				<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="5em">
+					<Label text="Employee ID" tooltip="Employee ID" />
+	 			</Column>
+				<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="8em">
+					<Label text="Employee Name" tooltip="Employee Name" />
+				</Column>
+				<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="7em">
+					<Label text="Item" tooltip="Item Name" />
+				</Column>
+				<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="4em">
+					<Label text="Avail. Qty." tooltip="Available Quantity" />
+				</Column>
+				<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="4em">
+					<Label text="Req Qty." tooltip="Requested Quantity" />
+				</Column>
+				<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="12em">
+					<Label text="Requested Date &amp; Time" tooltip="Requested Date &amp; Time" />
+				</Column>
+				<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="4em">
+					<Label text="Appr. Qty." tooltip="Approved Quantity" />
+				</Column>
+				<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="7em">
+					<Label text="Remarks" tooltip="Remarks" />
+				</Column>
+				<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="4em">
+					<Label text="Status" tooltip="Status" />
+				</Column>
+			</columns>
+		</Table>
+		
+		<ScrollContainer vertical="true" horizontal="true">
+			<Table id="idRequestHistory" items="{IssueTblJModel>/}" showNoData="true" 
+					class="tblgrid1" alternateRowColors="true">
+				<columns>
+					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="2em"/>
+					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="5em"/>
+					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="5em"/>
+					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="8em"/>
+					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="7em"/>
+					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="4em"/>
+					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="4em"/>
+					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="12em"/>
+					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="4em"/>
+					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="7em"/>
+					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="4em"/>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<CheckBox onSelect="" selected="false"/>
+							<Text text="{IssueTblJModel>ReqNo}"/>
+							<Text text="{IssueTblJModel>Pernr}"/>
+							<Text text="{IssueTblJModel>Ename}"/>
+							<Text text="{IssueTblJModel>Maktx}"/>
+							<Text text="{IssueTblJModel>TotAvaMenge}"/>
+							<Text text="{IssueTblJModel>ReqMenge}"/>
+							
+							<Text text="{IssueTblJModel>TimeStamp}"/>
+							<Text text="{IssueTblJModel>AppMenge}"/>
+							<Text text="{IssueTblJModel>AppRemarks}" tooltip="{IssueTblJModel>Remark}"/>
+							<core:Icon src="{path:'IssueTblJModel>Status',formatter: 'zexpoinvoice.util.Formatter.setIcon'}"
+									color="{path:'IssueTblJModel>Status', formatter: 'zexpoinvoice.util.Formatter.setColor'}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</ScrollContainer>
+	 	 -->
+			</content>
+			<footer>
+			<Bar>
+			<contentRight>
+			<Button icon="sap-icon://sys-cancel" class="icon-save" text="Home Page" type="Reject" press="onHome" id="idBack"/>
+			</contentRight>
+			</Bar>
+			</footer>
+			</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

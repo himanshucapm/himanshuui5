@@ -1,0 +1,86 @@
+/* Enter your custom styles here */
+/* .sapUiSizeCompact .sapMTB {
+    height: 0rem;
+    
+}
+
+.toolHeight{
+ height: 2rem !important;	
+} */
+
+.myStateError{
+	border-color: #e52929 !important;
+	border-width: 2px !important;
+}
+
+.sapMScrollCont {
+    overflow: scroll !important;
+}
+
+
+/* *******Added by RAM****** */
+.sapUiSizeCompact .sapMPageWithFooter>section {
+    bottom: 2.5rem;
+    background-color:#dff2f3;
+}
+
+
+.sapUiSizeCompact .sapUiFormContainerTitle > .sapUiFormTitle {
+    height: 2rem;
+    line-height: 2rem;
+    color: gray;
+    font-weight: bold;
+}
+
+.sapMLabel{
+    font-size: 0.875rem;
+    font-weight: bold;
+}
+
+.sapMTitle > span{
+    color: #7f7f87 !important;
+    font-weight: bold;
+    font-size: 16px;
+}  
+
+/* .btndelt.sapMBtnIcon{
+	background-color: #cc1919;
+	color:white;
+} */
+
+.sapMBtnIcon {
+    color: white !important;
+}
+
+.sapUiTable > .sapUiTableHdr {
+    border: none;
+    border-bottom: 2px solid transparent;
+    min-height: 25px;
+    height: auto;
+    padding: 0;
+    margin-bottom: 2px;
+    background-color: transparent;
+    margin-top: -41px;
+}
+
+.sapMITBScrollContainer {
+    padding: 1px 1px 0 1px;
+    font-weight: bold;
+    color: #7f7f87 !important;
+}
+
+.sapMITBTextOnly .sapMITBFilterDefault > .sapMITBText {
+    color: #7f7f87;
+    text-shadow: 0 0.0625rem 0 rgba(255, 255, 255, 0.7);
+}
+
+
+
+
+
+
+
+
+
+
+

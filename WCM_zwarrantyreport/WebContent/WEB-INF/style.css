@@ -1,0 +1,119 @@
+.SOS-button.sapMBtn{
+    margin-left: auto;
+    display: block;
+    margin-right: auto;
+}
+
+.sapMLIBIconDel {
+    margin-top: auto;
+    visibility: hidden !important;
+}
+
+.insurancePanel>header>span{
+  border-right: 0px !important;
+}
+
+.insurancePanel .sapMTitle > span {
+    color: white !important;
+}
+
+.insurancePanel .sapMBtnIcon{
+	color: white !important;
+}
+
+.insurancePanel .sapMTB{
+	background-color: #02427D !important;	
+}
+
+.editableFieldInForm .sapUiForm .sapUiFormElementLbl>.sapMLabel{
+  margin-top: 1rem !important;
+}
+
+/* .sapMInputBaseInner{
+  height: 1rem !important;
+} */
+
+.dependantTable .sap-phone .sapMListTblCell{
+  padding: 0rem !important;
+}
+
+/* .dependantTable .sapMInputBaseInner{
+  margin-top: -1rem !important;
+}  */
+
+/* .sap-phone .sapMInputBaseInner {
+  margin-top: -1rem !important;
+  text-align: initial !important;
+} */
+
+.myStateError { 
+	/* border-color: red;  */
+	/* border: 1px solid #e52929; */
+	border-color: #e52929;
+}
+
+/* .myStateError .sapMSltPressed:not(.sapMSltDisabled):not(.sapMSltState){
+    border-color: #e52929 !important;
+}
+
+.myStateError .sapMSltHoverable:not(.sapMSltState):hover {
+    border-color: #e52929 !important;
+}
+
+.myStateError .sapMSlt:not(.sapMSltDisabled), .sapMSlt:not(.sapMSltDisabled)>.sapMSltLabel, .sapMSltIconOnly:not(.sapMSltDisabled) .sapMSltIcon {
+    border-color: #e52929 !important;
+} */
+
+/*Dependent dialog hdr text*/
+.dialogHdr .sapMTitle{
+	font-weight: bold;
+}
+
+.tableTextCenter .sapMText{
+	line-height: 3rem !important;	
+}
+
+
+/* .sapUiRespGridMedia-Std-Phone.sapUiRespGridHSpace1>.sapUiRespGridSpanS8 {
+    width: calc(100% - 1rem);
+} 
+
+.sapUiRespGridMedia-Std-Desktop.sapUiRespGridHSpace1>.sapUiRespGridSpanL3 {
+    width: calc(9.7% - 1rem);
+    margin-left: 1rem !important;
+}
+ */
+ 
+ .empImg .sapMImg{
+ 	margin-left: 1rem !important;
+ }
+ 
+/* .yearSelect .sapMSelectListItem {to align the text to center in select year drop down in mobile view
+    padding: 0 1rem 0 10rem !important;
+}
+
+.yearSelect .sapMInputBaseInner {
+    padding: 0 9.5rem !important;
+} */
+
+.claimStatBtn{
+	margin-left: 1rem !important;
+}
+
+.linethrough{
+	/* text-decoration: line-through; */
+	margin-top: 1rem !important; 
+	margin-left: 1rem !important;
+}
+
+.tableItem .sapMLIBSelectD > .sapUiIcon{
+	visibility: hidden
+}
+
+.remarkLbl{
+	color : red !important;
+}
+
+.boldFont{
+	font-weight: bold !important;
+}
