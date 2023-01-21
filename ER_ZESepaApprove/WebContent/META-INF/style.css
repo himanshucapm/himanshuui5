@@ -1,0 +1,91 @@
+/* .sapUiSizeCompact .sapMTB {
+    height: 0rem;
+}
+.myStateError{
+	border-color: #e52929 !important;
+	border-width: 2px !important;
+}
+.sapUiSizeCompact .sapMPageWithFooter>section {
+    bottom: 2.5rem;
+    background-color:#dff2f3;
+}
+.sapUiSizeCompact .sapUiFormContainerTitle > .sapUiFormTitle {
+    height: 2rem;
+    line-height: 2rem;
+    color: gray;
+    font-weight: bold;
+}
+.sapMLabel{
+    font-size: 0.875rem;
+    font-weight: bold;
+}
+.sapUiFormTitle 
+{
+	color:black !important;
+	font-weight:bold !important;
+}
+.sapMTitle
+{
+	font-weight:bold !important;
+}
+.sapMListTbl .sapMLabel {
+    padding-top: 1px;
+    font-size: 0.875rem;
+    color: #4d4d53;
+    font-weight: bold !important;
+}
+
+.copa_sec table tbody tr:nth-child(odd){
+	background:#f9f9f9;
+}
+
+.sapUiTable > .sapUiTableHdr {
+    border: none;
+    border-bottom: 2px solid transparent;
+    min-height: 25px;
+    height: auto;
+    padding: 0;
+    margin-bottom: 2px;
+    background-color: transparent;
+    margin-top: -2rem;
+} */
+/* .sapUiTableVSb{ z-index: 999 !important; }
+.sapMLabel{
+    font-size: 0.875rem;
+    font-weight: bold;
+}
+.sapUiFormTitle 
+{
+	color:black !important;
+	font-weight:bold !important;
+}
+.sapMTitle
+{
+	font-weight:bold !important;
+} */
+	.lab .sapUiRespGridMedia-Std-Phone.sapUiFormResGridCont>.sapUiFormElementLbl:not(.sapUiRespGridSpanS12)>.sapMLabel, .sapUiRespGridMedia-Std-Tablet.sapUiFormResGridCont>.sapUiFormElementLbl:not(.sapUiRespGridSpanM12)>.sapMLabel, .sapUiRespGridMedia-Std-Desktop.sapUiFormResGridCont>.sapUiFormElementLbl:not(.sapUiRespGridSpanL12)>.sapMLabel, .sapUiRespGridMedia-Std-LargeDesktop.sapUiFormResGridCont>.sapUiFormElementLbl:not(.sapUiRespGridSpanXL12)>.sapMLabel {
+    text-align: right !important;
+    float: none !important;
+    font-size:14px !important;
+    position: relative !important;
+}
+
+ .sapUiFormResGrid>div {
+    padding: 0rem 0.00rem;
+    box-sizing: border-box !important; 
+}
+
+ /* .heading>.sapUiForm>.sapUiFormTitle {
+    border-width: 1px;
+    border-color: black;
+    font-family: Arial,Helvetica,sans-serif;
+    font-weight: 700;
+} */
+
+
+.sapUiForm .sapUiFormTitle {
+    border-width: 1px;
+    border-color: black;
+    font-weight: 700;
+    font-family: Arial,Helvetica,sans-serif;
+}
