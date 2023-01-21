@@ -1,0 +1,21 @@
+.sapUiSizeCompact .sapMTB {
+    height: 2rem;
+}
+
+.sapMIBar > .sapMBarChild:last-child {
+    margin-right: 0.25rem;
+    font-weight: bold;
+}
+
+.sapMTitle > span {
+    color: #000000;
+    font-weight: 800;
+}
+
+.abc.sapMTB-Transparent-CTX .sapMLabel {
+    text-shadow: 0 0px 0 #ffffff;
+}
+
+.viewCQ tbody tr:nth-child(even) {
+    background: rgb(245, 245, 245);
+}
