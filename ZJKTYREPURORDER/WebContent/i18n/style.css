@@ -1,0 +1,49 @@
+/* Enter your custom styles here */
+.sapUiSizeCompact .sapMTB {
+    height: 0rem;    
+}
+    
+.myStateError{
+	border-color: #e52929 !important;
+	border-width: 2px !important;
+}
+
+.myTextcolor{
+	text-color: BLACK;
+	color: BLACK;
+}
+.sapUiFormTitle .sapUiFormTitleH5 .sapUiForm{
+    border-width: 0.900rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    color: black;
+    height: 3rem;
+    line-height: 3rem;
+}
+
+.sapMITBContent {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+.sapUiFormResGrid.sapUiFormBackgrTranslucent > div {
+    /* background-color: rgba(255, 255, 255, 0.8); */
+    text-color: #003366;
+}
+
+.sapUiFormResGrid.sapUiFormBackgrTranslucent{
+    /* background-color: rgba(255, 255, 255, 0.8); */
+    text-color: #003366;
+}
+
+
+.sapMLabel {
+    color: black;
+    font-size: 0.900rem;
+   /*  font-size: 0.87rem; */
+    ont-family: Arial,Helvetica,sans-serif;
+    font-weight: normal;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: text;
+}

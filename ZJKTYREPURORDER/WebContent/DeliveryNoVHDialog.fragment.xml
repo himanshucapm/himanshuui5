@@ -1,0 +1,33 @@
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:t="sap.ui.table" busy="{oPageModel>/busy}" busyIndicatorDelay="0">
+	<TableSelectDialog title="Delivery Numbers" 
+		class="sapUiPopupWithPadding sapUiSizeCompact" items="{oPageModel>/deliveryNoItems}"
+		liveChange="_handleDeliveryNumberSearch" confirm="_handleDeliveryNumberF4Confirm"
+		cancel="_handleValueHelpClose">
+		<columns>
+			<Column>
+				<Text text="Delivery Number" />
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Begin">
+				<Text text="Sold to Party" />
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Begin">
+				<Text text="Plant" />
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true" hAlign="End">
+				<Text text="Distribution Channel" />
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<Text text="{oPageModel>Deliv_no}"></Text>
+					<Text text="{oPageModel>SoldToParty}"></Text>
+					<Text text="{oPageModel>Plant}"></Text>
+					<Text text="{oPageModel>Dist_Channel}"></Text>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</TableSelectDialog>
+
+</core:FragmentDefinition>
