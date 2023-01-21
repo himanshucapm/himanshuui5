@@ -1,0 +1,40 @@
+/* Enter your custom styles here */
+.sapUiSizeCompact .sapMTB {
+    height: 0rem;
+    
+}
+
+.myStateError{
+	border-color: #e52929 !important;
+	border-width: 2px !important;
+}
+
+/* .l1.sapMLabel {
+    color: black;
+    font-size: 0.875rem;
+    font-family: Arial,Helvetica,sans-serif;
+    font-weight: 700;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: text;
+} */
+.sapMLabel {
+    color: black;
+    font-size: 0.975rem;
+    font-family: Arial,Helvetica,sans-serif;
+    font-weight: normal;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: text;
+}
+
+.jhClass .sapUiForm .sapUiFormTitle  > span {
+    font-weight: 700;
+    color: black;
+    font-size: larger !important;
+	}
+	
