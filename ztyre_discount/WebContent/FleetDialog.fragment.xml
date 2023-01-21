@@ -1,0 +1,11 @@
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:t="sap.ui.table" busyIndicatorDelay="0">
+	<SelectDialog title="Select Fleet" class="sapUiPopupWithPadding sapUiSizeCompact" items="{oPageModel>/F4FleetData}" 
+				  liveChange="_handleValueHelpFleetSearch" confirm="_handleFleetF4Confirm" cancel="_handleValueHelpFleetClose">
+		
+		<!-- <StandardListItem title="{oPageModel>FleetName}" info="{oPageModel>RegionCode}" /> -->
+		<StandardListItem title="{oPageModel>FleetName}"/>
+	
+	</SelectDialog>
+	
+</core:FragmentDefinition>

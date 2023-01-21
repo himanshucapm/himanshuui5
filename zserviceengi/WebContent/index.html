@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/>
+
+		<script src="resources/sap-ui-core.js"
+				id="sap-ui-bootstrap"
+				data-sap-ui-libs="sap.m"
+				data-sap-ui-theme="sap_bluecrystal"
+				
+				data-sap-ui-resourceroots='{"ztyre_discount": ""}'>
+		</script>
+		<!-- only load the mobile lib "sap.m" and the "sap_bluecrystal" theme -->
+
+		<script>
+				sap.ui.localResources("ztyre_discount");
+				var app = new sap.m.App({initialPage:"idView11"});
+				var page = sap.ui.view({id:"idView11", viewName:"ztyre_discount.View1", type:sap.ui.core.mvc.ViewType.XML});
+				app.addPage(page);
+				app.placeAt("content");
+				/* sap.ui.getCore().attachInitEvent(function() {
+			        var oComponentContainer = new sap.ui.core.ComponentContainer({
+			          height : "100%",
+			          name : "ztyre_discount"
+				  }).placeAt("content");
+			    }); */
+		</script>
+
+<!-- <style>
+  .myimage{float:right !important; width:300px; height:200px;}
+  </style> -->
+
+	</head>
+	<body class="sapUiBody" role="application">
+		<div id="content"></div>
+	</body>
+</html>

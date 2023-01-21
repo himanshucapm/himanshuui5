@@ -1,0 +1,183 @@
+.sapMListTbl th {
+    background: cornsilk;
+    border-bottom: 1px solid #e5e5e5;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px; 
+}
+.tblgrid .sapMListTblCell{
+    vertical-align: middle;
+    border: 1px solid #cdcdcd;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px; 
+}
+
+.sapUiFormResGrid>div {
+    padding: 0.2rem !important;
+    box-sizing: border-box !important;
+}
+.sapUiSizeCompact .sapUiFormContainerTitle>.sapUiFormTitle {
+    height: 1rem !important;
+    line-height: 1rem !important;
+}
+.sapMITB.sapUiResponsiveContentPadding>.sapMITBContainerContent>.sapMITBContent {
+    padding: 0rem 0rem !important;
+    box-sizing: border-box !important;
+}
+.sapMITBHead {
+    position: relative !important;
+    white-space: nowrap !important;
+    display: inline-block !important;
+    margin: 0rem 0rem 0 0rem !important;
+    padding: 0 1px !important;
+    vertical-align: top !important;
+    font-size: 0.75rem !important;
+}
+.sapMITBContent {
+    padding: 0.2rem !important;
+    position: relative !important;
+}
+.color .sapUiSizeCompact .sapUiFormContainerTitle>.sapUiFormTitle {
+    background-color: blanchedalmond !important;
+} 
+.sapMITBContent {
+    border-bottom: 0.125rem solid #fafafa !important;
+}
+.sapUiFormM:not(.sapUiFormEdit) .sapUiFormResGridCont>div {
+    padding-top: 0.0rem;
+    padding-bottom: 0.0rem;
+    font-size: 1px;
+}
+
+.cllbltext {
+    font-weight: bold;
+    text-align: left;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.Clnsds{
+	font-weight: bold;
+    color: black;	
+}
+
+.clinpt.sapMInputBaseInner {
+    color: #236e06;
+    background: #ffffff;
+    border: 1px solid #bfbfbf;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    font-size: 0.875rem;
+    font-family: Arial,Helvetica,sans-serif;
+    line-height: normal;
+    padding: 0 0.75rem;
+    height: 100%;
+    box-sizing: border-box;
+    font-weight: bold;
+}
+
+.classdefect{
+	color:black;
+	font-weight: bold;
+	background-color: #f7f7b7;
+}
+/* -------------------------------------------------- */
+.clashedClaim {
+	color: black !important;
+	font-weight: 600;
+	font-size: 15px;
+}
+.sapMIBar-CTX .sapMTitle {
+	color: black;
+	font-weight: 600;
+	font-size: 15px;
+}
+.styleatribute {
+   margin-top: -22px;
+   margin-left: -16px;
+}
+.stylstext {
+margin-left: 40px;
+}
+
+.stylswear {
+margin-left: 57px;
+}
+
+.stylinputwear1{
+  margin-left: 170px;
+}
+
+.stylinputwear2{
+  margin-left: 120px;
+}
+
+.stylinputwear3{
+margin-left: 75px;  
+}
+
+.stylinputwear4{
+ margin-left: 25px; 
+}
+
+
+.stylstencil{
+margin-left: 3px;
+}
+
+.styletimg{
+margin-left: 2px;
+}
+
+.styleYnsd1 {
+margin-left:9px;
+}
+
+.styleYnsds2 {
+ margin-left: 40px;
+}
+
+.stylnsd2 {
+ margin-left: 23px;
+}
+
+.styleYnsds3 {
+ margin-left: 46px;
+}
+
+.stylnsd3 {
+margin-left: 28px;
+}
+
+.styleYnsds4{
+	margin-left: 41px;
+}
+
+.stylnsd4{
+	margin-left: 24px;
+}
+
+.styleadjbtn {
+   width: 118px;
+}
+
+.stylenonadjbtn{
+	margin-left: 15px;
+    width: 118px;
+}
+
+.stylelblClaimawrd {
+ margin-left:104px;
+}
+ 
+.styleClaimawrd {
+ margin-left:40px;
+}
+.styleheading{
+	font-weight: bold;
+    font-size: 15px;
+}
+

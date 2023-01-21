@@ -1,0 +1,132 @@
+<core:View xmlns:core="sap.ui.core" 
+		   xmlns:mvc="sap.ui.core.mvc"
+		   xmlns="sap.m"    	
+		   xmlns:u="sap.ui.unified"
+		   xmlns:f="sap.ui.layout.form"
+	       xmlns:l="sap.ui.layout"
+	       xmlns:sc="sap.suite.ui.commons" 	
+	       xmlns:fb="sap.ui.comp.filterbar"
+	       xmlns:c="sap.ui.unified.calendar"
+	       controllerName="ZHrApprove.view.View1" 
+	       xmlns:html="http://www.w3.org/1999/xhtml">
+<html:style>
+	
+.paddingnew .sapMPanelContent {
+ 	padding: 0rem;
+    box-sizing: border-box;
+    overflow: auto;
+    white-space: normal;
+}
+	
+.labelnew .sapFactsheetUtiLabel, .sapMListTbl .sapMLabel {
+    color: black;
+    font-weight: 700;
+}
+
+.hClass .sapMTitle > span {
+    font-weight: bold !important;
+    color: black;
+    font-size: larger;
+}
+.toolbar{
+background:whiteshomke;
+}
+.cllbl {
+    color: black;
+}
+
+	</html:style>
+	
+<Page title="HR Approve" class="hClass">
+<content>	
+<Toolbar class="toolbar">
+	<!-- <ToolbarSpacer></ToolbarSpacer> -->
+	<Label text="Employee Id" design="Bold" class="cllbl"></Label>
+	<Input id="IdEmpSrch"  width="15em" ></Input>
+	<Button enabled="true" type="Accept" icon="sap-icon://show" press="bindView" id="raceNoBtn"></Button>
+	<ToolbarSpacer></ToolbarSpacer>
+</Toolbar>
+	
+<f:SimpleForm id="SimpleFormToolbar1" minWidth="1024" maxContainerCols="6" editable="true" layout="ResponsiveGridLayout"
+         labelSpanL="4" labelSpanM="3" emptySpanL="0" emptySpanM="0" columnsL="2" columnsM="2" class="editableForm l1 labe1"  backgroundDesign="Solid"> 
+	<f:content>
+		<core:Title text="Employee Details" class="jhClass c1"/>  
+		    
+		<Label text="Employee ID"/>
+		<Text id="idEmp" text="" MaxLength="8"/>
+		
+		<Label text="Employee Name" />
+		<Text id="idEmpName" MaxLength="40" text=""/>
+						
+		<Label text="Personnel Area" />
+		<Text id="idPerArea"  MaxLength="30" text=""/>
+		
+		<Label text="Personnel Subarea"  />
+		<Text id="idPerSubArea" MaxLength="15"  text=""/>
+		
+		<Label text="Designation / Title"/>
+		<Text id="idDT" MaxLength="25" text=""/>
+		
+		<core:Title text=""/>
+		
+		<Label text="Date of Joining"/>
+		<Text id="idDoj" valueFormat="yyyy-MM-dd"  text=""/>
+				
+		<Label text="Organisation Unit"/>
+		<Text id="idOrgunit" MaxLength="25" text=""/>		 
+		
+		<Label text="Appraiser"  />
+		<Text id="idAppraise" text=""/>
+				
+		<Label text="Reviewer"/>
+		<Text id="idReviwer" text=""/>	
+	</f:content>
+</f:SimpleForm>
+		
+
+<panel>
+<f:SimpleForm id="SimpleFormToolbar4" minWidth="1024" maxContainerCols="6" editable="true" layout="ResponsiveGridLayout"
+              labelSpanL="4" labelSpanM="4" emptySpanL="1" emptySpanM="1" columnsL="2"  columnsM="1" class="editableForm" 
+              backgroundDesign="Solid" vSpacing="0">
+	<f:content>
+		<core:Title text="HR Manager Details" class="jhClass" />
+		
+		<Label  text="Action"/>
+		<Select id="idAction2" selectedKey="" MaxLength="20" forceSelection="false" enabled="true" change="onChange">
+			<items>
+				<core:Item text="Approve"  key="A"/>
+				<core:Item text="On Hold"  key="H" />
+				<core:Item text="Reject"   key="R" />
+			</items>
+			<layoutData>
+			<l:GridData span="XL5 L4 M2 S2"/>
+			</layoutData>
+		</Select>
+		
+		<core:Title text=""/>
+		            
+		<Label  text="Final Reliving Date" />
+		<DatePicker id="IdFnlRelDt" change="changeHRReqDate" visible="false"/>
+		            
+		<Label  text="Clearance Requierd" />
+		<Switch id="idSwitch" state="false" customTextOn="Yes" customTextOff="No" visible="false" >
+		<layoutData>
+		<FlexItemData growFactor="1" />
+		</layoutData>
+		</Switch>
+				
+		<Label  text="Comments" />
+		<TextArea id="idHrComments" visible="false" />
+	</f:content>
+</f:SimpleForm>
+</panel>	
+</content>
+<footer>
+		<Bar>
+			<contentRight>
+			<Button text="Save" press="onSave" type="Accept" id="Id_bt2" visible="true" /> 
+			</contentRight>
+		</Bar>
+</footer>
+</Page>
+</core:View>

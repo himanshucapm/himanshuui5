@@ -1,0 +1,17 @@
+.sapUiTableVSb{ z-index: 999 !important; }
+.sapMLabel{
+   
+     font-size: 0.900rem;
+    font-weight: none;
+    color:black;
+}
+.sapUiFormTitle 
+{
+	color:black !important;
+	font-weight:bold !important; 
+}
+
+.clpage{
+	background-color:white;
+}
+

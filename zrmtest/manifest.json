@@ -1,0 +1,131 @@
+{
+	"_version": "1.8.0",
+	"sap.app": {
+		"id": "com.musashi.scan",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"title": "",
+		"description": "{{appDescription}}",
+		"applicationVersion": {
+			"version": "1.1.0"
+		},
+		"dataSources": {
+			"mainService": {
+				"uri": "/sap/opu/odata/sap/ZSCANREPORT_SRV/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0"
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"_version": "1.56.4.",
+		"technology": "UI5",
+		"icons": {
+			"icon": "sap-icon://detail-view",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_belize"
+		]
+	},
+	"sap.ui5": {
+		"_version": "1.2.0",
+		"config": {
+			"sapFiori2Adaptation": true
+		},
+		"rootView": {
+			"viewName": "com.musashi.scan.view.App",
+			"type": "XML",
+			"id": "app"
+		},
+		"dependencies": {
+			"minUI5Version": "1.56.4",
+			"libs": {
+				"sap.ui.core": {
+					"minVersion": "1.56.4"
+				},
+				"sap.m": {
+					"minVersion": "1.56.4"
+				},
+				"sap.ui.layout": {
+					"minVersion": "1.56.4"
+				}
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			],
+			"js": [{
+					"uri":"js/BigIntegermin.js"
+			},{
+					"uri":"js/zxingpdf417.js"
+			}]
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "com.musashi.scan.i18n.i18n"
+				}
+			},
+			"": {
+				"dataSource": "mainService",
+				"settings": {
+					"metadataUrlParams": {
+						"sap-documentation": "heading"
+					},
+					"mCustomHeaders": {
+						"X-CSRF-Token": "Fetch",
+						"bTokenRequested": true,
+						"bTokenHandling": true,
+						"bUseCache": true
+					},
+					"useBatch": false,
+					"defaultCountMode": "Inline"
+				}
+			}
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "com.musashi.scan.view",
+				"controlId": "idAppControl",
+				"controlAggregation": "pages",
+				"async": true
+			},
+			"routes": [
+				{
+					"pattern": "",
+					"name": "home",
+					"target": "fullscreen"
+				}
+			],
+			"targets": {
+				"fullscreen": {
+					"viewName": "Home",
+					"viewLevel": 1,
+					"viewId": "home"
+				}
+			}
+		}
+	}
+}

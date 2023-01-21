@@ -1,0 +1,105 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "zfieldplanrepor",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.40.12"
+		}
+	},
+
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+
+	"sap.ui5": {
+		"flexEnabled": false,
+		"rootView": {
+			"viewName": "zfieldplanrepor.view.View1",
+			"type": "XML",
+			"async": true,
+			"id": "View1"
+		},
+		"dependencies": {
+			"minUI5Version": "1.52.0",
+			"libs": {
+				"sap.ui.layout": {},
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "zfieldplanrepor.i18n.i18n"
+				}
+			}
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/style.css"
+			}]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "zfieldplanrepor.view",
+				"controlAggregation": "pages",
+				"controlId": "app",
+				"clearControlAggregation": false,
+				"serviceUrl": "/sap/opu/odata/sap/ZFT_FIELDTESTING_SRV/",
+				"async" : true
+			},
+			"routes": [
+						{
+							"pattern" : "",
+							"name" : "View1",
+							"target" : "page1"
+						},
+						{
+							"pattern" : "View2/{entity}",
+							"name" : "View2",
+							"target" : "page2"
+						}
+						],
+					
+			"targets": {
+							"page1" : {
+								"viewName" : "View1",
+								"viewLevel" : 1
+			 				},
+			 				"page2" : {
+								"viewName" : "View2",
+								"viewLevel" : 2
+			 				}
+			 				
+						}
+		}
+	}
+}

@@ -1,0 +1,102 @@
+/* .myBackgroundStyle {
+   height : '50px';
+  background-image: url('jk.png');
+} */
+.fontdate{
+	font-weight: 850;
+	font-size:20px
+}
+
+.fontlabel{
+ color: red;
+ font-weight: 700;	
+}
+
+ .newlabe1 {
+    color: red;
+    font-weight: bold !important;
+}
+
+.sapMIBar.sapMTB .sapMBarChild {
+    margin-right: 0.25rem;
+    font-size: large;
+}
+.projectTitle .sapMTitle > span {
+    font-weight: bold !important;
+    color: black;
+    font-size: larger;
+	}
+	
+.sapUiSizeCompact .sapUiFormContainerTitle>.sapUiFormTitle {
+    height: 1rem;
+    line-height: 1rem;
+    color: blue;
+    font-weight: 700;
+}
+
+.myimage{
+	float:None !important; width:250px; height:45px;}
+
+.lblhight .sapUiSizeCompact .sapUiFormContainerTitle>.sapUiFormTitle {
+    height: 0rem;
+    line-height: 1rem;
+    color: blue;
+    font-weight: 700;
+}
+.sapMITBContent {
+    border-bottom: 0rem solid #ffffff;
+}
+.sapMIBar.sapMTB .sapMBarChild {
+    margin-right: 0.25rem;
+    font-size: small;
+}
+
+.sapMPanelContent {
+    padding: 0rem;
+    box-sizing: border-box;
+    overflow: auto;
+    white-space: normal;
+}
+.sapMITH {
+    box-shadow: inset 0 0rem 0 0rem #d1e0ee;
+    background-color: cornsilk;
+    border-bottom: 0rem solid #eff4f9;
+}
+
+.sapMITBSelected .sapMITBFilterDefault {
+    background: #3b6f9a;
+    color: cornsilk;
+    height: 2.5rem;
+    width: 2.5rem;
+    padding-top: unset;
+}
+
+
+.colorlbl .sapMLabel {
+	 color: black;
+    font-size: 0.875rem;
+    font-family: Arial,Helvetica,sans-serif;
+    font-weight: normal;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: text;
+}
+
+
+.sapMSplitContainerHideMode>.sapMSplitContainerDetail .sapMITB.sapUiResponsiveContentPadding>.sapMITBContainerContent>.sapMITBContent, .sapMITB.sapUiResponsiveContentPadding>.sapMITBContainerContent>.sapMITBContent {
+    padding: 0rem  0rem;
+    box-sizing: border-box;
+}
+
+.filterbarlbl .sapMITBFilter .sapMITBText {
+    line-height: 0.9375rem;
+    overflow: hidden;
+    padding: 0.375rem 0 0;
+    position: relative;
+    text-overflow: ellipsis;
+    width: 9rem;
+    color: #333333;
+    text-shadow: 0 0 0.125rem #ffffff;
+}

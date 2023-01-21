@@ -1,0 +1,137 @@
+<core:View xmlns:core="sap.ui.core" 
+		   xmlns:mvc="sap.ui.core.mvc"
+		   xmlns="sap.m" 
+		   xmlns:f="sap.ui.layout.form"
+	       xmlns:l="sap.ui.layout"	
+	       controllerName="zrmtest1.view.View1" 
+	       xmlns:html="http://www.w3.org/1999/xhtml"
+	       displayBlock="true" class="sapUiSizeCompact">     
+	<Page title="Test App" level="h4" class="sapUiStdPage" enableScrolling="true">
+  <content>
+  <!-- ********************First form*********************** -->
+   <VBox class="sapUiSmallMargin">
+   
+		<f:SimpleForm id="SimpleFormToolbar1" minWidth="1024"
+					  maxContainerCols="6" editable="true" layout="ResponsiveGridLayout"
+					  labelSpanL="4" labelSpanM="4"	emptySpanL="1" emptySpanM="1" columnsL="2"
+			          columnsM="1" class="editableForm">
+				<f:content>
+					<core:Title text="Header"/>
+					 <Label text="Ticket Source" design="Bold" required="true"/>
+			         <Select selectedKey="" forceSelection="false" enabled="true" id="idTicketSource" >
+					</Select>
+								
+					<Label text="Fitment Type" design="Bold" required="true"/>
+				    <Select selectedKey="" forceSelection="false" enabled="true" id="idFitmentType">
+				     <!-- <items>
+				    	<core:Item text="A" key="01" />
+				    	<core:Item text="B" key="02" />
+				     </items> -->	
+			       </Select>
+					
+					<core:Title text=""/>
+					<Label text="Ticket Date" design="Bold" required="true"/>
+		  			<DatePicker dateValue="{/date}" enabled="false"/>
+				</f:content>	
+		</f:SimpleForm>
+	</VBox>
+  
+  
+  <!-- ********************secound form*********************** -->
+  
+  <VBox class="sapUiSmallMargin">
+   
+		<f:SimpleForm id="SimpleFormToolbar2" minWidth="1024"
+					  maxContainerCols="6" editable="true" layout="ResponsiveGridLayout"
+					  labelSpanL="4" labelSpanM="4"	emptySpanL="1" emptySpanM="1" columnsL="2"
+			          columnsM="1" class="editableForm">
+				<f:content>
+					<core:Title text="Vechicle Details"/>
+					<Label text="Vechile Type" design="Bold" required="true"/>
+		    <Input id="inpVechileType" valueHelpRequest="onVechicleHelp" valueHelpOnly="true"
+			 showValueHelp="true"/>
+								
+					
+					<core:Title text=""/>
+					 <Label text="Vechicle Make" design="Bold"/>
+			<Input id="inpVechicleMake" valueHelpRequest="onVechicleMakeHelp" valueHelpOnly="true"
+			 showValueHelp="true"/>
+				</f:content>	
+		</f:SimpleForm>
+	</VBox>
+	
+  <!-- ********************Third form*********************** -->
+  <VBox class="sapUiSmallMargin">
+   
+		<f:SimpleForm id="SimpleFormToolbar3" minWidth="1024"
+					  maxContainerCols="6" editable="true" layout="ResponsiveGridLayout"
+					  labelSpanL="4" labelSpanM="4"	emptySpanL="1" emptySpanM="1" columnsL="2"
+			          columnsM="1" class="editableForm">
+				<f:content>
+					<core:Title text="Vechicle Details"/>
+					<Label text="Phone" design="Bold" required="true"/>	
+					<Input value="+91" enabled="false">
+						<layoutData>
+							<l:GridData span="XL2 L1 M3 S4" />
+						</layoutData>  
+					</Input>	 
+			 <Input value="" enabled="true"  liveChange="NumValid" id="inpPhone" submit="onEnter" maxLength="10"/>
+			 <Label/>	
+			 <Input  enabled="true" id="idigit" liveChange="NumDigit" >
+						<layoutData>
+							<l:GridData span="XL2 L3 M3 S4" />
+						</layoutData>  
+					</Input>
+					
+			<Label text="Name" design="Bold" required="true"/>
+		    <Input id="inpName" liveChange="validateCharacter" />
+								
+					
+					<core:Title text=""/>
+					  <Label text="Address" design="Bold" required="true"/>
+			<Input id="inpAddress" liveChange="" />
+			 
+			 <Label text="Email" design="Bold" required="true"/>
+			<Input  id="idEmail" type="Email" maxLength="35" />
+				</f:content>	
+		</f:SimpleForm>
+	</VBox>
+	
+	<!-- *********************Fifth Box********************** -->
+	
+	
+	<VBox class="sapUiSmallMargin">
+   
+		<UploadCollection
+			id="idUpload"
+			maximumFilenameLength="55"
+			maximumFileSize="10"
+			multiple="true"
+			sameFilenameAllowed="true"
+			instantUpload="false"
+			noDataDescription="Drop files or use the &quot;+&quot; button for pending upload"
+			change="onChange"
+			fileDeleted="onFileDeleted"
+			filenameLengthExceed="onFilenameLengthExceed"
+			fileSizeExceed="onFileSizeExceed"
+			typeMissmatch="onTypeMissmatch"
+			uploadComplete="onUploadComplete"
+			beforeUploadStarts="onBeforeUploadStarts" />
+			
+		<Button id="Button" text="Upload Now" press="OnAttachUploader" />
+	</VBox>
+	
+<!-- ************************************************************** -->
+  
+  </content>
+  <footer >
+		<Bar id="idFooter">
+			<contentRight>
+			<Button text="Clear" press="onClear" type="Accept" id="btnClear" visible="true" />
+			<Button text="Save" press="onSave" type="Accept" id="btnSave" visible="true" />
+			</contentRight>
+		</Bar>
+	</footer>
+  
+</Page>
+</core:View>
