@@ -1,0 +1,19 @@
+/* Enter your custom styles here */
+
+.sapMLabel {
+    color: black;
+    font-size: 0.900rem;
+    font-family: Arial,Helvetica,sans-serif;
+    font-weight: normal;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: text;
+}
+
+ .sapMIBar-CTX .sapMLabel {
+    color: black;
+    font-size: larger;
+    font-weight: 700;
+} 

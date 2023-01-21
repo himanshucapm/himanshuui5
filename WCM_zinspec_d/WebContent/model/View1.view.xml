@@ -1,0 +1,20 @@
+<mvc:View controllerName="zastest1.view.View1" 
+			xmlns:mvc="sap.ui.core.mvc" 
+			xmlns="sap.m"
+			>
+<Shell id="shell" appWidthLimited="false">
+		<App id="app">
+			<pages>
+				<Page id="page" title="Page Title">
+					<content>
+						<Label design="Bold" text="Sample F4"></Label>
+						<Input showValueHelp="true" valueHelpOnly="true" valueHelpRequest="onCustomer"></Input>
+						<Image height="200px" width="200px" alt="Defect Image" mode="Background" backgroundSize="200px 200px"
+								src="https://image.shutterstock.com/image-photo/damaged-truck-tyre-260nw-1222667248.jpg" ></Image>
+					</content>
+</Page>
+</pages>
+</App>
+</Shell>
+
+</mvc:View>
