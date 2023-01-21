@@ -1,0 +1,29 @@
+.abc .sapMITBFilter .sapMITBText {
+    width: 10rem !important;
+    color: #346288 !important;
+    font-weight: bold;
+    font-size: small;
+}
+
+.readingForm .sapUiFormTitle{
+        color: #1b1919;
+        font-weight: 600;
+}
+
+.readingForm .sapUiFormResGridMain{
+    background-color: #ffffff;
+}
+
+.sapMITBHead {
+    margin: 0.2rem 0.75rem 0px 0.25rem !important;
+    padding: 1px 1px;
+    
+}
+
+tr[data-mydata="X"]{	
+  background: #A0EEF7 !important;
+}
+
+/* tr[data-mydata=""]{	
+  background:  blue !important;
+} */

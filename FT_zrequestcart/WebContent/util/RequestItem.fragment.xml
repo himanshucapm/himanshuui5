@@ -1,0 +1,54 @@
+<core:FragmentDefinition 
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core">
+	<Dialog id="historyDialog" xmlns="sap.m" class="sapUiSizeCompact textBold" contentWidth="40%" contentHeight="50%">
+		<content>
+			<l:Grid defaultSpan="L12 M12 S12" width="auto" position="Center">
+				<l:content>
+				
+					<Table class="tblgrid" showNoData="false" >
+						<columns>
+						<Column minSceenWidth="Tablet" demandPopin="true" hAlign="Center" width="15rem">
+								<Label text="Refill Date &amp; Time" class="textBold"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="15rem">
+								<Label text="Quantity" class="textBold"/>
+							</Column>
+						</columns>
+					</Table>
+					<ScrollContainer vertical="true" horizontal="false" height="400px" >
+						<Table id="historyTable" items="{HistoryJModel>/}" showNoData="true" alternateRowColors="true" class="tblgrid1">
+							<columns>
+								<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="12rem"/>
+								<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="12rem"/>
+							</columns>
+								<items>
+									<ColumnListItem>
+										<cells>
+											<Text text="{HistoryJModel>TimeStamp}" textAlign="Center" />
+												<!-- <VBox alignContent="Center" alignItems="Center">
+													<HBox alignContent="Center" alignItems="Center" >
+														<Text text="{path:'HistoryJModel>Erdat',formatter:'ZAddStationary.util.Formatter.date1'}"/>
+														<VBox width="1rem" />
+														<Text text="{path:'HistoryJModel>Erzet',formatter:'ZAddStationary.util.Formatter.Time'}" 
+																textAlign="Center" enabled="false" />
+													</HBox>
+												</VBox> -->
+											<Text text="{HistoryJModel>Menge}" textAlign="Center" />
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+					</ScrollContainer>
+				</l:content>
+			</l:Grid>
+		</content>
+		<beginButton>
+			<Button text="Close" press="onRequestClose"/>
+		</beginButton>
+		<!-- <endButton>
+			<Button text="Cancel" press="onRequestCancel"/>
+		</endButton> -->
+	</Dialog>
+</core:FragmentDefinition>

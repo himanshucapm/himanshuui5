@@ -1,0 +1,39 @@
+.mainPage .sapMBarContainer{
+	background-color: #ffffff;
+	font-size:12px bold;
+}
+.mainPage1 .sapMTitle > span{
+	font-weight:700;
+	color: #000000;
+}
+.sapMTitle > span {
+    color: #000000;
+    font-weight: 800;
+   }  
+.sapMText > span{
+text-align:center;
+font-weight: 700;	
+}
+.sapUiSizeCompact .sapMTB {
+    height: 2rem;
+    background-color: #cccccc;
+}
+.sapMIBar > .sapMBarChild:last-child {
+    margin-right: 0.25rem;
+    font-weight: bold;
+}
+
+.prntbtn {
+	
+}
+
+.abc.sapMTB-Transparent-CTX .sapMLabel {
+    text-shadow: 0 0px 0 #ffffff !important;
+    font-family: Arial,Helvetica,sans-serif;
+    color: #333333 !important;
+    font-size:"larger" !important;
+}
+
+.viewCQ tbody tr:nth-child(even) {
+    background: rgb(245, 245, 245);
+}
