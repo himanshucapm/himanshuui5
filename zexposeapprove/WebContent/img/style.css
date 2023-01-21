@@ -1,0 +1,420 @@
+/* Enter your custom styles here */
+
+.firstShippingTxt {
+    margin-left: 2.5rem !important
+}
+
+.secondShippingTxt {
+    margin-left: 5.9rem !important;
+    margin-top: 0.5rem !important;
+}
+
+.objPageHeader .sapUxAPObjectPageHeaderTitleText {
+    margin-left: 20rem !important;
+    position: relative !important;
+    bottom: 0.5rem !important;
+}
+
+.radioMargin {
+    margin-left: 3rem !important;
+}
+
+.horizontalLayout {
+    /*position: relative !important;
+    bottom: 1rem !important;
+    margin-top: 3.6rem;*/
+    padding-left: 4% !important;
+    background: #333333 !important;
+}
+
+.customVBoxWidth {
+    width: 63% !important;
+}
+
+.dropDownRadioButton {
+    margin-bottom: 2rem !important;
+}
+
+.detailTxt {
+    /*font-size: 1.4rem !important;*/
+    font-size: 1.1rem !important;
+}
+
+.itemTypeMarginBottom {
+    margin-bottom: .7rem !important;
+}
+
+.masterList .sapMListHdrText {
+    /*padding-left: 2rem !important;*/
+}
+
+.ratingMargin {
+    margin-top: 1.3rem !important;
+}
+
+.objPageHeader .sapUxAPObjectPageContainerNoBar>.sapUxAPObjectPageSection:first-child:not(.sapUxAPObjectPageSectionNoTitle) {
+    margin: 0 !important;
+}
+
+.totalPriceHBox {
+    margin-left: 70%;
+    position: relative;
+    bottom: 1rem;
+}
+
+
+/*.masterPage .sapMPageBgStandard {
+    background-color: #333333 !important;
+}*/
+
+.masterPage > div > section > div:nth-child(1) {
+    background-color: #333333 !important;
+}
+
+.sapMSplitContainerMaster .sapMPageHeader {
+    background-color: #333333 !important;
+}
+
+.sapMITH {
+    background-color: #333333 !important;
+}
+
+.masterPage .sapMIBar-CTX .sapMTitle {
+    color: #DFB028;
+}
+
+.sapMLabel {
+    color: white !important;
+}
+
+.sapMITBTextOnly .sapMITBFilterDefault.sapMITBSelected>.sapMITBText {
+    color: #DFB028 !important;
+}
+
+.sapMITBTextOnly .sapMITBFilterDefault.sapMITBSelected:hover>.sapMITBText {
+    color: #DFB028 !important;
+}
+
+.sapMITBFilterDefault {
+    color: #DFB028 !important;
+}
+
+.sapMITBSelected>.sapMITBContentArrow::after {
+    color: #DFB028 !important;
+}
+
+.sapMITBSelected>.sapMITBContentArrow::after {
+    background: #DFB028 !important;
+}
+
+.sapMITBTextOnly .sapMITBFilterDefault>.sapMITBText {
+    color: white !important;
+    text-shadow: none;
+}
+
+.jkTyreIconTabBar .sapMLabel {
+    color: #6a6d70 !important;
+}
+
+.jkTyreIconTabBar .sapMSlt {
+    background: #fff !important;
+}
+
+.jkTyreIconTabBar .sapMSlt>.sapMSltLabel {
+    color: #32363a !important;
+}
+
+.jkTyreIconTabBar .sapMSltArrow {
+    color: #0854a0 !important;
+}
+
+.jkTyreIconTabBar .sapMITBTextOnly .sapMITBFilterDefault.sapMITBSelected .sapMITBText {
+    color: #DFB028 !important;
+}
+
+.jkTyreIconTabBar .sapMITBTextOnly .sapMITBFilterDefault .sapMITBText {
+    color: #fff !important;
+    text-shadow: none;
+}
+
+.jkTyreIconTabBar .sapMITBSelected .sapMITBContentArrow::after {
+    background: #DFB028 !important;
+}
+
+.sapMRbSel .sapMRbBInn {
+    fill: #DFB028 !important;
+    stroke: none;
+}
+
+.sapMSlt {
+    background: #333333;
+}
+
+.sapMSlt>.sapMSltLabel {
+    color: white;
+}
+
+.sapMSltArrow {
+    color: white;
+}
+
+.sapMSltHoverable:not(.sapMSltState):not(.sapMSltIconOnly):hover {
+    border-color: white;
+    background: #333333;
+}
+
+.sapMSltPressed>.sapMSltArrow {
+    background: #333333;
+}
+
+.sapMSltPressed:not(.sapMSltDisabled):not(.sapMSltState) {
+    border-color: white;
+}
+
+.sapUxAPObjectPageHeaderIdentifier {
+    background-color: #333333 !important;
+}
+
+.sapUxAPObjectPageHeaderContentDesign-Light,
+.sapUxAPObjectPageHeaderContentDesign-Dark {
+    background-color: #333333 !important;
+}
+
+.sapUxAPObjectPageHeaderIdentifierTitle {
+    font-family: "72", "72full", Arial, Helvetica, sans-serif;
+    font-size: 1.25rem;
+    font-weight: normal;
+    color: #DFB028 !important;
+}
+
+.sapMText {
+    color: #DFB028 !important;
+}
+
+.sapUxAPObjectPageSection > .sapUxAPObjectPageSectionHeader {
+    background: #333333 !important;
+}
+
+.sapUiSizeCompact .sapUxAPObjectPageSectionTitle,
+.sapUxAPObjectPageSectionTitle {
+    color: #DFB028 !important;
+    border-bottom: .0625rem solid #DFB028 !important;
+}
+
+.detailTable .sapMLabel {
+    color: #333333 !important;
+}
+
+.sapUxAPObjectPageLayout .sapUxAPObjectPageFooter .sapUxAPObjectPageFloatingFooter {
+    background: #333333 !important;
+}
+
+span.sapMBtnInner.sapMBtnEmphasized {
+    background-image: none;
+    background-color: #DFB028 !important;
+    border-color: #DFB028 !important;
+}
+
+.sapFShellBar {
+    background: #1a1a1a !important;
+    height: 2.75rem;
+}
+
+.sapFShellBar .sapMTB-Transparent-CTX .sapFShellBarItem>.sapMBtn .sapMBtnContent {
+    background: transparent;
+    color: #DFB028 !important;
+}
+
+.sapMSplitContainerMaster .sapMPageHeader {
+    box-shadow: inset 0 -1px #333333 !important;
+}
+
+.sapUxAPObjectPageLayoutNoAnchorBar .sapUxAPObjectPageHeaderContent {
+    box-shadow: 0 0 0.25rem 0 rgba(0, 0, 0, 0.15), inset 0 -0.0625rem 0 0 #333333 !important;
+}
+
+.sapMVSD.sapMDialog.sapMPopup-CTX .sapMIBar.sapMHeader-CTX,
+.sapMVSD.sapMDialog.sapMPopup-CTX .sapMIBar.sapMSubHeader-CTX {
+    background-color: #333333 !important;
+}
+
+.fragmentClass .sapMIBar-CTX .sapMTitle {
+    color: #fff !important;
+    text-shadow: none;
+}
+
+.fragmentClass .sapMIBar.sapMFooter-CTX {
+    background-color: #333333 !important;
+    border-top: 1px solid #d9d9d9;
+}
+
+.fragmentClass .sapMBtn .sapMBtnContent {
+    display: block;
+    color: #fff !important;
+}
+
+.detailTable .sapMText {
+    color: #32363a !important;
+}
+
+table tbody tr td:nth-child(4) .sapMText {
+    color: green !important;
+}
+
+.totalPriceHBox .sapMLabel {
+    color: #32363a !important;
+}
+
+.editBtn .sapMBtnInner {
+    color: #fff !important;
+}
+
+.treeMarginBegin {
+    margin-left: 1rem !important;
+}
+
+.treeQuantity {
+    margin-left: 5rem !important;
+}
+
+.treeLabelWidth {
+    width: 17em !important;
+}
+
+.sapMMessageBox .sapMText {
+    color: #32363a !important;
+}
+
+.sapMSelectListItemBase.sapMSelectListItemBasePressed,
+.sapMSelectListItemBase.sapMSelectListItemBasePressed.sapMSelectListItemBaseSelected {
+    color: #fff;
+    background: #DFB028 !important
+}
+
+.jkTyreIconTabBar > div {
+    width: 32rem !important;
+}
+
+.shipToPartyMarginLeft {
+    margin-left: 1rem !important;
+}
+
+.objectHeaderLargeMargin {
+    margin-left: 4rem !important;
+}
+
+.totalPriceHBoxLabel .sapMLabel {
+    color: #32363a !important;
+}
+
+.totalPriceHBoxLabel {
+    /*position: relative;
+    left: 31rem;
+    bottom: 1rem !important;*/
+    margin-left: 75%;
+    margin-top: 5%;
+}
+
+
+/** Portal CSS **/
+
+.sapMBarPH {
+    background-color: #333333 !important;
+}
+
+.sapMListTbl {
+    border: none !important;
+}
+
+.sapMPageHeader {
+    border: 2px solid #333;
+}
+
+.equalWidth {
+    /*width: 8rem !important;*/
+    padding-bottom: 6% !important;
+    padding-top: 7% !important;
+}
+
+.jkTyreDetailIconTabBar .sapMLabel {
+    color: #6a6d70 !important;
+}
+
+.jkTyreDetailIconTabBar .sapMSlt {
+    background: #fff !important;
+}
+
+.jkTyreDetailIconTabBar .sapMSlt>.sapMSltLabel {
+    color: #32363a !important;
+}
+
+.jkTyreDetailIconTabBar .sapMSltArrow {
+    color: #0854a0 !important;
+}
+
+.jkTyreDetailIconTabBar .sapMITBTextOnly .sapMITBFilterDefault.sapMITBSelected .sapMITBText {
+    color: #DFB028 !important;
+}
+
+.jkTyreDetailIconTabBar .sapMITBTextOnly .sapMITBFilterDefault .sapMITBText {
+    color: #fff !important;
+    text-shadow: none;
+}
+
+.jkTyreDetailIconTabBar .sapMITBSelected .sapMITBContentArrow::after {
+    background: #DFB028 !important;
+}
+
+.sapMFooter-CTX.sapContrast {
+    background-color: #fff !important;
+    border-top: 1px solid #eee;
+}
+
+.productCatalogueTitle {
+    width: 14rem !important;
+}
+
+.totalText {
+    width: 6rem !important;
+}
+
+.totalPrc {}
+
+.sapUiSizeCompact .sapMSF {
+    height: 2rem !important;
+    padding: 0.3875rem 0 !important;
+    min-width: 6rem !important;
+}
+
+html.sap-desktop::-webkit-scrollbar-corner {
+    background-color: #333333 !important;
+}
+
+html.sap-desktop::-webkit-scrollbar {
+    background-color: #333333 !important;
+}
+
+#jkToolbar span {
+    color: #666666 !important;
+}
+
+.context-sub-level {
+    max-width: 1024px;
+    position: absolute;
+    z-index: 2 !important;
+    box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.2);
+}
+
+.legends{
+	float:right;
+}
+
+
+/*.jkMasterPage > section > div {
+    margin-left: 0rem !important;
+    width: 28rem !important;
+}
+
+.divisonClass > div{
+	background-color: #333333 !important;
+}*/
