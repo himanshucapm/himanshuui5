@@ -1,0 +1,80 @@
+/* Enter your custom style here*/
+
+.pageTitle .sapMTitle {
+    color: black;
+    font-weight: bold !important;
+    text-shadow: 0 0 0.125rem #ffffff;
+}
+ .tblgrid .sapMListTblCell {
+   vertical-align: middle;
+   border: 1.1px solid #ddcfea;
+   background: #f4f4f6;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.tblgrid1 .sapMListTblCell {
+    vertical-align: middle;
+    border: 1.1px solid #f4f4f6;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.sapMITBFilter .sapMITBText {
+    width: 10rem !important;
+    color: #346288 !important;
+    font-weight: bold !important;
+}
+.sapMITBContent {
+    padding: 0px;
+    position: relative;
+    background-color: #ffffff;
+}
+ .paddingnew .sapMPanelContent {
+    padding: 0rem;
+   box-sizing: border-box;
+   overflow: auto;
+   white-space: normal;
+}
+
+.textBold  {
+    display: inline-block;
+    box-sizing: border-box;
+    white-space: pre-line;
+    word-wrap: break-word;
+    cursor: text;
+    font-weight: bold;
+    font-size: 1rem;
+    font-family: Arial,Helvetica,sans-serif;
+    line-height: normal;
+    color: #400080;
+}
+.labelnew .sapFactsheetUtiLabel, .sapMListTbl .sapMLabel {
+   color: black;
+   font-weight: 700;
+}
+
+.tablemargin .sapMTB-Transparent-CTX.sapMTB {
+   padding-left: 0.75rem;
+   margin-top: -26px;
+}
+
+.paddingRight1{
+padding-right: 60px;
+}
+
+.margintop1	.sapUiSizeCompact .sapUiFormContainerTitle>.sapUiFormTitle {
+   height: 2rem;
+   line-height: 2rem;
+   margin-top: -50px;
+}
+
+
+.sapMPanelContent {
+    padding: 0rem;
+    box-sizing: border-box;
+    overflow: auto;
+    white-space: normal;
+}

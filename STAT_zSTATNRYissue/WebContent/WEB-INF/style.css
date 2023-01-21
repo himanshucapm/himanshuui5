@@ -1,0 +1,125 @@
+/* Enter your custom styles here */
+.label {
+    color: black;
+    font-size: 0.875rem;
+    font-family: Arial,Helvetica,sans-serif;
+    font-weight: bold !important;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: text;
+}
+.pageTitle .sapMTitle {
+    color: black;
+    font-weight: bold !important;
+    text-shadow: 0 0 0.125rem #ffffff;
+}
+.userTitle {
+    text-align: left;
+    color: black;
+    font-weight: bold;
+    font-style: normal;
+}
+ .text {
+    text-align: left;
+    color: black;
+    font-weight: bold !important;
+}
+
+.toolbar{
+    height: 2rem;
+    background-color: floralwhite;
+}
+.toolbar1{
+    height: 2rem;
+    background-color: floralwhite;
+}
+.formPadding .sapUiFormResGrid>div {
+	padding: 0px;
+    padding-top: -1px;
+   	padding-bottom: 0px;
+   	padding-right: 0px;
+   	padding-left: 0px;
+   	margin-left: 0px;
+   	margin-right: 0px;
+   	margin-top: 0px;
+   	margin-bottom: 0px;
+}
+
+  .tblgrid .sapMListTblCell {
+   vertical-align: middle;
+   border: 1.1px solid #ddcfea;
+   background: #f4f4f6;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.tblgrid1 .sapMListTblCell {
+    vertical-align: middle;
+    border: 1.1px solid #f7f7f7;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}  
+.sapMITBFilter .sapMITBText {
+    width: 6rem !important;
+    color: #346288 !important;
+    font-weight: bold !important;
+}
+.sapMITBContent {
+    padding: 0px;
+    position: relative;
+    background-color: #ffffff;
+}
+ .paddingnew .sapMPanelContent {
+    padding: 0rem;
+   box-sizing: border-box;
+   overflow: auto;
+   white-space: normal;
+}
+
+.labelnew .sapFactsheetUtiLabel, .sapMListTbl .sapMLabel {
+   color: black;
+   font-weight: 700;
+}
+
+	.tablemargin .sapMTB-Transparent-CTX.sapMTB {
+   padding-left: 0.75rem;
+   margin-top: -26px;
+}
+
+.paddingRight1{
+padding-right: 60px;
+}
+
+.margintop1	.sapUiSizeCompact .sapUiFormContainerTitle>.sapUiFormTitle {
+   height: 2rem;
+   line-height: 2rem;
+   margin-top: -50px;
+}
+ 
+ .sapUiSizeCompact .sapMInputBase.sapMTextArea .sapMTextAreaInner {
+    line-height: 0.5rem;
+    padding: 0.187rem 0.5rem;
+}
+.sapMPanelContent {
+    padding: 0rem;
+    box-sizing: border-box;
+    overflow: auto;
+    white-space: normal;
+}
+.textBold  {
+    display: inline-block;
+    box-sizing: border-box;
+    white-space: pre-line;
+    word-wrap: break-word;
+    cursor: text;
+    font-weight: bold;
+    font-size: 1rem;
+    font-family: Arial,Helvetica,sans-serif;
+    line-height: normal;
+    color: #400080;
+}
