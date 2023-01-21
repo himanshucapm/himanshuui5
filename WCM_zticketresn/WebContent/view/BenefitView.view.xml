@@ -1,0 +1,365 @@
+<mvc:View controllerName="com.jkt.ui.mybenefit.demo.app.controller.BenefitController"
+  xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core"
+  xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" height="100%">
+  <Page id="benefitId" title="" class="sapUiContentPadding">
+    <customHeader>
+      <Bar>
+        <contentMiddle>
+          <Title text="{i18n>InsuranceDetailTitle}"  />
+        </contentMiddle>
+        <contentRight>
+          <Select id="selectYear" autoAdjustWidth= "true" change="handleYearSelection" icon="sap-icon://date-time" items='{/}'>
+            <core:Item key="{year}" text="{year}" />
+          </Select>
+        </contentRight>
+      </Bar>
+    </customHeader>
+    <content>
+      <l:Grid id="GridLayout" defaultSpan="L8 M8 S12" width="auto" height="100%" class="empImg">
+        <l:content>
+          <Image
+            src="{path:'/EmpPicValue' , formatter: 'com.jkt.ui.mybenefit.demo.app.util.Formatter.srcText'}"
+            densityAware="false" width="100%" height="100%" class="">
+            <layoutData>
+              <l:GridData span="L3 M3 S8" linebreakL="true"
+                linebreakM="true" linebreakS="true" />
+            </layoutData>
+          </Image>
+          <f:SimpleForm minWidth="1024" maxContainerCols="2"
+            editable="false" layout="ResponsiveGridLayout" labelSpanL="3"
+            labelSpanM="3" emptySpanL="0" emptySpanM="0" columnsL="1"
+            columnsM="1">
+            <f:content>
+              <Label text="{i18n>Name}" design="Bold">
+              </Label>
+              <Text text="{/Name}">
+              </Text>
+              <Label text="{i18n>Designation}" design="Bold">
+              </Label>
+              <Text text="{/Designation}">
+              </Text>
+              <Label text="{i18n>Location}" design="Bold">
+              </Label>
+              <Text text="{/Location}">
+              </Text>
+              <Label text="{i18n>DOJ}" design="Bold">
+              </Label>
+              <Text
+                text="{path:'/Doj' , formatter: 'com.jkt.ui.mybenefit.demo.app.util.Formatter.date'}">
+              </Text>
+              <Label text="{i18n>BloodGroup}" design="Bold">
+              </Label>
+              <Text text="{/BloodGroup}">
+              </Text>
+              <Label text="{i18n>EmpCode}" design="Bold">
+              </Label>
+              <Text
+                text="{path:'/Pernr' , formatter: 'com.jkt.ui.mybenefit.demo.app.util.Formatter.empCode'}">
+              </Text>
+            </f:content>
+          </f:SimpleForm>
+        </l:content>
+      </l:Grid>
+      <Panel id="panel1Id" expandable="true" expanded="true"
+        headerText="{i18n>ViewInsurance}" width="auto"
+        class="sapUiResponsiveMargin insurancePanel">
+        <headerToolbar>
+          <Toolbar>
+            <Title text="{i18n>ViewInsurance}"></Title>
+            <ToolbarSpacer />
+            <HBox>
+              <!-- <Button id="ID_BTN_POL_EDIT" icon="sap-icon://edit" tooltip="Edit"
+                visible="{oViewModel>dispPolicyDtl}" type="Transparent" class="sapUiSmallMarginBegin"
+                press="handleEditPolicyDetails"></Button> <Button id="ID_BTN_POL_CNCL" icon="sap-icon://sys-cancel-2"
+                tooltip="Cancel" visible="{oViewModel>editPolicyDtl}" type="Transparent"
+                class="sapUiSmallMarginBegin" press="handleCancelPolicyDetails"></Button>
+                <Button id="ID_BTN_POL_SUBMIT" icon="sap-icon://save" tooltip="Save" visible="{oViewModel>editPolicyDtl}"
+                type="Transparent" press="handleSavePolicyDetails"></Button> -->
+            </HBox>
+          </Toolbar>
+        </headerToolbar>
+        <content>
+          <f:SimpleForm minWidth="1024" maxContainerCols="2" class="editableFieldInForm"
+            editable="{oViewModel>editPolicyDtl}" layout="ResponsiveGridLayout"
+            labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4"
+            columnsL="1" columnsM="1">
+            <f:content>
+              <Label text="{i18n>ProviderName}" design="Bold">
+                <layoutData>
+                  <l:GridData span="L3 M3 S12" />
+                </layoutData>
+              </Label>
+              <!-- <Input id="providerNameFieldId" value='{/InsuranceProvider}' editable="false"
+                width="100%">
+              </Input> -->
+              
+              <FlexBox id="InsPvdrFlexBox">
+                <Select id="providerNameFieldId" autoAdjustWidth="true" enabled="false" selectedKey="{/Inspr}" change="handleProviderChange"
+                items="{
+                      path: 'CoveragePlanModel>/'
+                    }">
+                  <core:Item key="{CoveragePlanModel>Inspr}" text="{CoveragePlanModel>InsprText}" />
+                </Select>
+                <!-- <Link id="checkStatusLinkId" text='{i18n>TPAPortalLink}' href='{/TpaUrl}' press="handleClaimStatusClick">
+            </Link> -->
+            <Button id="checkStatusLinkId" text='{i18n>TPAPortalLink}' press="handleClaimStatusClick"/>
+
+            <layoutData>
+                <l:GridData span="L9 M9 S12" />
+            </layoutData>
+              </FlexBox>
+
+        <!-- <ComboBox id="providerNameFieldId" autoAdjustWidth="true" enabled="false" selectedKey="{/Inspr}" selectionChange="handleProviderChange"
+                items="{
+                      path: 'CoveragePlanModel>/'
+                    }">
+                <core:Item key="{CoveragePlanModel>Inspr}" text="{CoveragePlanModel>InsprText}" />
+              </ComboBox> -->
+              
+              <Label text="{i18n>CoverageOption}" design="Bold">
+              <!-- <layoutData>
+                <l:GridData span="L6 M8 S4" />
+              </layoutData> -->
+              </Label>
+              <!-- <Input id="cvrgOptionId" value="{/CoverageOption}" editable="false"
+                width="100%">
+              </Input> -->
+              <Select id="cvrgOptionId" autoAdjustWidth="true" enabled="false" selectedKey="{/Instyp}" change="handleCoveragePlanChange"
+                  items="{
+                      path: 'CoveragePlanModel>/'
+                    }">
+                <core:Item key="{CoveragePlanModel>Instyp}" text="{CoveragePlanModel>InsttypeText}" />
+                <!-- <layoutData>
+                <l:GridData span="L6 M4 S4" />
+              </layoutData> -->
+              </Select>
+              <!-- <ComboBox id="cvrgOptionId" autoAdjustWidth="true" enabled="false" selectedKey="{/Instyp}" selectionChange="handleCoveragePlanChange"
+                  items="{
+                      path: 'CoveragePlanModel>/'
+                    }">
+                <core:Item key="{CoveragePlanModel>Instyp}" text="{CoveragePlanModel>InsttypeText}" />
+              </ComboBox> -->
+
+              <Label text="{i18n>CoverageAmount}" design="Bold">
+              </Label>
+              <!-- <Input id="cvrgAmtFieldId" value="{path:'/CoverageAmount' , formatter: 'com.jkt.ui.mybenefit.demo.app.util.Formatter.roundNumber'}" editable="false"
+                width="100%"></Input> -->
+              <Select id="cvrgAmtFieldId" autoAdjustWidth="true" enabled="false" selectedKey="{/CoverageAmount}" change="handleCvrgAmtChange"
+                items="{
+                      path: 'CvrgAmtModel>/'
+                    }">
+                <core:Item key="{CvrgAmtModel>CovAmt}" text="{path:'CvrgAmtModel>CovAmt' , formatter: 'com.jkt.ui.mybenefit.demo.app.util.Formatter.roundNumber'}" />
+              </Select>
+              <!-- <ComboBox id="cvrgAmtFieldId" autoAdjustWidth="true" enabled="false" selectedKey="{/CoverageAmount}" selectionChange="handleCvrgAmtChange"
+                items="{
+                      path: 'CvrgAmtModel>/'
+                    }">
+                <core:Item key="{CvrgAmtModel>CovAmt}" text="{path:'CvrgAmtModel>CovAmt' , formatter: 'com.jkt.ui.mybenefit.demo.app.util.Formatter.roundNumber'}" />
+              </ComboBox> -->
+              
+              <Label id="categoryLblId" text="{i18n>category}" design="Bold">
+              </Label>
+              <Input id="categoryFieldId" value="" editable="false">
+              </Input>
+              
+        	  <Label text="{i18n>TotalPremium}" design="Bold"></Label>
+              
+              <HBox>
+                <Input id="totalPremiumId" editable="false" name='{/TotalPremium}' width="100%"
+                		value="{path:'/TotalPremium' , formatter: 'com.jkt.ui.mybenefit.demo.app.util.Formatter.roundNumber'}"></Input>
+                
+                <Text id="totalPremiumOld" visible="false" class="linethrough claimStatBtn"
+                text="{path:'/TotalPremiumOld' , formatter: 'com.jkt.ui.mybenefit.demo.app.util.Formatter.roundNumber'}"></Text>
+              </HBox>      
+              
+              <Label text="{i18n>PremiumAmount}" design="Bold">
+                <!-- <layoutData>
+                  <l:GridData span="L4 M2 S12" />
+                </layoutData> -->
+              </Label>
+              
+              <HBox>
+                <Input id="premiumAmtId" editable="false"
+                  value="{path:'/PremiumAmount' , formatter: 'com.jkt.ui.mybenefit.demo.app.util.Formatter.roundNumber'}"
+                  name='{/PremiumAmount}'
+                  width="100%">
+              </Input>
+              
+              <Text id="premiumToRecoverOld" visible="false" class="linethrough claimStatBtn"
+              		text="{path:'/PremiumAmtOld' , formatter: 'com.jkt.ui.mybenefit.demo.app.util.Formatter.roundNumber'}">
+              </Text>
+              </HBox>
+              
+              <Label id="balPremAmtLabel" text='{i18n>BalPrem}' design="Bold" visible="false"></Label>
+              <Input id="balPremAmtField" editable="false" visible="false" width="100%">
+            </Input>
+            
+              <Label text="{i18n>PolicyValid}" design="Bold">
+              </Label>
+              <DatePicker editable="false" id="policyValidFieldId" placeholder="dd.MM.yyyy" width="100%"
+                          value="{path:'/PolicyTill' , formatter: 'com.jkt.ui.mybenefit.demo.app.util.Formatter.date'}">
+              </DatePicker>
+
+              <Label text="{i18n>PolicyNumber}" design="Bold">
+              </Label>
+              <Input id="policyNumFieldId" value="{/PolicyNumber}" editable="false" width="100%" ></Input>
+
+              <Label text="{i18n>PhsCardNo}" design="Bold">
+              </Label>
+              <Input id="phsCardNoFieldId" value="{/EmpPhs}" editable="false"
+                width="100%">
+              </Input>
+            </f:content>
+          </f:SimpleForm>
+        </content>
+      </Panel>
+      <Panel id="panel2Id" expandable="true" expanded="true"
+			headerText="{i18n>ViewDependent}" width="auto" class="sapUiResponsiveMargin insurancePanel">
+        <headerToolbar>
+          <Toolbar>
+            <Title text="{i18n>ViewDependent}"></Title>
+            <ToolbarSpacer />
+            <HBox>
+              <Button id="ID_BTN_TBL_ADD" icon="sap-icon://add" tooltip="Add"
+					  visible="false" type="Transparent" class="sapUiSmallMarginBegin" press="handleAddDependentDetails"></Button>
+              </HBox> 
+            <!-- type="Transparent" -->
+          </Toolbar>
+        </headerToolbar>
+        <content>
+        <!--delete="onDeleteDependentDetails" class="" inset="false" mode="None" -->
+          <Table id="idProductsTable" alternateRowColors="true" class="none" items="{path: '/PolicyDependentNav/results'}" >
+            <columns>
+              <!-- <Column hAlign="Center">
+                <Input value="{i18n>NameHeader}" editable="false"/>
+              </Column>
+              <Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+                <Input value="{i18n>RelationshipHeader}" editable="false"/>
+              </Column>
+              <Column minScreenWidth="Tablet" demandPopin="true">
+                <Input value="{i18n>DOBHeader}" editable="false"/>
+              </Column>
+              <Column minScreenWidth="Tablet" demandPopin="true" >
+                <Input value="{i18n>InsuranceIDHeader}" editable="false"/>
+              </Column>
+              <Column minScreenWidth="Tablet" demandPopin="true" hAlign="Left">
+                <Input value="{i18n>StandardPremium}" editable="false"/>
+              </Column>
+              <Column minScreenWidth="Tablet" demandPopin="true" >
+                <Input value="{i18n>ActualPremium}" editable="false"/>
+              </Column> -->
+              <Column hAlign="Center">
+                <header>
+                  <Text text="{i18n>NameHeader}" />
+                </header>                
+              </Column>
+              <Column hAlign="Center">
+                <header>
+                  <Text text="{i18n>RelationshipHeader}" />
+                </header>                
+              </Column>
+              <Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+                <header>
+                  <Text text="{i18n>DOBHeader}" />
+                </header>                
+              </Column>
+              <Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+                <header>
+                  <Text text="{i18n>InsuranceIDHeader}" />
+                </header>                
+              </Column>
+              <Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+                <header>
+                  <Text text="{i18n>StandardPremium}" />
+                </header>                
+              </Column>
+              <Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+                <header>
+                  <Text text="{i18n>ActualPremium}" />
+                </header>                
+              </Column>
+              <Column id="deleteColumnId" minScreenWidth="Tablet" demandPopin="true" width="3rem"
+                      visible="false" hAlign="Center">
+                <!-- <Text text="{i18n>Delete}" /> -->
+              </Column>
+            </columns>
+            <items>
+              <ColumnListItem>
+                <cells>
+                  <!-- <Input value="{Name}" editable="false" class="sapUiNoMarginTop sapUiNoMarginBottom sapUiNoMarginBegin sapUiNoMarginEnd"/>
+                  <Input value="{Relationship}" editable="false"/>
+                  <Input value="{path:'DateOfBirth' , formatter: 'com.jkt.ui.mybenefit.demo.app.util.Formatter.date'}" editable="false"/>
+                  <Input value="{PhsCard}" editable="false"/>
+                  <Input value="{StdPrem}" editable="false"/>
+                  <Input value="{ActPrem}" editable="false"/> -->
+
+                  <Text text="{Name}" />
+                  <Text text="{Relationship}" />
+                  <Text text="{path:'DateOfBirth' , formatter: 'com.jkt.ui.mybenefit.demo.app.util.Formatter.date'}" />
+                  <Input value="{PhsCard}" editable="false" />
+                  <Text text="{path:'StdPrem' , formatter: 'com.jkt.ui.mybenefit.demo.app.util.Formatter.roundNumber'}" />
+                  <Text text="{path:'ActPrem' , formatter: 'com.jkt.ui.mybenefit.demo.app.util.Formatter.roundNumber'}" />
+                  <Button icon="sap-icon://delete" type="Emphasized" press="onDeleteDependentDetails"></Button>
+                </cells>
+              </ColumnListItem>
+            </items>
+          </Table>
+          
+          <!-- The below text section should be visible only during Mid year time ie. 'M'-->
+          <HBox id="remarkBox" class="sapUiSmallMarginTop" visible="false">
+            <Label id="remarksLabel" text="Remarks : " design="Bold" class="remarkLbl" />
+            <Text id="remarksField" text="Premium Amount shown is for the full year. Prorated Premium will be reflected in due course of time." class="sapUiTinyMarginBegin boldFont"/>
+          </HBox>
+
+        </content>
+      </Panel>
+      
+      <Panel id="panel3Id" expandable="true" expanded="false"
+        headerText="{i18n>ViewTerms}" width="auto"
+        class="sapUiResponsiveMargin insurancePanel">
+        <headerToolbar>
+          <Toolbar>
+            <Title text="{i18n>ViewTerms}"/>
+            <ToolbarSpacer />
+            <Button text="Policy Document" press="getPolicyDoc" icon="sap-icon://document">
+            </Button>
+          </Toolbar>
+        </headerToolbar>
+        <content>
+          <Text text="{/Tnc}" />
+          <!-- <Button text="Policy Document" press="getPolicyDoc"/> -->
+        </content>
+      </Panel>
+      
+      <Button text="{i18n>IntimationToTPA}" press="onPress"
+        ariaDescribedBy="defaultButtonDescription genericButtonDescription"
+        class="SOS-button" type="Accept">
+        <layoutData>
+          <FlexItemData growFactor="1" />
+        </layoutData>
+      </Button>
+      
+      <!-- <Button id="" text="{i18n>ClaimStatus}" press="showClaimStatus"
+        ariaDescribedBy="defaultButtonDescription genericButtonDescription"
+        class="SOS-button" type="Accept">
+        <layoutData>
+          <FlexItemData growFactor="1" />
+        </layoutData>
+      </Button> -->
+    </content>
+    <footer>
+      <Toolbar>
+        <ToolbarSpacer />
+        <Button id="editBtnId" icon="sap-icon://edit" tooltip="Edit" text="Edit for Policy renewal"
+          visible="true" type="Emphasized" class="sapUiSmallMarginEnd"
+          press="handleEditPolicyDetails"></Button>
+        <Button id="cancelBtnId" icon="sap-icon://sys-cancel-2" tooltip="Cancel" text="Cancel"
+          visible="false" type="Reject" class="sapUiTinyMarginEnd"
+          press="handleCancelPolicyDetails"></Button>
+        <Button id="saveBtnId" icon="sap-icon://save" tooltip="Save" text="Save"
+          visible="false" type="Accept" press="confirmSaveAction"
+          class="sapUiSmallMarginEnd"></Button>
+      </Toolbar>
+    </footer>
+  </Page>
+</mvc:View>

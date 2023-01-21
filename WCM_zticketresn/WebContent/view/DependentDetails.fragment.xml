@@ -1,0 +1,45 @@
+<core:FragmentDefinition xmlns="sap.m"
+  xmlns:core="sap.ui.core">
+  <Dialog title="{i18n>DepndntDialogTitle}" showHeader="true"
+    class="sapUiPopupWithPadding dialogHdr">
+    <content>
+      <!-- <List id="ID_DEPENDENT_LIST" mode="MultiSelect" items="{oDpdtModel>/}">
+        <StandardListItem title="{oDpdtModel>Name}" info="{oDpdtModel>Relationship}" />
+      </List> -->
+      <Table id="ID_DEPENDENT_LIST"
+        mode="MultiSelect"
+        inset="false"
+        items="{oDpdtModel>/}">
+
+        <columns>
+          <Column hAlign="Center">
+            <Text text="{i18n>NameHeader}" />
+          </Column>
+          <Column hAlign="Center">
+            <Text text="{i18n>RelationshipHeader}" />
+          </Column>
+          <Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+            <Text text="{i18n>DOBHeader}" />
+          </Column>
+        </columns>
+
+        <items>
+          <ColumnListItem vAlign="Middle">
+            <cells>
+              <Text text="{oDpdtModel>Name}"/>
+              <Text text="{oDpdtModel>Relationship}"/>
+              <Text text="{path:'oDpdtModel>DateOfBirth' , formatter: 'com.jkt.ui.mybenefit.demo.app.util.Formatter.date'}"/>
+            </cells>
+          </ColumnListItem>
+        </items>
+
+      </Table>
+    </content>
+    <beginButton>
+      <Button text="Add" type="Accept" press="onAddDependentPress"></Button>
+    </beginButton>
+    <endButton>
+      <Button text="Cancel" type="Emphasized" press="onCancelDependentPress"></Button>
+    </endButton>
+  </Dialog>
+</core:FragmentDefinition>

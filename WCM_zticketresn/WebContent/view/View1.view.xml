@@ -1,0 +1,416 @@
+<core:View
+ 		   xmlns:core="sap.ui.core" 
+		   xmlns:mvc="sap.ui.core.mvc"
+		   xmlns="sap.m" 
+		   xmlns:t="sap.ui.table"	   	
+		   xmlns:u="sap.ui.unified"
+		   xmlns:f="sap.ui.layout.form"
+	       xmlns:l="sap.ui.layout"
+	       xmlns:sc="sap.suite.ui.commons" 	
+	       xmlns:fb="sap.ui.comp.filterbar"
+	       xmlns:c="sap.ui.unified.calendar"
+	       controllerName="zwarrantyreport.view.View1" 
+	       xmlns:html="http://www.w3.org/1999/xhtml">     
+
+	<Page title=" Ticket Search Tool" class="sapUiSizeCompact" enableScrolling="false" 
+	busy="{oViewJModel>/busy}" busyIndicatorDelay="{oViewJModel>/delay}">
+				<!-- Warranty Report-->
+		<content>
+			<!-- <VBox> -->
+
+        <f:SimpleForm  minWidth="1024" maxContainerCols="3" editable="true" layout="ResponsiveGridLayout"
+		       labelSpanL="4" labelSpanM="4" emptySpanL="1" emptySpanM="1" columnsL="2" columnsM="3" class="editableForm">
+		<f:content>
+		 
+		 <core:Title  text="Selection Criteria" />
+		    
+		    <Label text="Ticket Number" design="Bold"/>
+			<Input id="inpTicketNo" valueHelpRequest="onTicketNoHelp" valueHelpOnly="true"	 showValueHelp="true"/>
+			
+			<Label text="Customer Number" design="Bold"/>
+			<input enabled="true" id="idCustomerno" valueHelpRequest="onmobile" maxLength="10" liveChange="NumberValid" valueHelpOnly="false"
+			       showValueHelp="false" placeholder="Enter your mobile number"/>
+			
+			<Label text="Service Engineer" design="Bold"/>
+			<input id="idSE" valueHelpRequest="onServiceHelp" valueHelpOnly="true" showValueHelp="true" /> 
+		
+			<Label text="Ticket Status" design="Bold"/>
+			<input id="idStatus" valueHelpRequest="onStatus" valueHelpOnly="true" showValueHelp="true" />
+			 
+			<Label text="Ticket Source"/>
+            <Select selectedKey="" forceSelection="false" enabled="true" id="idTicketSource" >
+            </Select>
+			
+			<core:Title/>
+			
+			<Label text="State"/>
+			<Input id="idState" enabled="true" value="{jModel>/d/CustomerRegion}" valueHelpRequest="onStateHelp" valueHelpOnly="true" showValueHelp="true" />
+			
+			<Label text="District"/>
+			<Input id="idDist" enabled="true" value="{jModel>/d/CustomerCity2}" valueHelpRequest="onDistrictHelp" valueHelpOnly="true" showValueHelp="true" />
+			
+			
+			<Label text="Claim Number" design="Bold"/>
+			<input id="idClaimno" valueHelpRequest="onClaimF4" valueHelpOnly="true" showValueHelp="true" />
+		
+			<!--<Label text="Ticket Date" design="Bold"/>
+			<DateRangeSelection	id="idDateRange" change="handleDate" valueFormat="yyyy-MM-dd" /> -->
+			
+			<Label text="Date" design="Bold" />
+			<DatePicker id="fromDate"  displayFormat="dd.MM.yyyy" change="handledatefrom">
+			<layoutData>
+				<l:GridData span="L4"/>
+			</layoutData>
+			</DatePicker>
+			
+			<DatePicker id="toDate" displayFormat="dd.MM.yyyy" change="handledateto" >
+			<layoutData>
+					<l:GridData span="L3"/>
+				</layoutData>
+			</DatePicker>	
+		
+			<Label></Label>
+			<Button id="btnSearch" text="Go" type="Emphasized" press="onSearch">
+			        <layoutData>
+					<l:GridData span="XL2 L1 M2 S2"/>
+					</layoutData>
+			</Button>
+			
+			<Button id="btnSearch1" text="Clear" type="Emphasized" press="onClear">
+			        <layoutData>
+					<l:GridData span="XL2 L2 M1 S1"/>
+					</layoutData>
+			</Button>
+				
+					
+		</f:content>
+	</f:SimpleForm>
+<!-- End Filter -->
+
+		<t:Table id="idTable" title="" selectionMode="None" visibleRowCount="8"  class="copa_sec " rowHeight="30">
+		<t:columns>
+ 
+		<t:Column width="11rem" hAlign="Center">
+		<Label text="Ticket Number" design="Bold"/>
+		<t:template>
+		<Text text="{TicketNo}" enabled="false"/>
+		</t:template>
+		</t:Column>
+									 									
+		<t:Column width="12rem" hAlign="Center">
+		<Label text="Ticket Date" design="Bold"/>
+		<t:template>
+	<!-- 	<Text text="{TicketDate}" enabled="false" /> -->
+			<Text text="{path:'TicketDate' , formatter: 'zwarrantyreport.util.Formatter.date2'}" enabled="false"/>
+	
+		</t:template>
+		</t:Column>
+		
+		
+		<t:Column width="8rem" hAlign="Center">
+		<Label text="SE Response" design="Bold"/>
+		<t:template>
+		<Text text="{SEResponse}" enabled="false"/>
+		</t:template>
+		</t:Column>
+		
+		<t:Column width="10rem" hAlign="Center">
+		<Label text="Appointment Date " design="Bold"/>
+		<t:template>
+		<!-- <Text text="{AppointDate}" enabled="false" /> -->
+		<Text text="{path:'AppointDate' , formatter: 'zwarrantyreport.util.Formatter.date2'}" enabled="false"/>
+		</t:template>
+		</t:Column>
+		
+									
+		<t:Column width="8rem" hAlign="Center">
+		<Label text="First Name" design="Bold"/>
+		<t:template>
+		<Text text="{CustomerFname}" enabled="false"/>
+		</t:template>
+		</t:Column>
+		
+		<t:Column width="8rem" hAlign="Center">
+		<Label text="Last Name" design="Bold"/>
+		<t:template>
+		<Text text="{CustomerLname}" enabled="false"/>
+		</t:template>
+		</t:Column>
+		
+		<t:Column width="11rem" hAlign="Center">
+		<Label text="Customer Phone" design="Bold"/>
+		<t:template>
+		<Text text="{CustomerTelf1}" enabled="false"/>
+		</t:template>
+		</t:Column>
+		
+		<!-- <t:Column width="12rem" hAlign="Center">
+		<Label text="Customer Type" design="Bold"/>
+		<t:template>
+		<Text text="{CustTypeDescr}" enabled="false"/>
+		</t:template>
+		</t:Column>
+		 -->
+		<!-- <t:Column width="8rem" hAlign="Center">
+		<Label text="Company Name" design="Bold"/>
+		<t:template>
+		<Text text="{CompanyName}" enabled="false"/>
+		</t:template>
+		</t:Column> -->
+		
+		<!-- <t:Column width="8rem" hAlign="Center">
+		<Label text="Claim Date" design="Bold"/>
+		<t:template>
+		<Text text="{ClaimDate}" enabled="false"/>
+		</t:template>
+		</t:Column> -->
+		
+		<t:Column width="8rem" hAlign="Center">
+		<Label text="Claim Number" design="Bold"/>
+		<t:template>
+		<Text text="{ClaimNo}" enabled="false"/>
+		</t:template>
+		</t:Column>
+		
+		<!-- <t:Column width="12rem" hAlign="Center">
+		<Label text="Claim Recv Depot" design="Bold"/>
+		<t:template>
+		<Text text="{ClaimRecDepo}" enabled="false"/>
+		</t:template>
+		</t:Column> -->
+		
+		<t:Column width="12rem" hAlign="Center">
+		<Label text="Claim Status" design="Bold"/>
+		<t:template>
+		<Text text="{ClaimStatusDescr}" enabled="false"/>
+		</t:template>
+		</t:Column>
+		
+		<!-- <t:Column width="12rem" hAlign="Center">
+		<Label text="Claim Type" design="Bold"/>
+		<t:template>
+		<Text text="{ClaimTypDescr}" enabled="false"/>
+		</t:template>
+		</t:Column> -->
+		<!-- 
+		<t:Column width="8rem" hAlign="Center">
+		<Label text="Dealer Name" design="Bold"/>
+		<t:template>
+		<Text text="{DealerName}" enabled="false"/>
+		</t:template>
+		</t:Column>
+		
+		<t:Column width="12rem" hAlign="Center">
+		<Label text="Disposal Decision" design="Bold"/>
+		<t:template>
+		<Text text="{DisDecisionDescr}" enabled="false"/>
+		</t:template>
+		</t:Column>
+		
+		<t:Column width="8rem" hAlign="Center">
+		<Label text="Disptach Date" design="Bold"/>
+		<t:template>
+		<Text text="{DisptachDate}" enabled="false"/>
+		</t:template>
+		</t:Column>
+									
+		<t:Column width="8rem" hAlign="Center">
+		<Label text="Vehicle Make" design="Bold"/>
+		<t:template>
+		<Text text="{VehMake}" enabled="false"/>
+		</t:template>
+		</t:Column>
+		
+		<t:Column width="8rem" hAlign="Center">
+		<Label text="Vehicle Model" design="Bold"/>
+		<t:template>
+		<Text text="{VehModel}" enabled="false"/>
+		</t:template>
+		</t:Column>
+									
+		<t:Column width="15rem" hAlign="Center">
+		<Label text="Fitment Type" design="Bold"/>
+		<t:template>
+		<Text text="{FitTypeDescr}" enabled="false"/>
+		</t:template>
+		</t:Column>
+		
+		<t:Column width="12rem" hAlign="Center">
+		<Label text="Franchise Name" design="Bold"/>
+		<t:template>
+		<Text text="{FranhiseName}" enabled="false"/>
+		</t:template>
+		</t:Column>
+		
+		<t:Column width="8rem" hAlign="Center">
+		<Label text="Franchise Phone" design="Bold"/>
+		<t:template>
+		<Text text="{FranhiseContact}" enabled="false"/>
+		</t:template>
+		</t:Column>
+		
+		<t:Column width="8rem" hAlign="Center">
+		<Label text="Final Discount" design="Bold"/>
+		<t:template>
+		<Text text="{policyDiscount }" enabled="false"/>
+		</t:template>
+		</t:Column>
+		
+		<t:Column width="8rem" hAlign="Center">
+		<Label text="Insp Date" design="Bold"/>
+		<t:template>
+		<Text text="{InspDate}" enabled="false"/>
+		</t:template>
+		</t:Column>
+		
+		<t:Column width="8rem" hAlign="Center">
+		<Label text="Item Code" design="Bold"/>
+		<t:template>
+		<Text text="{ItemCode}" enabled="false"/>
+		</t:template>
+		</t:Column>
+		
+		<t:Column width="8rem" hAlign="Center">
+		<Label text="Item Description" design="Bold"/>
+		<t:template>
+		<Text text="{ItemDesc}" enabled="false"/>
+		</t:template>
+		</t:Column>
+					
+		<t:Column width="8rem" hAlign="Center">
+		<Label text="Letter Ref" design="Bold"/>
+		<t:template>
+		<Text text="{LetterRefNo}" enabled="false"/>
+		</t:template>
+		</t:Column>
+		
+		<t:Column width="8rem" hAlign="Center">
+		<Label text="Letter Ref Date" design="Bold"/>
+		<t:template>
+		<Text text="{LetterRefDt}" enabled="false"/>
+		</t:template>
+		</t:Column>
+		
+		<t:Column width="8rem" hAlign="Center">
+		<Label text="Major Defect Text" design="Bold"/>
+		<t:template>
+		<Text text="{MajorDefectTxt}" enabled="false"/>
+		</t:template>
+		</t:Column>
+		
+		<t:Column width="8rem" hAlign="Center">
+		<Label text="Manf Plant" design="Bold"/>
+		<t:template>
+		<Text text="{ManfPlnt}" enabled="false"/>
+		</t:template>
+		</t:Column>
+		
+		<t:Column width="8rem" hAlign="Center">
+		<Label text="Policy No" design="Bold"/>
+		<t:template>
+		<Text text="{PolicyNo}" enabled="false"/>
+		</t:template>
+		</t:Column>
+		
+		<t:Column width="8rem" hAlign="Center">
+		<Label text="Prod Month" design="Bold"/>
+		<t:template>
+		<Text text="{PrdMonth}" enabled="false"/>
+		</t:template>
+		</t:Column>
+		
+		<t:Column width="8rem" hAlign="Center">
+		<Label text="Prod Year" design="Bold"/>
+		<t:template>
+		<Text text="{PrdYear}" enabled="false"/>
+		</t:template>
+		</t:Column>
+		
+		<t:Column width="8rem" hAlign="Center">
+		<Label text="Registration No" design="Bold"/>
+		<t:template>
+		<Text text="{RegNo}" enabled="false"/>
+		</t:template>
+		</t:Column>
+		
+		<t:Column width="8rem" hAlign="Center">
+		<Label text="Rejection Reason" design="Bold"/>
+		<t:template>
+		<Text text="{RejectionReason}" enabled="false"/>
+		</t:template>
+		</t:Column>
+		
+		<t:Column width="8rem" hAlign="Center">
+		<Label text="Rejection Reason Descr" design="Bold"/>
+		<t:template>
+		<Text text="{RejReasonDescr}" enabled="false"/>
+		</t:template>
+		</t:Column>
+		
+		<t:Column width="8rem" hAlign="Center">
+		<Label text="Revised Discount" design="Bold"/>
+		<t:template>
+		<Text text="{RevisedDis}" enabled="false"/>
+		</t:template>
+		</t:Column>
+		
+		<t:Column width="8rem" hAlign="Center">
+		<Label text="Stencil No" design="Bold"/>
+		<t:template>
+		<Text text="{StnclNumber}" enabled="false"/>
+		</t:template>
+		</t:Column>
+		
+		<t:Column width="8rem" hAlign="Center">
+		<Label text="Subm No" design="Bold"/>
+		<t:template>
+		<Text text="{SubmNo}" enabled="false"/>
+		</t:template>
+		</t:Column>
+		
+		<t:Column width="8rem" hAlign="Center">
+		<Label text="Subm Reason" design="Bold"/>
+		<t:template>
+		<Text text="{SubmReason}" enabled="false"/>
+		</t:template>
+		</t:Column>
+		
+		<t:Column width="8rem" hAlign="Center">
+		<Label text="% Wear" design="Bold"/>
+		<t:template>
+		<Text text="{PrecentageWear}" enabled="false"/>
+		</t:template>
+		</t:Column>
+		<t:Column width="8rem" hAlign="Center">
+		<Label text="Adjustment Mode" design="Bold"/>
+		<t:template>
+		<Text text="{AdjustmentMode}" enabled="false"/>
+		</t:template>
+		</t:Column>
+		
+		<t:Column width="8rem" hAlign="Center">
+		<Label text="Approval Reason" design="Bold"/>
+		<t:template>
+		<Text text="{ApprovalReason}" enabled="false"/>
+		</t:template>
+		</t:Column>
+		
+		<t:Column width="8rem" hAlign="Center">
+		<Label text="Award Mode" design="Bold"/>
+		<t:template>
+		<Text text="{AwardMode}" enabled="false"/>
+		</t:template>
+		</t:Column>
+																 -->		
+												
+		</t:columns>
+		</t:Table>
+		
+		</content>
+		<footer>
+			<Toolbar>
+			<Label text="JK Tyre and Industries Ltd."/>
+			</Toolbar>
+			</footer>
+		</Page>
+		</core:View>

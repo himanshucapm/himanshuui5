@@ -1,0 +1,31 @@
+.sapUiFormM:not(.sapUiFormEdit) .sapUiFormResGridCont>div {
+    padding-top: 0.0rem;
+    padding-bottom: 0.0rem;
+    font-size: 1px;
+} 
+
+ .sapUiSizeCompact .sapUiFormContainerTitle>.sapUiFormTitle {
+    height: 1rem !important;
+    line-height: 1rem !important;
+    font-weight: bold !important;
+} 
+
+.sapUiFormResGrid>div {
+    padding: 0rem;
+    box-sizing: border-box;
+}
+
+.sapMITBHead {
+    position: relative !important;
+    white-space: nowrap !important;
+    display: inline-block !important;
+    margin: 0rem 0rem 0 0rem !important;
+    padding: 0 1px !important;
+    vertical-align: top !important;
+    font-size: 0.75rem !important;
+}
+
+.sapUiFormResLayout>div {
+    padding: 0rem !important;
+    box-sizing: border-box;
+}
