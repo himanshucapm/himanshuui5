@@ -1,0 +1,37 @@
+.left_panel_list li:nth-child(even){
+	background:#eff4f9;
+}
+.detailPage {
+    padding-top: -28px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    margin-top: -48px;
+    margin-bottom: 10px;
+    margin-left:0px;
+    margin-right:0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.sapMText.sapMObjLTitle {
+    vertical-align: top !important;
+    word-break: break-word !important;
+    color: midnightblue !important;
+    font-size: 12px !important;
+    font-weight: bold !important;
+    line-height: 1rem !important;
+}
+.sapMTitleStyleAuto {
+    font-size: large !important;
+    font-weight: bold !important;
+}
+.sapMLIB.sapMObjLItem {
+    padding-left: 0 !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    margin-left: -5px !important;
+    margin-right: -6px !important;
+    margin-bottom: -10px !important;
+    margin-top: 5px !important;
+}

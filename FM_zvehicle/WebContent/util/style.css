@@ -1,0 +1,63 @@
+.sapUiFormTitle 
+{
+	color:black !important;
+	font-weight:bold !important;
+}
+
+.sapMTitle
+{
+	font-weight:bold !important;
+}
+
+.sapMListTbl .sapMLabel {
+    padding-top: 1px;
+    font-size: 0.875rem;
+    color: #4d4d53;
+    font-weight: bold !important;
+}
+
+.copa_sec table tbody tr:nth-child(odd){
+	background:#f9f9f9;
+}
+
+.sapMITBContent{
+	background-color: transparent;
+	padding: 0rem;
+    position: relative;
+}
+
+.myStateError{
+	border-color: #e52929 !important;
+	border-width: 2px !important;
+}
+
+.sapMITBItem : hover {
+    color: #000000;
+}
+
+.sapMITBAll .sapMITBText : hover{
+	color: #000000;
+}
+
+.sapMITBInLine.sapMITBTextOnly > .sapMITBVertical : hover{
+	color: black;
+	background-color: yellow;
+}
+
+IconTabFilter : hover{
+	color: black;
+	background-color: yellow;
+}
+
+.tabBorder{
+	    display: none;
+}
+
+.sapMTitle > span {
+    color: #000000;
+    font-weight: bold !important;
+}
+
+.redClasss{
+	color: red !important;
+}

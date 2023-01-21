@@ -1,0 +1,158 @@
+
+<mvc:View 
+		controllerName="zfieldplanrepor.controller.View1"
+		xmlns="sap.ui.table"
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns:m="sap.m"
+		xmlns:f="sap.ui.layout.form"
+		xmlns:l="sap.ui.layout"
+		xmlns:u="sap.ui.unified"
+		xmlns:core="sap.ui.core"
+		height="100%"
+		>
+<m:Shell id="shell" >
+		<m:App id="app">
+		
+	<m:Page title="Plan Inspection Report" showHeader="true" enableScrolling="false">
+		<m:content>
+
+<f:SimpleForm minWidth="1024" maxContainerCols="3" editable="true" layout="ResponsiveGridLayout"
+				labelSpanL="4" labelSpanM="4" emptySpanL="1" emptySpanM="1" columnsL="2" columnsM="3" class="editableForm" >
+
+		<f:content>
+		<core:Title id="V_01" level="h4"  class="Titlee1" />
+		<m:Label id="lblPlan" text="Test Plan" design="Bold" >
+				<m:layoutData>
+					<l:GridData span="XL3 L3 M3 S2"/>
+				</m:layoutData>
+		</m:Label>
+				
+		<m:Select id="idPlan" items="{GetTestRequestSetJModel>/}" forceSelection="false" >
+				<m:items>
+					<core:Item text="{GetTestRequestSetJModel>TestPlanNumber}" key="{GetTestRequestSetJModel>PlanGuid}" />
+				</m:items>
+		</m:Select>
+
+		<core:Title id="V_02" />
+ 		
+		<m:Label id="lblPlanStatus" text="Test Plan Status" design="Bold" visible="false">
+				<m:layoutData>
+					<l:GridData span="XL3 L3 M3 S2"/>
+				</m:layoutData>
+		</m:Label>
+				
+		<m:Select id="idPlanStatus" items="" forceSelection="false" visible="false">
+				<m:items>
+					<core:Item text="Pending by PTG for Approval" key="PAPP" />
+					<core:Item text="Pending by PDC for Approval" key="PAPR" />
+					<core:Item text="Approved" key="APPR" />
+					<core:Item text="Authorized By TD" key="AUTH" />
+					<core:Item text="Closed" key="CLSD" />
+					<core:Item text="On Hold" key="HOLD" />
+					<core:Item text="Modification Allowed" key="EDIT" />
+				</m:items>
+		</m:Select>
+				
+		<m:Label text="Vehicle No" design="Bold" >
+				<m:layoutData>
+					<l:GridData span="XL3 L3 M3 S2"/>
+				</m:layoutData>
+		</m:Label>
+		<m:Input id="idVehNo" valueHelpRequest="onVehHelp" valueHelpOnly="true" showValueHelp="true"/>
+				
+		<m:Label id="lblFitmentStatus" text="Fitment Status" design="Bold" >
+				<m:layoutData>
+					<l:GridData span="XL3 L3 M3 S2"/>
+				</m:layoutData>
+		</m:Label>
+				
+		<m:Select id="idFitmentStatus" items="" forceSelection="true">
+				<m:items>
+					<core:Item text="All" key="A" />
+					<core:Item text="Running" key="" />
+					<core:Item text="Closed" key="X" />
+				</m:items>
+		</m:Select>
+
+		<m:Button id="btnSearch" text="Search" type="Emphasized" press="onSearch" >
+			<m:layoutData>
+				<l:GridData span="XL2 L2 M2 S2"/>
+			</m:layoutData>
+		</m:Button>
+			
+		<m:Button id="idClear" text="Clear" type="Emphasized" press="onClear" >
+			<m:layoutData>
+				<l:GridData span="XL2 L2 M2 S2"/>
+			</m:layoutData>
+		</m:Button>			
+
+		</f:content>
+</f:SimpleForm> 
+ 
+	<m:Toolbar id="toolbarCT2" class="clstoolbar">
+			<m:ToolbarSpacer></m:ToolbarSpacer>
+				<m:Text text="Status :" TextColor="#e78c07"></m:Text>
+						<core:Icon src="sap-icon://process" color="#e78c07">
+							<core:layoutData>
+								<m:FlexItemData growFactor="1" />
+							</core:layoutData>
+						</core:Icon>
+						
+				<m:Text text="Running"></m:Text> 	
+ 			<core:Icon src="sap-icon://decline" color="#5dcc6a">
+				<core:layoutData>
+					<m:FlexItemData growFactor="1" />
+				</core:layoutData>
+			</core:Icon>
+						
+			<m:Text text="Closed"></m:Text>
+				<m:ToolbarSpacer />
+	</m:Toolbar>
+
+		<TreeTable id="TreeTableBasicDisplay"
+					rows="{path:'PlanInspRepJModel>/', parameters: {arrayNames:['children']}}"
+					enableSelectAll="false" ariaLabelledBy="title" visibleRowCount="9"
+					>
+			<columns>
+				<Column width="20rem" hAlign="Center">
+					<m:Label text="Plan Number" design="Bold"/>
+						<template>
+							<m:Text text="{PlanInspRepJModel>TestPlanNumber}"/>
+						</template>
+				</Column>
+
+				<Column width="20rem" hAlign="Center">
+					<m:Label text="Plan Guid" design="Bold"/>
+						<template>
+							<m:Text text="{PlanInspRepJModel>PlanGuid}"/>
+						</template>
+				</Column>
+				<Column width="8rem" hAlign="Center">
+					<m:Label text="" design="Bold"/>
+						<template>
+							<m:Button text="Details" press="onDetailPress"/>
+						</template>
+				</Column>
+				
+			</columns>
+		</TreeTable>
+		
+	</m:content>
+		
+<m:footer>
+		<m:Toolbar>
+			<m:Label text="JK Tyre and Industries Ltd."></m:Label>
+		</m:Toolbar>
+		<m:Bar>
+			<m:contentRight>
+			<m:Button text="Download" enabled="true" visible="true" type="Accept"
+					press="onDownload" id="DownBtn" icon="sap-icon://download" />
+						<m:Button text="Details" press="onDetailPress"/>
+			</m:contentRight>
+		</m:Bar>
+</m:footer>
+    </m:Page>
+
+</m:App>
+</m:Shell>
+</mvc:View>

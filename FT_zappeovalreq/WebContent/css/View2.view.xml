@@ -1,0 +1,40 @@
+
+<mvc:View 
+		controllerName="zfieldplanrepor.controller.View2"
+		xmlns="sap.ui.table"
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns:m="sap.m"
+		xmlns:f="sap.ui.layout.form"
+		xmlns:l="sap.ui.layout"
+		xmlns:u="sap.ui.unified"
+		xmlns:core="sap.ui.core"
+		height="100%"
+		>
+		
+	<m:Page title="Plan Inspection Report" showHeader="true" enableScrolling="false">
+		<m:content>
+
+<f:SimpleForm minWidth="1024" maxContainerCols="3" editable="true" layout="ResponsiveGridLayout"
+				labelSpanL="4" labelSpanM="4" emptySpanL="1" emptySpanM="1" columnsL="2" columnsM="3" class="editableForm" >
+
+		<f:content>
+		<Label text="Last Inspection No" design="Bold" />
+			<Text id="LInspNo" text="{path:'getRequestDataJModel>LInspNo'}" />
+
+		</f:content>
+</f:SimpleForm> 
+	</m:content>
+		
+<m:footer>
+		<m:Toolbar>
+			<m:Label text="JK Tyre and Industries Ltd."></m:Label>
+		</m:Toolbar>
+		<m:Bar>
+			<m:contentRight>
+			<m:Button text="Download" enabled="true" visible="true" type="Accept"
+					press="onDownload" id="DownBtn" icon="sap-icon://download" />
+			</m:contentRight>
+		</m:Bar>
+</m:footer>
+    </m:Page>
+</mvc:View>

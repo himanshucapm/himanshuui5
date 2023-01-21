@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Credit Release (SO)</title>
+
+<script type="text/javascript">
+    window["sap-ushell-config"] = {
+        defaultRenderer : "fiorisandbox",
+        services: {
+            NavTargetResolution: {
+                config : {
+                    resolveLocal : [ {
+                        "linkId" : "",
+                        resolveTo : {
+                            additionalInformation : "SAPUI5.Component=zfltfitcreate2",
+                            applicationType : "URL",
+                            url : "./" + window.location.search //Pass URL query parameters to appplication
+                        }
+                    }]
+                }
+            }
+        }   
+    };
+</script>
+<script src="test-resources/sap/ushell/bootstrap/sandbox.js" id="sap-ushell-bootstrap"></script>
+<script id="sap-ui-bootstrap"
+    src="resources/sap-ui-core.js" data-sap-ui-libs="sap.m, sap.me"
+    data-sap-ui-theme="sap_bluecrystal"
+    data-sap-ui-xx-bindingSyntax="complex" data-sap-ui-compatVersion="1.16"
+    data-sap-ui-resourceroots='{"zfltfitcreate2": "./"}'>
+</script>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script type="text/javascript">
+    sap.ui.getCore().attachInitEvent(function() {
+        sap.ushell.Container.createRenderer().placeAt("content");
+    });
+</script>
+</head>
+<body class="sapUiBody" id="content">
+</body>
+</html>
