@@ -1,0 +1,169 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "zjktyrepurorder",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.40.12"
+		},
+		"dataSources": {} 
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"flexEnabled": false,
+		"rootView": {
+			"viewName": "zjktyrepurorder.view.View1",
+			"type": "XML",
+			"async": true,
+			"id": "idApp"
+		},
+		"dependencies": {
+			"minUI5Version": "1.65.6",
+			"libs": {
+				"sap.ui.layout": {},
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "zjktyrepurorder.i18n.i18n"
+				}
+			},
+			"categoriesJSONModel": {
+				"type": "sap.ui.model.json.JSONModel",
+				"dataSource": "categoriesJSON"
+			},
+			"itemsJSONModel": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"favouritesJSONModel": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"detailHeaderVisibility": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"detailsJSONModel": {
+				"type": "sap.ui.model.json.JSONModel",
+				"dataSource": "detailsJSON"
+			},
+			"tableDetailsJSONModel": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"treeJSONModel": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"shipToPartyModel": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"totalPriceModel": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"categoriesModel": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"orderTypeModel": {
+				"type": "sap.ui.model.json.JSONModel"
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "zjktyrepurorder.view",
+				"controlId": "idApp",
+				"clearControlAggregation": false
+			},
+			"routes": [
+				{
+					"pattern": "",
+					"name": "route",
+					"target": [
+						"Master",
+						"Detail"
+					]
+				},
+				{
+					"name": "Master",
+					"pattern": "Master",
+					"target": [
+						"Master",
+						"Detail"
+					]
+				},
+				{
+					"pattern": "Detail",
+					"name": "Detail",
+					"target": [
+						"Master",
+						"Detail"
+					]
+				}
+			],
+			"targets": {
+				"Master": {
+					"viewType": "XML",
+					"transition": "slide",
+					"viewId": "Master",
+					"viewName": "Master",
+					"controlAggregation": "masterPages",
+					"ViewLevel": 1,
+					"clearControlAggregation": true
+				},
+				"secondMaster": {
+					"viewType": "XML",
+					"transition": "slide",
+					"viewId": "secondMaster",
+					"viewName": "secondMaster",
+					"controlAggregation": "masterPages",
+					"clearControlAggregation": true
+				},
+				"Detail": {
+					"viewType": "XML",
+					"transition": "slide",
+					"viewId": "Detail",
+					"viewName": "Detail",
+					"ViewLevel": 2,
+					"clearControlAggregation": true,
+					"controlAggregation": "detailPages"
+				}
+			}
+		}
+	}
+}

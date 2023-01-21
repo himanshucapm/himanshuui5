@@ -1,0 +1,23 @@
+.pageTitle .sapMTitle {
+    color: black;
+    font-weight: bold !important;
+    text-shadow: 0 0 0.125rem #ffffff;
+}
+.textBold  {
+    display: inline-block;
+    box-sizing: border-box;
+    white-space: pre-line;
+    word-wrap: break-word;
+    cursor: text;
+    font-weight: bold;
+    font-size: 1rem;
+    font-family: Arial,Helvetica,sans-serif;
+    line-height: normal;
+    color: #400080;
+}
+.sapMPanelContent {
+    padding: 0rem;
+    box-sizing: border-box;
+    overflow: auto;
+    white-space: normal;
+}

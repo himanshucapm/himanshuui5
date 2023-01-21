@@ -1,0 +1,178 @@
+.sapMTitle > span {
+    color: #000000;
+}
+
+.sapMTitle > span {
+    color: #000000;
+}
+
+.my_chart001{
+
+    display: block;
+   	width: 64% !important;
+    height: 308px !important;
+    padding-left: 18% !important;
+    padding-bottom: 5px !important;
+    padding-top: 1px !important;
+  
+}
+
+.my_chart1{
+  display: block;
+   	width: 64% !important;
+    height: 308px !important;
+    padding-left: 18% !important;
+    padding-bottom: 5px !important;
+    padding-top: 1px !important;
+
+}
+
+.my_chart2{
+  height:270px !important;
+
+}
+
+.submy_chart
+{
+    display: block;
+   	width: 65% !important;
+    height: 308px !important;
+    padding-left: 18% !important;
+    padding-bottom: 5px !important;
+    padding-top: 1px !important;
+}
+
+.submy_chart2
+{
+    display: block;
+   	width: 65% !important;
+    height: 308px !important;
+    padding-left: 18% !important;
+    padding-bottom: 5px !important;
+    padding-top: 1px !important;
+}
+
+/* div#__hbox5 {
+    background-color: black;
+} */
+
+.rootPage
+{
+
+  background: -webkit-linear-gradient(top,rgba(80, 45, 45, 0.6),hsla(0, 0%, 0%, 0.47) 100%);
+
+}
+
+.page2
+{
+  background: -webkit-linear-gradient(top,rgba(80, 45, 45, 0.6),hsla(0, 0%, 0%, 0.47) 100%);
+}
+
+.page3
+{
+  background: -webkit-linear-gradient(top,rgba(80, 45, 45, 0.6),hsla(0, 0%, 0%, 0.47) 100%);
+}
+
+.toolbar
+{
+
+    color: #f9f4f4;
+    outline-color: #eae5e5;
+    outline-style: ridge;
+    height: 30px;
+}
+
+.toolbar2
+{
+
+    color: #f9f4f4;
+    outline-color: #eae5e5;
+    outline-style: ridge;
+    height: 30px;
+}
+
+
+
+@media screen and (max-width:480px){
+.rootPage section .sapMFlexBoxWrapNoWrap{
+  flex-wrap: wrap;
+  padding: 10px 2px;
+    background: #fff;
+}
+.rootPage section .sapMFlexBoxWrapNoWrap .sapMFlexBoxBGTransparent{
+  background:#000;
+  padding: 5px 0;
+}
+.rootPage section .sapMFlexBoxWrapNoWrap .sapMFlexBoxBGTransparent:nth-child(2){
+  margin:10px auto;
+}
+.rootPage section .sapMFlexBoxWrapNoWrap .sapMFlexBoxBGTransparent .my_chart001{
+  width:380px !important;
+}
+.rootPage section .sapMFlexBoxWrapNoWrap .sapMFlexBoxBGTransparent .my_chart002{
+  width:360px !important;
+}
+.rootPage section .sapMFlexBoxWrapNoWrap .sapMFlexBoxBGTransparent .my_chart003{
+  width:360px !important;
+}
+.rootPage section .sapMFlexBoxWrapNoWrap .sapMFlexBoxBGTransparent .my_chart004{
+  width:365px !important;
+}
+
+/*----Sub Details page css---*/
+.sub-detail_pg section .sapMFlexBoxWrapNoWrap{
+  flex-wrap:wrap;
+  padding: 10px 2px;
+    background: #fff;
+}
+.sub-detail_pg section .sapMFlexBoxWrapNoWrap .sapMFlexBoxBGTransparent{
+  background:#000;
+  padding: 5px 0;
+}
+.sub-detail_pg section .sapMFlexBoxWrapNoWrap .sapMFlexBoxBGTransparent:nth-child(1){
+  margin-bottom:10px;
+}
+.sub-detail_pg section .sapMFlexBoxWrapNoWrap .submy_chart{
+  width:380px !important;
+}
+.submy_chart, .submy_chart2{
+  margin-top:0;
+}
+.submy_chart2{
+  max-width:360px !important;
+  width:360px !important;
+  overflow:scroll;
+}
+.sapMListTblCell.sapMSize-tablet{
+  display:table-cell;
+}
+.TFtable table{
+  background:#fff;
+  padding-top:10px;
+}
+.TFtable table thead tr{
+  height:auto;
+}
+.TFtable table thead th{
+  padding:12px 1px;
+  text-align:center !important;
+  background:#777676;
+}
+.TFtable table thead th span{
+  color:#fff !important;
+  font-size:0.8rem !important;
+}
+.TFtable table tbody tr{
+  height:auto;
+}
+.TFtable table tbody tr td{
+  padding:5px 1px;
+  text-align:center !important;
+  border:none;
+}
+.TFtable table tbody tr td span{
+  font-size:0.8rem !important;
+}
+/*---sub detail page css---*/
+
+}

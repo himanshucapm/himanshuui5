@@ -1,0 +1,80 @@
+.allLabel .sapMLabel {
+    color: black;
+    font-size: 13px;
+    font-family: Helvetica, sans-serif;
+    font-weight: normal;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: text;
+}
+
+.Borderbox .sapUiFormResGrid>div {
+    padding: 0rem 0rem;
+    box-sizing: content-box;
+}
+
+.HeadingLabel .sapUiForm .sapUiFormTitle {
+    font-weight: bold;
+    color: darkblue;
+    height: 2.2rem;
+    line-height: 3rem;
+}
+.HeadingLabel1 .sapUiForm .sapUiFormTitle {
+    font-weight: bold;
+    color: darkblue;
+    height: 0rem;
+    line-height: 3rem;
+}
+
+.HeaderHeading .sapMLabel {
+    color: black;
+    font-size: 0.875rem; 
+    font-family: Arial,Helvetica,sans-serif;
+    font-weight: normal;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: text;
+}
+
+.HeaderHeading1 .sapMLabel{
+    color: black;
+    font-size: 0.875rem; 
+    font-family: Arial,Helvetica,sans-serif;
+    font-weight: bolder;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: text;
+}
+
+.tablepadding .sapMITBContent {
+    padding: 0rem;
+    position: relative;
+    background-color: #ffffff;
+}
+
+.sapUiSizeCompact .sapUiFormContainerTitle>.sapUiFormTitle {
+    height: 0rem;
+    line-height: 2rem;
+}
+
+.textbank .sapUiSizeCompact .sapUiFormEdit .sapMText {
+    min-height: 2rem;
+    font-weight: 700;
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+}
+
+.myStateError{
+	border-color: #e52929 !important;
+	border-width: 2px !important;
+}
+
+/*.sapUiSizeCompact .sapUiFormEdit.sapUiFormM .sapUiRespGridMedia-Std-Phone.sapUiFormResGridCont>.sapUiFormElementLbl:not(.sapUiRespGridSpanS12), .sapUiSizeCompact .sapUiFormEdit.sapUiFormM .sapUiRespGridMedia-Std-Tablet.sapUiFormResGridCont>.sapUiFormElementLbl:not(.sapUiRespGridSpanM12), .sapUiSizeCompact .sapUiFormEdit.sapUiFormM .sapUiRespGridMedia-Std-Desktop.sapUiFormResGridCont>.sapUiFormElementLbl:not(.sapUiRespGridSpanL12), .sapUiSizeCompact .sapUiFormEdit.sapUiFormM .sapUiRespGridMedia-Std-LargeDesktop.sapUiFormResGridCont>.sapUiFormElementLbl:not(.sapUiRespGridSpanXL12) {
+    padding-top: 0rem;
+} */
