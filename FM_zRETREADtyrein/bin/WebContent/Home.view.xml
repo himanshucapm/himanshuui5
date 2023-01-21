@@ -1,0 +1,135 @@
+<core:View xmlns:core="sap.ui.core" 
+			xmlns:mvc="sap.ui.core.mvc"
+			xmlns="sap.m" 
+			xmlns:fb="sap.ui.comp.filterbar" 
+			xmlns:l="sap.ui.layout"
+			xmlns:ndc="sap.ndc" 
+			xmlns:t="sap.ui.table" 
+			xmlns:f="sap.f"
+			controllerName="com.musashi.scan.controller.Home" 
+			xmlns:html="http://www.w3.org/1999/xhtml"
+			>
+	
+<f:DynamicPage showFooter="true"
+		class="sapUiSizeCompact headerPadding noContentPadding contentPadding"
+		busy="{oPageModel>/busy}" 
+		busyIndicatorDelay="0"
+		>
+		<f:header>
+			<f:DynamicPageHeader pinnable="false">
+				<f:content>
+					<fb:FilterBar showFilterConfiguration="false"
+						search="onSearchGoPress" clear="onClearPageFilter" cancel="onCancel"
+						filtersDialogClosed="onFiltersDialogClosed" showClearOnFB="true">
+						<fb:filterItems>
+							<fb:FilterItem name="A" label="Document Date"
+								mandatory="true">
+								<fb:control>
+									<DateRangeSelection id="idDateRange" change="onDateChange"
+										dateValue="{filterModel>/filterDocDateFrom}" secondDateValue="{filterModel>/filterDocDateTo}"
+										valueState="{path:'filterModel>/docDateValueState'}"
+										valueStateText="{filterModel>/docDateValueStateText}"
+										displayFormat="dd/MM/yyyy" />
+								</fb:control>
+							</fb:FilterItem>
+							<fb:FilterItem name="B" label="Plant" mandatory="true">
+								<fb:control>
+									<Input value="{filterModel>/filterPlant}" showValueHelp="true"
+										valueHelpOnly="true" valueHelpRequest="handlePlantHelp"></Input>
+								</fb:control>
+							</fb:FilterItem>
+							<fb:FilterItem name="C" label="Sold to Party">
+								<fb:control>
+									<Input value="{filterModel>/filterSoldToParty}"
+										showValueHelp="true" valueHelpOnly="true" valueHelpRequest="handleSoldToPartyHelp"></Input>
+								</fb:control>
+							</fb:FilterItem>
+
+							<fb:FilterItem name="D" label="Delivery Number"
+								mandatory="true">
+								<fb:control>
+									<Input value="{filterModel>/filterDeliveryNo}"
+										showValueHelp="true" valueHelpOnly="true" valueHelpRequest="handleDeliveryNoF4Help"></Input>
+								</fb:control>
+							</fb:FilterItem>
+							<fb:FilterItem name="E" label="Posting Date" visible="false">
+								<fb:control>
+									<DatePicker dateValue="{filterModel>/filterPostingDate}"
+										enabled="false" displayFormat="dd/MM/yyyy"></DatePicker>
+								</fb:control>
+							</fb:FilterItem>
+							<fb:FilterItem name="F" label="No of Package" visible="false">
+								<fb:control>
+									<Input value="{filterModel>/filterNoOfPackage}" enabled="false"></Input>
+								</fb:control>
+							</fb:FilterItem>
+						</fb:filterItems>
+					</fb:FilterBar>
+				</f:content>
+			</f:DynamicPageHeader>
+		</f:header>
+		<f:content>
+			<Table id="idMainTable" items="{oPageModel>/materialItems}" >
+				<columns>
+					<Column visible="false">
+						<Text text="Status" />
+					</Column>
+					<Column hAlign="Center" width="25%">
+						<Label text="Material" design="Bold"/>
+					</Column>
+					<Column hAlign="Center" minScreenWidth="Tablet" demandPopin="true">
+						<Label text="Item" design="Bold"/>
+					</Column>
+					<Column hAlign="Center" minScreenWidth="Tablet" demandPopin="true">
+						<Label text="SLoc" design="Bold"/>
+					</Column>
+					<Column hAlign="Center" minScreenWidth="Tablet" demandPopin="true">
+						<Label text="Delivery Qty." design="Bold"/>
+					</Column>
+					<Column hAlign="Center" minScreenWidth="Tablet" demandPopin="true">
+						<Label text="Unit" design="Bold"/>
+					</Column>
+					<Column hAlign="Center" minScreenWidth="Tablet" demandPopin="true">
+						<Label text="Scan Qty" design="Bold"/>
+					</Column>
+					<Column hAlign="Center" minScreenWidth="Tablet" demandPopin="true">
+						<Label text="Scan" design="Bold"/>
+					</Column>
+					<Column hAlign="Center" minScreenWidth="Tablet" demandPopin="true">
+						<Label text="" design="Bold"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<Text text="{oPageModel>}"></Text>
+							<Text text="{oPageModel>Material} ({oPageModel>MatDesc})"></Text>
+							<Text text="{= parseInt(${oPageModel>LineItem})}"></Text>
+							<Text text="{oPageModel>StorageLoc}"></Text>
+							<Text text="{= parseFloat(${oPageModel>MatQty}).toFixed(2)}"></Text>
+							<Text text="{oPageModel>Meins}"></Text>
+							<Text text="{= parseFloat(${oPageModel>ScanQty}).toFixed(2)}"></Text>
+							<HBox alignContent="Center" alignItems="Center"
+									justifyContent="Center">
+								<ndc:BarcodeScannerButton tooltip="Scan"
+									visible="{= parseFloat(${oPageModel>MatQty}).toFixed(2) !== parseFloat(${oPageModel>ScanQty}).toFixed(2)}"
+									scanSuccess="onBarCodeScanSuccess"></ndc:BarcodeScannerButton>
+								<Button icon="sap-icon://bar-code" press="onBarcodeScanButtonPress"
+									visible="false"></Button>
+							</HBox>
+							<Button text="HU Details" press="onPressHUDetails"
+									></Button>
+
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</f:content>
+		<f:footer>
+			<Toolbar>
+				<ToolbarSpacer />
+				<Button icon="sap-icon://save" type="Accept" text="Post Goods Issue" press="onSubmitPress" />
+			</Toolbar>
+		</f:footer>
+	</f:DynamicPage>
+</core:View>

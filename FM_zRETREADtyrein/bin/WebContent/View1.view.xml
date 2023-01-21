@@ -1,0 +1,112 @@
+<core:View controllerName="zftdashboard.view.View1" 
+ 	 xmlns:core="sap.ui.core"
+     xmlns:mvc="sap.ui.core.mvc" 
+     xmlns="sap.m" 
+     xmlns:viz="sap.viz.ui5.controls"
+     xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+     xmlns:viz.data="sap.viz.ui5.data"
+     xmlns:l="sap.ui.layout"
+     xmlns:cl="sap.ui.commons.layout"
+     height="100%"
+     xmlns:html="http://www.w3.org/1999/xhtml" >
+      
+ <html:style>
+
+
+.clStyle {
+    left: 0px;
+    top: 0px;
+    height: 100%; 
+    width: 100%;
+    display: block;
+    cursor: default;
+    background-color: rgb(216, 207,207);
+        
+}
+
+</html:style>	     
+<!-- <App> -->	
+<Page title="Fitment Dashboard" class="clpage">
+<content>
+
+<cl:MatrixLayout width="100%">
+<cl:MatrixLayoutRow>
+<cl:MatrixLayoutCell>
+
+<viz:VizFrame class="clStyle" id="oVizFrame1" width="100%" height= "558px" busy="false" busyIndicatorDelay="1000" visible="true" uiConfig="{'applicationSet': 'fiori'}" vizType="bar"  legendVisible="false">
+	<viz:dataset> 
+	    	<viz.data:FlattenedDataset data="{FTChartData>/}">
+	    	
+		        <!-- <viz.data:dimensions>
+		            <viz.data:DimensionDefinition name="Item Category" value="" />
+		        </viz.data:dimensions> -->
+		        
+		        <viz.data:measures>
+		            <viz.data:MeasureDefinition group="1" name="TotalFitment" value="{FTChartDat>/TotalFitment}" />
+		            <viz.data:MeasureDefinition group="1" name="FitmentComp" value="{FTChartDat>/FitmentComp}" />
+		            <viz.data:MeasureDefinition group="1" name="FitmentRunn" value="{FTChartDat>/FitmentRunn}" />
+		            <viz.data:MeasureDefinition group="1" name="TotalPlan" value="{FTChartDat>/TotalPlan}" />
+		            <viz.data:MeasureDefinition group="1" name="PlanComp" value="{FTChartDat>/PlanComp}" />
+		            <viz.data:MeasureDefinition group="1" name="PlanRunn" value="{FTChartDat>/PlanRunn}" />
+		        </viz.data:measures>
+		        
+	    </viz.data:FlattenedDataset>
+	</viz:dataset>
+	
+	<viz:feeds>
+	    <viz.feeds:FeedItem id="value4" uid="primaryValues" type="Measure" values="TotalFitment" />
+	    <viz.feeds:FeedItem id="value5" uid="primaryValues" type="Measure" values="FitmentComp" />
+	    <viz.feeds:FeedItem id="value6" uid="primaryValues" type="Measure" values="FitmentRunn" />
+	    <viz.feeds:FeedItem id="value7" uid="primaryValues" type="Measure" values="TotalPlan" />
+	    <viz.feeds:FeedItem id="value8" uid="primaryValues" type="Measure" values="PlanComp" />
+	    <viz.feeds:FeedItem id="value9" uid="primaryValues" type="Measure" values="PlanRunn" />
+	    <!-- <viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="Item Category" /> -->
+	</viz:feeds>
+</viz:VizFrame>
+
+
+</cl:MatrixLayoutCell>
+
+<cl:MatrixLayoutCell>
+
+<viz:VizFrame class="clStyle" id="oVizFrame2" width="100%" height= "558px" busy="false" busyIndicatorDelay="1000" visible="true" uiConfig="{'applicationSet': 'fiori'}" vizType="column"  
+              legendVisible="true">
+	<viz:dataset>
+	    	<viz.data:FlattenedDataset data="{PlanDetalCountJmodel>/}">
+	    	
+		        <viz.data:dimensions> 
+		            <viz.data:DimensionDefinition name="Item Category" value="{PlanDetalCountJmodel>Name1}" />
+		        </viz.data:dimensions>
+		        
+		        <viz.data:measures>
+		            <viz.data:MeasureDefinition group="1" name="PlanComp" value="{PlanDetalCountJmodel>PlanComp}" />
+		            <viz.data:MeasureDefinition group="1" name="PlanRunn" value="{PlanDetalCountJmodel>PlanRunn}" />
+		            <viz.data:MeasureDefinition group="1" name="TotalPlan" value="{PlanDetalCountJmodel>TotalPlan}" />
+		        </viz.data:measures>
+		        
+	    </viz.data:FlattenedDataset>
+	</viz:dataset>
+	
+	<viz:feeds>
+	    <viz.feeds:FeedItem id="value1" uid="primaryValues" type="Measure" values="PlanComp" />
+	    <viz.feeds:FeedItem id="value2" uid="primaryValues" type="Measure" values="PlanRunn" />
+	    <viz.feeds:FeedItem id="value3" uid="primaryValues" type="Measure" values="TotalPlan" />
+	    <viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="Item Category" />
+	</viz:feeds>
+</viz:VizFrame>
+
+</cl:MatrixLayoutCell>
+
+</cl:MatrixLayoutRow>
+</cl:MatrixLayout> 
+
+
+</content>
+<footer>
+	<Toolbar>
+		<Label text="JK Tyre and Industries Ltd."></Label>
+	</Toolbar>
+</footer>
+</Page>
+<!-- </App> -->
+</core:View>

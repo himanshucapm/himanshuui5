@@ -1,0 +1,37 @@
+.pageTitle .sapMTitleStyleAuto {
+	font-size: 1rem;
+	color: Black; 
+	font-weight:bold !important; 
+}
+.fontWight {
+	font-weight: bold;
+	color: #2b059c;
+}
+.bgcolor{
+	background-color: wheat !important;
+}
+
+.sapMListTbl th {
+    background: cornsilk !important;
+    border-bottom: 1px solid #e5e5e5;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px; 
+}
+.tblgrid .sapMListTblCell {
+    vertical-align: middle;
+    border: 1px solid #cdcdcd;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 1px;
+    padding-right: 1px;
+}
+.tblgrid2 .sapMListTblCell {
+    vertical-align: middle;
+    border: 1px solid #ffffff;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}

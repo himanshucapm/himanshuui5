@@ -1,0 +1,173 @@
+/* .fontWight {
+    font-weight: bold;
+    color: #2b059c;
+}
+.sapMLabel {
+    color: black;
+    font-size: 0.875rem;
+    font-family: Arial,Helvetica,sans-serif;
+    font-weight: bold;
+}
+.sapMIBar-CTX .sapMTitle {
+    color: black;
+    font-size: 15px;
+    font-weight: bold !important;
+    text-shadow: 0 0 0.125rem #ffffff;
+}
+.sapFactsheetUtiLabel, .sapMListTbl .sapMLabel {
+    color: black;
+    font-weight: bold !important;
+
+}
+.tblclass .sapMListTbl th {
+    background: cornsilk !important;
+}
+.sapMListTbl th {
+    background: cornsilk;
+    border-bottom: 1px solid #e5e5e5;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px; 
+}
+.tblgrid1 .sapMListTblCell {
+    vertical-align: middle;
+    border: 1px solid #cdcdcd;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.tblgrid .sapMListTblCell {
+    vertical-align: middle;
+    border: 1px solid #cdcdcd;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+ */
+ 
+ .sapUiTableVSb{ z-index: 999 !important; }
+.sapMLabel{
+   
+     font-size: 0.900rem;
+    font-weight: none;
+    color:black;
+}
+.sapUiFormTitle 
+{
+	color:black !important;
+	font-weight:bold !important; 
+}
+
+/* .clpage{
+	background-color:white;
+}
+ */
+
+
+.sapUiSizeCompact .sapUiFormContainerTitle>.sapUiFormTitle {
+    height: 0rem;
+    line-height: 2rem;
+}
+
+.sapMPanelContent {
+    padding: 0rem;
+    box-sizing: border-box;
+    overflow: auto;
+    white-space: normal;
+}
+
+.sapUiSizeCompact .sapMTB.sapMListHdrTBar {
+    height: 2rem;
+}
+
+.styleatribute {
+   margin-top: -22px;
+   margin-left: -16px;
+}
+
+.clto {
+	font-weight:bold	
+}
+
+.clmtrl {
+	margin-left: 9px;
+	font-weight: bold;
+    margin-top: 8px;
+}
+.cltext {
+	font-weight: bold;
+    margin-top: 8px;
+}
+
+.clcusttype {
+	
+}
+
+.styleatribute{
+	margin-left: -112px;
+}
+.sapMIBar-CTX .sapMTitle {
+    color: #333333;
+    text-shadow: 0 0 0.125rem #ffffff;
+    font-weight: bold;
+}
+
+.styledateto {
+	
+}
+
+.clStyleTo {
+	margin-left: -2px;
+    font-weight: bold;
+}
+
+.styletoolbar1 {
+	border-block-end: none;
+	margin-top: -4px;
+	font-weight: bold;
+}
+
+.styletoolbar2  {
+	border-block-end: none;
+	margin-top: -8px;
+	font-weight: bold;
+	margin-left: 103px;
+}
+
+.tblgrid .sapMListTblCell {
+    vertical-align: middle;
+    border: none;
+    background: rgb(91, 91, 146);
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.tblgrid .sapMListTblCell .sapMLabel {
+    vertical-align: middle;
+    line-height: 1.4;
+    color: white;
+}
+
+.tblgrid2 .sapMListTblCell {
+    vertical-align: middle;
+    border: 0.2px solid #f5eaea;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.sapUiRespGridMedia-Std-Desktop.sapUiRespGridHSpace0>.sapUiRespGridSpanL1 {
+    width: 4%;
+}
+.sapMIBar.sapMHeader-CTX {
+    color: #666666;
+    background-color: gainsboro;
+    filter: none;
+    background-image: none;
+}

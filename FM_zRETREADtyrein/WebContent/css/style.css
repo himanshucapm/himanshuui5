@@ -1,0 +1,48 @@
+.copa_sec table tbody tr:nth-child(odd){
+	background:#f9f9f9;
+}
+
+
+.frgLebl .sapMDialog>header.sapMDialogTitle .sapMTitle {
+    color: black !important;
+    margin: 0 !important;
+    vertical-align: middle !important;
+    font-size: larger !important;
+    font-weight: 700 !important;
+}
+
+.sapUiSizeCompact .sapUiFormContainerTitle>.sapUiFormTitle {
+    height: 0rem;
+    line-height: 2rem;
+}
+
+.sapMDialog>header.sapMDialogTitle .sapMTitle {
+    color: black;
+    font-weight: 700;
+    margin: 0;
+    vertical-align: middle;
+}
+
+.frgtb .sapMListTbl th {
+    background: coral;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.tblgrid1 .sapMListTblCell {
+		    vertical-align: middle;
+		    border: 1.1px solid gray;
+		    background: #f4f4f6;
+			}
+			
+			
+/* .vehlabel .sapMLabel {
+    color: black;
+    font-size: 0.875rem;
+    font-family: Arial,Helvetica,sans-serif;
+    font-weight: normal;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: text;
+}	 */		

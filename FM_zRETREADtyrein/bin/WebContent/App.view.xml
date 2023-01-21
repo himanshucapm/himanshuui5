@@ -1,0 +1,10 @@
+<mvc:View
+	controllerName="com.musashi.scan.controller.App"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	displayBlock="true"
+>
+	<App
+		id="idAppControl"
+		visible="true" />
+</mvc:View>
