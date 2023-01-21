@@ -1,0 +1,13 @@
+<core:FragmentDefinition xmlns="sap.m" 
+						 xmlns:l="sap.ui.layout" 
+						 xmlns:core="sap.ui.core"
+						  xmlns:d= "sap.m.LabelDesign.Bold">
+	<Dialog title="Login">
+		<content>
+		<Label text="User Name" required="true" design="Bold"/>
+		<Input type="text" placeholder="Enter Your User Name"/>
+		<Label text="Password" required="true" design="Bold"/>
+		<Input type="text" placeholder="Enter Your Password"/>
+		</content>
+	</Dialog>
+</core:FragmentDefinition>

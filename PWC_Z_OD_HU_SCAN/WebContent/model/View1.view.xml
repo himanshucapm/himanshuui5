@@ -1,0 +1,245 @@
+<mvc:View 
+	controllerName="zstatnryrequest.controller.View1" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	displayBlock="true" 
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}" class="pageTitle" enableScrolling="true">
+					<content>
+					
+				 	<Toolbar >
+				<HBox >
+						<Label text="User Name: " design="Bold" />
+						<VBox width="1rem"/>
+						<Text id="idName" class="textBold"></Text>
+				</HBox>
+			<ToolbarSpacer></ToolbarSpacer>
+				<HBox >
+					<Text id="idDate" class="textBold"	></Text>
+					<VBox width="0.5rem"/>
+					<Text id="idTime" class="textBold"	></Text>
+				</HBox>
+		</Toolbar>	
+	
+	<Panel >
+	
+	<Toolbar>
+			<HBox>
+				<Label text="Location: " design="Bold" />
+				<VBox width="1rem"/>
+				<Text id="idLocation" class="textBold"></Text>
+			</HBox>
+		<ToolbarSpacer></ToolbarSpacer>
+			
+	</Toolbar>
+	
+	</Panel>
+	
+					<IconTabBar id="iconTabBar" expanded="{device>isNoPhone}" select="handleIconTabBarSelect"
+								showSelection="true" expandable="true" class="sapUiSizeCompact">
+							<items>
+									<!-- *****************Stationary Requisition Detail  *************************** -->
+								<IconTabFilter text="Form" key="A" icon="sap-icon://request" 
+												design="Vertical" tooltip="STATIONARY REQUEST">
+										
+										<HBox width="100%" >
+											<VBox width="95%" class="sapUiSizeCompact">
+											<Text text="Fill Stationary Requisition Details" class="text" width="100%" visible="false"></Text>
+											</VBox>
+										<Button icon="sap-icon://add" class="icon-add" text="Add" type="Emphasize" press="addNewItem" />
+										</HBox>
+									
+									<layoutData>
+										<l:GridData span="L5 M5 S12"></l:GridData>
+									</layoutData>
+								
+										<Table id="idStationary" class="tblgrid" showNoData="false" >
+											<columns>
+												<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="5rem">
+													<Label text="Items" required="true"/>
+												</Column>
+												<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="0rem" >
+													<Label text="" required="true"/>
+												</Column>
+												<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="4rem">
+													<Label text="Available Quantity"/>
+												</Column>
+													<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="4rem">
+													<Label text="Total Reserved Qty"/>
+												</Column>
+												<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="4rem">
+													<Label text="Request Quantity" required="true"/>
+												</Column>
+											
+												<Column minSceenWidth="Tablet" demandPopin="true" hAlign="Center" width="6rem">
+													<Label text="Remarks"/>
+												</Column>
+												<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="1rem"/>
+											</columns>
+										</Table> 
+										<ScrollContainer vertical="true" horizontal="false" height="300px">
+											<Table id="idStationaryRequest" items="{RequestJModel>/}" showNoData="true"
+													alternateRowColors="true" class="tblgrid1">
+												<columns>
+													<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="5rem"/>
+													<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="0rem"/>
+													<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="4rem"/>
+													<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="4rem"/>
+													<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="4rem"/>
+													<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="6rem"/>
+													<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="1rem"/>
+												</columns>
+													<items>
+														<ColumnListItem>
+															<cells>
+																<Input showValueHelp="true" valueHelpOnly="true" showSuggestion="true"
+																		valueHelpRequest="onItemHelp" value="" width="15em"  textAlign="Center"/>
+																<Text text="{RequestJModel>Matnr}" visible="false"  textAlign="Center"/>
+																<Text  width="8em"  enabled="false"  textAlign="Center"/>
+																
+																<Text text ="{RequestJModel>ReqMenge}"  textAlign="Center"/>
+																
+																<Input width="8em" value="{RequestJModel>Menge}"
+																		 liveChange="onQtyValid"  maxLength="3" change="onQuantitychange"  textAlign="Center" enabled="false"/>
+																
+																<Input width="90%" value="{RequestJModel>Remark}" maxLength="30"/>
+																
+																<Button icon="sap-icon://delete" class="icon-cancel" type="Reject" 
+																		tooltip=" Delete Item" press="onRemoveRow"/>
+															</cells>
+														</ColumnListItem>
+													</items>
+												</Table>
+										</ScrollContainer>
+									</IconTabFilter>
+									
+									<!-- *****************Stationary History Detail  *************************** -->
+									<IconTabFilter text="Details" key="B" icon="sap-icon://history" design="Vertical"
+													tooltip="STATIONARY HISTORY" >
+													<Panel>
+													 <Toolbar id="toolbarCT"  class="lineblnk">
+						<ToolbarSpacer />
+
+						<core:Icon src="sap-icon://validate" color="#e78c07" font-weight="bold">
+							<core:layoutData>
+								<FlexItemData growFactor="1" />
+							</core:layoutData>
+						</core:Icon>
+						<Text text="Pending for Approval" />
+
+						<core:Icon src="sap-icon://pending" color="#2b7d2b">
+							<core:layoutData>
+								<FlexItemData growFactor="1" />
+							</core:layoutData>
+						</core:Icon>
+ 						<Text text="Approved" />
+
+						<core:Icon src="sap-icon://decline" color="#bb0000">
+							<core:layoutData>
+								<FlexItemData growFactor="1" />
+							</core:layoutData>
+						</core:Icon>
+ 						<Text text="Rejected" />
+
+						<core:Icon src="sap-icon://accept" color="#FF0000" font-weight="bold">
+							<core:layoutData>
+								<FlexItemData growFactor="1" />
+							</core:layoutData>
+						</core:Icon>
+						<Text text="Issued" />
+ 						
+						<ToolbarSpacer />
+					</Toolbar>
+
+					</Panel>
+						<Table id="idStationary1" class="tblgrid" showNoData="false">
+							<columns>
+								<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="7em">
+									<Label text="Request No."/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="11em">
+									<Label text="Request Date &amp;Time"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="8em">
+									<Label text="Employee ID"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="10em">
+									<Label text="Employee Name"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="8em">
+									<Label text="Item"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="6em">
+									<Label text="Req. Quantity"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="13em">
+									<Label text="Remarks"/>
+								</Column>
+								<Column minSceenWidth="Tablet" demandPopin="true" hAlign="Center" width="5em">
+									<Label text="Status"/>
+								</Column>
+							</columns>
+						</Table>
+						<ScrollContainer vertical="true" horizontal="false">
+						<Table id="idRequestHistory" items="{historyJModel>/}" showNoData="true" class="tblgrid1"
+								alternateRowColors="true">
+							<columns>
+								<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="7em"/>
+								<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="11em"/>
+								<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="8em"/>
+								<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="10em"/>
+								<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="8em"/>
+								<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="6em"/>
+								<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="13em"/>
+								<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="5em"/>
+							</columns>
+							<items>
+							<ColumnListItem>
+							<cells>
+							<Text text="{historyJModel>ReqNo}"/>
+							<!-- <VBox alignContent="Center" alignItems="Center">
+								<HBox alignContent="Center" alignItems="Center" >
+									<Text text="{path:'historyJModel>Erdat',formatter:'zstatnryrequest.utils.Formatter.date2'}" 
+									textAlign="Center" enabled="false" />
+									<VBox width="1rem" />
+									<Text text="{path:'historyJModel>Erzet',formatter:'zstatnryrequest.utils.Formatter.Time'}" 
+									textAlign="Center" enabled="false" />
+								</HBox>
+							</VBox> -->
+							<Text text="{historyJModel>TimeStamp}"/>
+							
+							<Text text="{historyJModel>Pernr}"/>
+							<Text text="{historyJModel>Ename}"/>
+							<Text text="{historyJModel>Maktx}"/>
+							
+							<Text text="{historyJModel>ReqMenge}"/>
+							<Text text="{historyJModel>Remark}"/>
+							<core:Icon src="{path:'historyJModel>Status',formatter: 'zstatnryrequest.utils.Formatter.setIcon'}"
+									 color="{path:'historyJModel>Status', formatter: 'zstatnryrequest.utils.Formatter.setColor'}"/>
+							</cells>
+							</ColumnListItem>
+							</items>
+							</Table>
+							</ScrollContainer>
+							</IconTabFilter>
+							</items>
+						</IconTabBar>
+					</content>
+					<footer>
+						<Toolbar>
+							<Label text="JK Tyre and Industries Ltd."/>
+							<ToolBarSpacer></ToolBarSpacer>
+							<Button icon="sap-icon://save" text="Submit" type="Accept" press="onSubmit" id="idSubmit"/>
+							<Button icon="sap-icon://sys-cancel" text="Home Page" type="Reject" press="onHome" /> 
+						</Toolbar>
+					</footer>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

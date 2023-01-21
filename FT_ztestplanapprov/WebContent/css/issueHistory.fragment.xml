@@ -1,0 +1,102 @@
+<core:FragmentDefinition 
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core">
+	<Dialog xmlns="sap.m"  title="Stationary Issue History" class="sapUiSizeCompact" contentWidth="90%" contentHeight="80%">
+		<content>
+			<l:Grid defaultSpan="L12 M12 S12" width="auto" position="Center">
+				<l:content>
+					<!-- <HBox width="100%" >
+						<VBox width="95%" class="sapUiSizeCompact">
+						<Text text="Fill Stationary Requisition Details" class="text" width="100%"></Text>
+						</VBox>
+						<Button icon="sap-icon://add" class="icon-add" text="Add" type="Emphasize" press="addNewItem" />
+					</HBox>
+									
+						<layoutData>
+							<l:GridData span="L5 M5 S12"></l:GridData>
+						</layoutData> -->
+					<Table class="tblgrid" showNoData="false">
+						<columns>
+							<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="1em">
+								  <CheckBox select="onSelect" selected="false" />
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="6em">
+								<Label text="Item No."/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="6em">
+								<Label text="Requested Quantity"/>
+							</Column>
+							<Column minSceenWidth="Tablet" demandPopin="true" hAlign="Center" width="6em">
+								<Label text="Issued Quantity"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="6em">
+								<Label text="Issuer Status"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="4em">
+								<Label text="Action"/>
+							</Column>
+						</columns>
+					</Table>
+					<ScrollContainer vertical="true" horizontal="false">
+						<Table  items="{historyJModel>/}" showNoData="true" class="tblgrid1"
+							id="IdIssueTable"	alternateRowColors="true">
+							<columns>
+								<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="1em"/>
+								<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="6em"/>
+								<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="6em"/>
+								<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="6em"/>
+								<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="6em"/>
+								<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="4em"/>
+							</columns>
+								<items>
+									<ColumnListItem>
+										<cells>
+										<CheckBox onSelect="" selected="false"/>
+											<Text text="{historyJModel>RequestNo}" enabled="false" />
+											<DatePicker value="{historyJModel>Erdat}" enabled="false" 
+														displayFormat='dd.MM.yyyy' width="50%"></DatePicker>
+											
+											<!-- <Select items="{statusJModel>/}" 
+													selectedKey="{historyJModel>Status}" enabled="false">
+													<core:Item text="{statusJModel>Description}" 
+																key="{statusJModel>Status}" />
+											</Select> -->
+											
+											<Input value="{historyJModel>Pernr}" enabled="false"></Input>
+											
+											<Select selectedKey="{historyJModel>Issue_Status}" enabled="false">
+												<items>
+													<core:Item text="Pending" key="01" />
+													<core:Item text="Issued" key="02" />
+												</items>
+											</Select>
+											
+											<!-- <Button type="Emphasized" icon="sap-icon://activity-items" 
+													press="onItems" /> -->
+											<Select>
+												<items>
+													<core:Item text="Approve" key="01"/>
+													<core:Item text="Reject" key="02"/>
+												</items>
+											</Select>
+										</cells>
+									</ColumnListItem>
+								</items>
+						</Table>
+					</ScrollContainer>
+				</l:content>
+			</l:Grid>
+		</content>
+		
+		<beginButton>
+			<Button text="Submit" press="onRequestOk"/>
+		</beginButton>
+		
+		<endButton>
+			<Button text="Cancel" press="onRequestCancel"/>
+			
+		</endButton>
+		
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,160 @@
+<mvc:View 
+	controllerName="ZAddStationary.controller.View1" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	displayBlock="true" 
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:html="http://www.w3.org/1999/xhtml" 
+	>
+
+<Shell id="shell">
+<App id="app">
+
+<pages>
+
+<Page id="page" title="{i18n>title}" class="pageTitle" enableScrolling="true">
+<content>
+
+		<Toolbar >
+				<HBox >
+						<Label text="User Name: " design="Bold" />
+						<VBox width="1rem"/>
+						<Text id="idName" class="textBold"></Text>
+				</HBox>
+			<ToolbarSpacer></ToolbarSpacer>
+				<HBox >
+					<Text id="idDate" class="textBold"	></Text>
+					<VBox width="0.5rem"/>
+					<Text id="idTime" class="textBold"	></Text>
+				</HBox>
+		</Toolbar>	
+	
+	<Panel >
+	
+	<Toolbar>
+			<HBox>
+				<Label text="Location: " design="Bold" />
+				<VBox width="1rem"/>
+				<Text id="idLocation" class="textBold"></Text>
+			</HBox>
+		<ToolbarSpacer></ToolbarSpacer>
+			<Button icon="sap-icon://add-activity" text="Item" type="Accept" press="onAddItem">
+					<layoutData>
+						<l:GridData span="XL3 L2 M2 S1"/>
+					</layoutData>
+			</Button>
+	</Toolbar>
+	
+	</Panel>
+	
+	<Panel id="Panel1" class="Custom_Panel">
+		<Table id="tblDetail2" items="" showNoData="false" class="tblgrid">
+				<columns>
+					<Column minScreenWidth="Tablet" hAlign='Center' demandPopin="true" width="3rem">
+					<Label text="S.NO" />
+					</Column>
+					<Column minScreenWidth="Tablet" hAlign='Center' demandPopin="true" visible="false">
+					<Label text="Item Code" />
+					</Column>
+					<Column minScreenWidth="Tablet" hAlign='Center' demandPopin="true" >
+					<Label text="Item" required="true"/>
+					</Column>
+					<Column minScreenWidth="Tablet" hAlign='Center' demandPopin="true" width="9rem">
+					<Label text="Avaliable Quantity" />
+					</Column>
+					<Column minScreenWidth="Tablet" hAlign='Center' demandPopin="true" width="10rem">
+					<Label text="Last Refill Quantity" />
+					</Column>
+					<Column minScreenWidth="Tablet" hAlign='Center' demandPopin="true" width="15rem">
+					<Label text="Last Refill Date &amp; Time" />
+					</Column>
+					<Column minScreenWidth="Tablet" hAlign='Center' demandPopin="true" width="7rem">
+					<Label text="Refill Quantity" required="true"/>
+					</Column>
+					<Column minScreenWidth="Tablet" hAlign='Center' demandPopin="true" width="10rem">
+					<Label text="Action" />
+					</Column>
+					<Column minScreenWidth="Tablet" hAlign='Center' demandPopin="true" width="4rem">
+					<Label text="History" />
+					</Column>
+				</columns>
+		</Table>
+
+			<Table id="ItemTable" items="{itemJModel>/}" alternateRowColors="true" showNoData="true" class="tblgrid1">
+					<columns>
+						<Column minScreenWidth="Tablet" hAlign='Center' demandPopin="true" width="3rem"></Column>
+						<Column minScreenWidth="Tablet" hAlign='Center' demandPopin="true" width="0px"></Column>
+						<Column minScreenWidth="Tablet" hAlign='Center' demandPopin="true" ></Column>
+						<Column minScreenWidth="Tablet" hAlign='Center' demandPopin="true" width="9rem"></Column>
+						<Column minScreenWidth="Tablet" hAlign='Center' demandPopin="true" width="10rem"></Column>
+						<Column minScreenWidth="Tablet" hAlign='Center' demandPopin="true" width="15rem"></Column>
+						<Column minScreenWidth="Tablet" hAlign='Center' demandPopin="true" width="7rem"></Column>
+						<Column minScreenWidth="Tablet" hAlign='Center' demandPopin="true" width="10rem"></Column>
+						<Column minScreenWidth="Tablet" hAlign='Center' demandPopin="true" width="4rem"></Column>
+						<Column minScreenWidth="Tablet" hAlign='Center' demandPopin="true" width="0px"></Column>
+					</columns>
+					<items>
+						<ColumnListItem >
+						<cells>
+							<Text ></Text>
+							<Input value="{itemJModel>Matnr}" enabled="false" textAlign="Center" />
+							<Input showValueHelp="true" valueHelpOnly="true" showSuggestion="true" value="{itemJModel>Maktx}"
+									valueHelpRequest="onItemHelp" textAlign="Center" enabled="false" />
+							
+							<Text text="{itemJModel>AvaMenge}" textAlign="Center" enabled="false" />
+							<Text text="{itemJModel>LstMenge}" textAlign="Center" enabled="false" />
+							
+							<VBox alignContent="Center" alignItems="Center">
+								<HBox alignContent="Center" alignItems="Center" >
+									<Text text="{itemJModel>TimeStamp}" textAlign="Center" enabled="false" />
+									<!-- <Text text="{path:'itemJModel>Aedat',formatter:'ZAddStationary.util.Formatter.date1'}" 
+											textAlign="Center" enabled="false" />
+									<VBox width="1rem" />
+									<Text text="{path:'itemJModel>Aezet',formatter:'ZAddStationary.util.Formatter.Time'}" 
+											textAlign="Center" enabled="false" /> -->
+								</HBox>
+							</VBox>
+							
+							<Input value="{itemJModel>Menge}" textAlign="Center" enabled="false" liveChange="onLiveQty" maxLength="3"/>
+							
+							<VBox alignContent="Center" alignItems="Center">
+								<HBox alignContent="Center" alignItems="Center" visible="false">
+									<Button text="Edit" type="Default" textAlign="Center" width="5rem" press="onEdit" />
+								</HBox>
+								<HBox alignContent="Center" alignItems="Center" visible="false">
+									<Button text="Update" type="Accept" textAlign="Center" press="onUpdate" />
+									<Button text="Cancel" type="Reject" textAlign="Center" width="4rem" press="onCancel" />
+								</HBox>
+								<HBox alignContent="Center" alignItems="Center" visible="false">
+									<Button text="Update" type="Accept" textAlign="Center" press="onUpdate" />
+									<Button text="Delete" type="Reject" textAlign="Center" width="4rem" press="onDeleteNewRow" />
+								</HBox>
+							</VBox>
+							
+							<VBox alignContent="Center" alignItems="Center">
+							<HBox alignContent="Center" alignItems="Center">
+								<Button icon="sap-icon://history" type="Emphasized" press="onHistory" tooltip="View Item History"/>
+							</HBox>
+							</VBox>
+							
+							<Text text="{itemJModel>Flag}" enabled="false" textAlign="Center" width="0px" visible="false"/>
+						</cells>
+						</ColumnListItem>
+					</items>
+					</Table>
+		</Panel>
+					</content>
+					<footer>
+						<Toolbar>
+							<Label text="JK Tyre and Industries Ltd."/>
+							<ToolBarSpacer></ToolBarSpacer>
+							<Button icon="sap-icon://sys-cancel" text="Home Page" type="Reject" press="onHome" />
+						</Toolbar>
+					</footer>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

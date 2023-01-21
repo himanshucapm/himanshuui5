@@ -1,0 +1,217 @@
+<mvc:View 
+	controllerName="zstatnryissue.controller.View1" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	displayBlock="true" 
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}" class="pageTitle" enableScrolling="true">
+				<content>
+				<Toolbar >
+				<HBox >
+				<Label text="User Name: " design="Bold" class="label" />
+				<VBox width="1rem"/>
+				<Text id="idName" class="textBold"></Text>
+				</HBox>
+				<ToolbarSpacer></ToolbarSpacer>
+				<HBox>
+				<Label text="Location: " design="Bold"  class="label" visible="false" />
+				<VBox width="1rem"/>
+				<Text id="idLocation" class="textBold" visible="false"></Text>
+				</HBox>
+				<ToolbarSpacer></ToolbarSpacer>
+				<HBox >
+					<Text id="idDate" class="textBold"	></Text>
+					<VBox width="0.5rem"/>
+					<Text id="idTime" class="textBold"	></Text>
+				</HBox>
+				</Toolbar>	
+	
+ 		<f:SimpleForm minWidth="1024" maxContainerCols="3" editable="true" layout="ResponsiveGridLayout"
+		       		  labelSpanL="4" labelSpanM="4" emptySpanL="1" emptySpanM="1" columnsL="2" columnsM="3" class="editableForm paddingleft">
+		<f:content>
+		<core:Title level="h4" text="" visible="false"/>
+		<Label text="Date" design="Bold"  class="label"/>
+		<DatePicker id="idfromDate"  displayFormat="dd.MM.yyyy" change="handledatefrom">
+		            				<layoutData>
+									<l:GridData span="XL5 L3 M2 S1"/>
+									</layoutData>
+									</DatePicker>
+									<Text text="To">
+									<layoutData>
+									<l:GridData span="XL1 L1 M1 S1"/>
+									</layoutData>
+									</Text>
+		  <DatePicker id="idToDate"  displayFormat="dd.MM.yyyy" change="handledateto">
+									<layoutData>
+									<l:GridData span="XL4 L3 M2 S1"/>
+									</layoutData>
+	      							</DatePicker>
+	      
+	    <Label text="Employee" design="Bold"  class="label"/>
+		<Input id="idEmployee" showValueHelp="true" valueHelpOnly="true" valueHelpRequest="onF4Employee"></Input>
+		
+		<core:Title id="V_3"  text="" visible="false"/>
+		
+		 <Label text="Item" design="Bold"  class="label"/>
+		<Input id="idItem" showValueHelp="true" valueHelpOnly="true" valueHelpRequest="onF4Item"></Input>
+		
+		<Label text="Status" design="Bold"  class="label"/>
+		<Select id="idStatus" forceSelection="false" change="OnDropDownChange" >
+			<layoutData>
+			  <l:GridData span="XL2 L4 M1 S1"/>
+			</layoutData>
+		</Select> 
+		<Button class="icon-save" text="Go" type="Accept" press="onSearch">
+			<layoutData>
+			  <l:GridData span="XL1 L1 M1 S1"/>
+			</layoutData>
+		</Button>
+		<Button  class="icon-save" text="Clear" type="Reject" press="onClear" id="btn_Clear">	
+			<layoutData>
+				<l:GridData span="XL2 L2 M1 S1"/>
+			</layoutData>
+		</Button> 
+		</f:content>
+		</f:SimpleForm> 
+ 
+		<!-- *****************Stationary History Detail  *************************** -->
+		<Panel>
+		<Toolbar id="toolbarCT"  class="lineblnk">
+		<ToolbarSpacer />
+		
+		<core:Icon src="sap-icon://validate" color="#e78c07" font-weight="bold">
+			<core:layoutData>
+			<FlexItemData growFactor="1" />
+			</core:layoutData>
+			</core:Icon>
+		<Text text="Pending for Approval" />
+					
+		<core:Icon src="sap-icon://pending" color="#2b7d2b">
+			<core:layoutData>
+			<FlexItemData growFactor="1" />
+			</core:layoutData>
+			</core:Icon>
+ 		<Text text="Approved" />
+ 						
+		<core:Icon src="sap-icon://decline" color="#bb0000">
+			<core:layoutData>
+			<FlexItemData growFactor="1" />
+			</core:layoutData>
+		</core:Icon>
+ 		<Text text="Rejected" />
+						
+		<core:Icon src="sap-icon://accept" color="#FF0000" font-weight="bold">
+			<core:layoutData>
+			<FlexItemData growFactor="1" />
+			</core:layoutData>
+			</core:Icon>
+			<Text text="Issued" />
+ 		<ToolbarSpacer />
+		</Toolbar>
+		</Panel>
+<!-- ***************************************************************************************************************************************** -->
+		<Table id="idStationary1" class="tblgrid" showNoData="false">
+			<columns>
+				<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="2em">
+					<CheckBox id="idCheckBox" select="onSelect" selected="false" />
+	 			</Column>
+	 			<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="5em">
+					<Label text="Req. No." tooltip="Request Number" />
+	 			</Column>
+				<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="5em">
+					<Label text="Employee ID" tooltip="Employee ID" />
+	 			</Column>
+				<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="8em">
+					<Label text="Employee Name" tooltip="Employee Name" />
+				</Column>
+				<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="7em">
+					<Label text="Item" tooltip="Item Name" />
+				</Column>
+				<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="4em">
+					<Label text="Avail. Qty." tooltip="Available Quantity" />
+				</Column>
+				<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="4em">
+					<Label text="Req Qty." tooltip="Requested Quantity" />
+				</Column>
+				<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="12em">
+					<Label text="Requested Date &amp; Time" tooltip="Requested Date &amp; Time" />
+				</Column>
+				<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="4em">
+					<Label text="Appr. Qty." tooltip="Approved Quantity" />
+				</Column>
+				<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="7em">
+					<Label text="Remarks" tooltip="Remarks" />
+				</Column>
+				<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="4em">
+					<Label text="Status" tooltip="Status" />
+				</Column>
+			</columns>
+		</Table>
+		
+		<ScrollContainer vertical="true" horizontal="true">
+			<Table id="idRequestHistory" items="{IssueTblJModel>/}" showNoData="true" 
+					class="tblgrid1" alternateRowColors="true">
+				<columns>
+					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="2em"/>
+					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="5em"/>
+					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="5em"/>
+					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="8em"/>
+					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="7em"/>
+					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="4em"/>
+					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="4em"/>
+					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="12em"/>
+					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="4em"/>
+					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="7em"/>
+					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="4em"/>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<CheckBox onSelect="" selected="false"/>
+							<Text text="{IssueTblJModel>ReqNo}"/>
+							<Text text="{IssueTblJModel>Pernr}"/>
+							<Text text="{IssueTblJModel>Ename}"/>
+							<Text text="{IssueTblJModel>Maktx}"/>
+							<Text text="{IssueTblJModel>TotAvaMenge}"/>
+							<Text text="{IssueTblJModel>ReqMenge}"/>
+							
+							<Text text="{IssueTblJModel>TimeStamp}"/>
+							<!-- <VBox alignContent="Center" alignItems="Center">
+								<HBox alignContent="Center" alignItems="Center" >
+								<Text text="{path:'IssueTblJModel>Erdat',formatter:'zstatnryissue.util.Formatter.date2'}" 
+									textAlign="Center" enabled="false" />
+								<VBox width="1rem" />
+								<Text text="{path:'IssueTblJModel>Erzet',formatter:'zstatnryissue.util.Formatter.Time'}" 
+									textAlign="Center" enabled="false" />
+								</HBox>
+							</VBox> -->
+							
+							<Text text="{IssueTblJModel>AppMenge}"/>
+							<Text text="{IssueTblJModel>AppRemarks}" tooltip="{IssueTblJModel>Remark}"/>
+							<core:Icon src="{path:'IssueTblJModel>Status',formatter: 'zstatnryissue.util.Formatter.setIcon'}"
+									color="{path:'IssueTblJModel>Status', formatter: 'zstatnryissue.util.Formatter.setColor'}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</ScrollContainer>
+		
+			</content>
+			<footer>
+			<Bar>
+			<contentRight>
+			<Button icon="sap-icon://save" text="Issue" type="Accept" press="onIssueSubmit" id="idSave"/>
+			<Button icon="sap-icon://sys-cancel" class="icon-save" text="Home Page" type="Reject" press="onHome" id="idBack"/>
+			</contentRight>
+			</Bar>
+			</footer>
+			</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

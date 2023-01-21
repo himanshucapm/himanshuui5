@@ -1,0 +1,80 @@
+.sapMPanelExpandableIcon {
+	background-color: inherit !important;
+	border-left: inherit !important;
+	border-right: inherit !important;
+	border-top: inherit !important;
+}
+
+.coreTitleHidden .sapUiFormTitle {
+	display: none !important;
+}
+
+.coreTitleHidden html.sap-phone .sapUiFormResGridCont {
+	padding-bottom: 0rem !important;
+}
+
+.noContentPadding .sapMITBContent {
+	padding-top: 0rem !important;
+	padding-bottom: 0rem !important;
+}
+
+.noContentPadding .sapUiFormResGridMain {
+	/* padding-top:0rem !important; */
+	padding-bottom: 0rem !important;
+}
+
+.paddingTop0 {
+	padding-top: 0px !important;
+}
+
+.sapUiFormResGrid>div {
+	padding: 0px !important;
+}
+
+.sapUxAPBlockContainerDesktop {
+	padding: 0px !important;
+}
+
+
+.messageStripCSS{
+	padding: 0px !important;
+	padding-left: 0.2rem !important;
+	line-height: 1rem !important;
+}
+
+.tableColumnTitle{
+     font-size: 9px !important;
+    }
+    .sapMPanelExpandableIcon {
+	background-color: inherit !important;
+	border-left: inherit !important;
+	border-right: inherit !important;
+	border-top: inherit !important;
+}
+.coreTitleHidden .sapUiFormTitle {
+	display: none !important;
+}
+.coreTitleHidden html.sap-phone .sapUiFormResGridCont {
+	padding-bottom: 0rem !important;
+}
+.noContentPadding .sapMITBContent {
+	padding-top: 0rem !important;
+	padding-bottom: 0rem !important;
+}
+.noContentPadding .sapUiFormResGridMain {
+	/* padding-top:0rem !important; */
+	padding-bottom: 0rem !important;
+}
+.paddingTop0 {
+	padding-top: 0px !important;
+}
+.headerPadding .sapFDynamicPageHeader {
+	padding: 0.5rem 3rem 0rem 3rem !important;
+}
+.contentPadding .sapFDynamicPageContent,
+	.sapFDynamicPageContentFitContainer {
+	padding-top: 0rem !important;
+	padding-bottom: 0rem !important;
+	padding-left: 1px !important;
+	padding-right: 1px !important;
+}
