@@ -1,0 +1,178 @@
+.sapUiSizeCompact .sapMTB.sapMListHdrTBar {
+    height: 1rem;
+}
+
+.flexExpDetails{
+background-color : #cornsilk !important;	
+}
+
+/* .sapUiSizeCompact .sapUiFormContainerTitle>.sapUiFormTitle {
+    height: 0rem !important;
+    line-height: 2rem !important;
+} */
+
+.col .sapMListTbl th {
+   border-bottom: 1px solid #e5e5e5 !important;
+    background: #cae4fb;
+}
+
+.col1 .sapMDialog>header.sapMDialogTitle .sapMTitle {
+    color: black;
+    margin: 0;
+    vertical-align: middle;
+}
+
+/* .tablabel .sapMListTbl .sapMText, .sapMListTbl .sapMLabel {
+    font-size: 0.875rem;
+    color: #333333;
+    font-weight: 710;
+} */
+
+element.style {
+    text-align: center;
+    color: white !important;
+}
+
+
+.label1 .sapMText {
+    display: inline-block;
+    box-sizing: border-box;
+    white-space: pre-line;
+    word-wrap: break-word;
+    cursor: text;
+    font-size: 0.875rem;
+    font-weight: 700;
+    font-family: Arial,Helvetica,sans-serif;
+    line-height: normal;
+    color: black;
+}
+
+.header .sapUiCompFilterBar {
+    background-color: white;
+    border-bottom: 1px solid #d1e0ee;
+}
+
+.newlab .sapMLabel {
+    color: black;
+    font-size: 0.900rem;
+    font-family: Arial,Helvetica,sans-serif;
+    font-weight: 700;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: text;
+}
+
+ .border .sapMITBContent {
+    border-bottom: 0rem;
+}
+
+/* .sapMListTbl th {
+    background: #012e57 !important;
+    border-bottom: 1px solid #e5e5e5 !important;
+} */
+
+
+.tab .sapMListTbl .sapMText, .sapMListTbl .sapMLabel {
+    font-size: 1rem !important;
+    color: black !important;
+    font-weight: normal !important;
+}
+
+.sapMTB-Transparent-CTX .sapMLabel {
+    font-weight: 700 !important;
+    font-family: Arial,Helvetica,sans-serif !important;
+    color: #333333 !important;
+    font-size: larger !important;
+}
+
+
+
+.head1 .sapUiForm .sapUiFormTitle {
+    border-width: 1px;
+    text-align: center;
+    font-size: larger;
+    border-color: black;
+    font-family: Arial,Helvetica,sans-serif;
+	}
+
+	
+	 .sapUiFormContainerTitle>.sapUiFormTitle {
+    height: 2rem !important;
+    line-height: 2rem !important;
+    margin-bottom: unset !important;
+    text-align: -webkit-center !important;
+    font-size: larger !important;
+    font-weight: 700 !important;
+    /* -webkit-margin-bottom-collapse: separate; */
+    /* -webkit-border-horizontal-spacing: inherit; */
+    /* padding-bottom: 10px; */
+	}
+	
+	
+	
+	.space .sapUiFormContainerTitle>.sapUiFormTitle {
+    height: 0rem !important;
+    line-height: 2rem !important;
+    margin-bottom: unset !important;
+    text-align: -webkit-center !important;
+    font-size: larger !important;
+    font-weight: 700 !important;
+    /* -webkit-margin-bottom-collapse: separate; */
+    /* -webkit-border-horizontal-spacing: inherit; */
+    /* padding-bottom: 10px; */
+	}
+	
+	.font1 .sapMLabel {
+    color: black;
+    font-size: 0.875rem;
+    font-family: Arial,Helvetica,sans-serif;
+    font-weight: normal;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: text;
+	}
+
+	.pading .sapMITB.sapUiResponsiveContentPadding>.sapMITBContainerContent>.sapMITBContent {
+    padding: 0rem 0rem;
+    box-sizing: border-box;
+}
+	
+	
+	.frg .sapUiCompFilterBar {
+    background-color: white;
+    border-bottom: 1px solid white;
+}
+
+	.lab .sapUiRespGridMedia-Std-Phone.sapUiFormResGridCont>.sapUiFormElementLbl:not(.sapUiRespGridSpanS12)>.sapMLabel, .sapUiRespGridMedia-Std-Tablet.sapUiFormResGridCont>.sapUiFormElementLbl:not(.sapUiRespGridSpanM12)>.sapMLabel, .sapUiRespGridMedia-Std-Desktop.sapUiFormResGridCont>.sapUiFormElementLbl:not(.sapUiRespGridSpanL12)>.sapMLabel, .sapUiRespGridMedia-Std-LargeDesktop.sapUiFormResGridCont>.sapUiFormElementLbl:not(.sapUiRespGridSpanXL12)>.sapMLabel {
+    text-align: right !important;
+    float: none !important;
+    font-size:14px !important;
+    position: relative !important;
+}
+
+.titlee .sapMTB {
+    white-space: nowrap;
+    overflow: hidden;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    align-items: center;
+    box-sizing: border-box;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    height: 3rem;
+    background: transparent;
+     border-bottom: 0px solid #cccccc; 
+}
+
+
+.ABC{
+     font-size:18px !important;
+   	 color:black; /* darkcyan; */
+   	 font-weight: 700;
+     font-style: initial;
+   	}

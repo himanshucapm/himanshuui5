@@ -1,0 +1,42 @@
+.tblgrid .sapMListTblCell {
+    vertical-align: middle;
+    <!-- border: 1.1px solid #d6aeae; -->
+    background: rgb(176, 181, 185);
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.tblgrid2 .sapMListTblCell {
+    vertical-align: middle;
+    border: 1.1px solid #f7f7f7;
+   <!--  background: #d0d0d2; -->
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+} 
+
+.AddsTyle {
+	font-weight:bold;
+} 
+
+.sapMIBar-CTX .sapMTitle {
+    color: #666666;
+    text-shadow: 0 0 0.125rem #ffffff;
+    font-weight: bold;
+}
+
+
+.onwheel.sapMText {
+    display: inline-block;
+    box-sizing: border-box;
+    white-space: pre-line;
+    word-wrap: break-word;
+    cursor: text;
+    font-size: larger;
+    font-family: Arial,Helvetica,sans-serif;
+    line-height: normal;
+    color: #333333;
+}
