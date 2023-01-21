@@ -1,0 +1,209 @@
+.sapUiSizeCompact .sapMInputBase.sapMTextArea .sapMTextAreaInner {
+    line-height: 0.9rem;
+    padding: 0.1875rem 0.5rem;
+}
+
+
+.applabel1 .sapMLabel {
+    color: black;
+    font-family: Arial,Helvetica,sans-serif;
+    font-weight: 100;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: text;
+}
+
+.size1 {
+	font-size : 1.5rem;
+}
+
+.sapMLIBShowSeparator>td {
+    border-top: 1px solid cornsilk;
+}
+
+
+.applabel .sapMLabel {
+    color: black;
+    <!-- font-size: 0.875rem; -->
+    font-family: Arial,Helvetica,sans-serif;
+    font-weight: 700;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: text;
+}
+
+.hClass .sapMTitle > span {
+    font-weight: bold !important;
+    color: black;
+    font-size: larger;
+	}
+	
+.jstatus {
+    min-height: 0rem;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: underline;
+    margin-left: 50px;
+  
+}
+
+
+.textLegend {
+	/* padding-top: 1px !important; */
+	color: red !important;
+	font-weight: bold !important;
+	
+}
+
+ .newlabe1{
+    color: red;
+    font-weight: bold !important;
+}
+
+
+.myRedTextButton {
+	font-weight: bold !important;
+      color: #333333;
+   }
+   .myRedTextButton1 {
+	
+      color: #333333;
+   }
+	.lab .sapUiRespGridMedia-Std-Phone.sapUiFormResGridCont>.sapUiFormElementLbl:not(.sapUiRespGridSpanS12)>.sapMLabel, .sapUiRespGridMedia-Std-Tablet.sapUiFormResGridCont>.sapUiFormElementLbl:not(.sapUiRespGridSpanM12)>.sapMLabel, .sapUiRespGridMedia-Std-Desktop.sapUiFormResGridCont>.sapUiFormElementLbl:not(.sapUiRespGridSpanL12)>.sapMLabel, .sapUiRespGridMedia-Std-LargeDesktop.sapUiFormResGridCont>.sapUiFormElementLbl:not(.sapUiRespGridSpanXL12)>.sapMLabel {
+    text-align: right !important;
+    float: none !important;
+    font-size:14px !important;
+    position: relative !important;
+}
+
+ .sapUiFormResGrid>div {
+    padding: 0rem 0.00rem;
+    box-sizing: border-box !important; 
+}
+  .boldTextLogo{  
+  font-color:red;
+               }
+
+.withdraw .sapMLabel {
+    color: black;
+    font-size: 0.875rem;
+    font-family: Arial,Helvetica,sans-serif;
+    font-weight: 700;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: text;
+}
+
+.sapMTB-Transparent-CTX .sapMText {
+    /* font-weight: 600; */
+    font-family: Arial,Helvetica,sans-serif;
+    text-shadow: 0 1px 0 #fffff;
+    color: white;
+}
+
+.sapUiSizeCompact .sapMTB.sapMListHdrTBar {
+    height: 2rem !important;
+    background-color: #13b1b1 !important;
+}
+
+.sapUiSizeCompact .sapUiFormContainerTitle>.sapUiFormTitle {
+    height: 0rem;
+    line-height: 2rem;
+}
+
+.tabbarcss .sapMITH {
+    box-shadow: 0rem 0rem cornsilk;
+    background-color: cornsilk;
+    height: 87px;
+    border-bottom: 0.125rem solid cornsilk;
+}
+
+.tablecss  {
+    padding: 0rem 0rem;
+    box-sizing: border-box;
+}
+
+
+.sapMSplitContainerHideMode>.sapMSplitContainerDetail .sapMITB.sapUiResponsiveContentPadding>.sapMITBContainerContent>.sapMITBContent, .sapMITB.sapUiResponsiveContentPadding>.sapMITBContainerContent>.sapMITBContent {
+   padding: 0rem 0rem;
+    box-sizing: border-box;
+}
+.sapUiForm .sapUiFormTitle {
+    border-width: 1px;
+    border-color: black;
+    font-weight: 700;
+    font-family: Arial,Helvetica,sans-serif;
+}
+
+.vehlabel .sapMLabel {
+    color: black;
+    font-size: 0.875rem;
+        padding-top: 5px;
+    font-family: Arial,Helvetica,sans-serif;
+    font-weight: 700;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: text;
+}
+
+
+.titel .sapMDialog>header.sapMDialogTitle .sapMTitle {
+    color: Black !important;
+    font-size: 1.4rem !important;
+    margin: 0 !important;
+    vertical-align: middle !important;
+    background-color: khaki;
+}
+
+.abcsapUiSizeCompact .sapMDialogTitle .sapMHeader-CTX {
+	height: 2.5rem; 
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    box-sizing: border-box;
+    background-color: #503ca2;
+
+}	
+
+
+
+/*  .sapMDialog.sapMPopup-CTX>header .sapMHeader-CTX, .sapMDialog.sapMPopup-CTX>header .sapMSubHeader-CTX {
+    background-color: khaki;
+} */
+
+
+.clsHeader .sapMDialog>header.sapMDialogTitle .sapMTitle {
+    color: black;
+    font-weight: 700;
+    margin: 0;
+    vertical-align: middle;
+}
+
+/*table color code alternate color white black*/			
+.clsfrag .sapMListTblCell {
+    vertical-align: middle;
+    border: 0px solid whitesmoke;
+   /*  background: white; */
+}
+.clsfragc .sapMListTbl .sapMLabel {
+    color: black;
+}
+
+.sapMLIBShowSeparator>td {
+    border-top: 1px solid cornsilk;
+}
+
+.disablekb input{
+ pointer-events: none;
+ color: transparent;
+ text-shadow: 0 0 0 gray;
+}

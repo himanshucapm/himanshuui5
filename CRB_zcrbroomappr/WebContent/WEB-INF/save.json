@@ -1,0 +1,215 @@
+{
+"RaceNumber" : " ",
+"ScheduledComplitionDate" : "2018-07-15T12:00:00",
+"FiscalYear" : "2019",
+"TotalGainExpectedDate" : "2018-07-15T12:00:00",
+"Plant" : "JKHO",
+"DocumentDate" : "2018-07-01T12:00:00",
+"RaceType" : "AMR1",
+"RaceDepartment" : "00000000",
+"RaceAmount" : "2.000",
+"TotalBudgetedAmount" : "0.000",
+"SanctionedAmount" : "0.000",
+"BalanceAmount" : "0.000",
+"Title1" : "TEST RACE - OData-1",
+"Title2" : "TEST RACE - OData-1",
+"BriefDescription1" : "TEST RACE - OData-1",
+"BriefDescription2" : "TEST RACE - OData-1",
+"PersonnelNumber" : "00018304",
+"ReleaseState" : " ",
+"NavToGain":[
+{
+"ItemDescription" : "Reduction in Manpower",
+"RaceNumber" : " ",
+"FiscalYear" : "2019",
+"ItemNo" : "0001",
+"ItemText" : "X"
+},
+{
+"ItemDescription" : "Reduction in Inputs(Energey/Raw Material, etc)",
+"RaceNumber" : " ",
+"FiscalYear" : "2019",
+"ItemNo" : "0002",
+"ItemText" : "X"
+},
+{
+"ItemDescription" : "Improvement in Productivity/Increase in Production",
+"RaceNumber" : " ",
+"FiscalYear" : "2019",
+"ItemNo" : "0003",
+"ItemText" : "X"
+},
+{
+"ItemDescription" : "Improvement in Quality/Reduction in Replacement Loss",
+"RaceNumber" : " ",
+"FiscalYear" : "2019",
+"ItemNo" : "0004",
+"ItemText" : "X"
+},
+{
+"ItemDescription" : "Safety/Environment",
+"RaceNumber" : " ",
+"FiscalYear" : "2019",
+"ItemNo" : "0005",
+"ItemText" : "X"
+},
+{
+"ItemDescription" : "System/Employee need",
+"RaceNumber" : " ",
+"FiscalYear" : "2019",
+"ItemNo" : "0006",
+"ItemText" : "X"
+},
+{
+"ItemDescription" : "Replacement against obsolescence",
+"RaceNumber" : " ",
+"FiscalYear" : "2019",
+"ItemNo" : "0007",
+"ItemText" : "X"
+},
+{
+"ItemDescription" : "Others (Not Specified Above)",
+"RaceNumber" : " ",
+"FiscalYear" : "2019",
+"ItemNo" : "0008",
+"ItemText" : "X"
+},
+{
+"ItemDescription" : "Payback Period in Years",
+"RaceNumber" : " ",
+"FiscalYear" : "2019",
+"ItemNo" : "0009",
+"ItemText" : "X"
+},
+{
+"ItemDescription" : "ROI in %",
+"RaceNumber" : " ",
+"FiscalYear" : "2019",
+"ItemNo" : "0010",
+"ItemText" : "X"
+},
+{
+"ItemDescription" : "Analysis & comments",
+"RaceNumber" : " ",
+"FiscalYear" : "2019",
+"ItemNo" : "0011",
+"ItemText" : "X"
+},
+{
+"ItemDescription" : "Names of the responsible person",
+"RaceNumber" : " ",
+"FiscalYear" : "2019",
+"ItemNo" : "0012",
+"ItemText" : "X"
+},
+{
+"ItemDescription" : "Replace/Upgrade-Detail of Exp.Vs Act.Life of Org.Item",
+"RaceNumber" : " ",
+"FiscalYear" : "2019",
+"ItemNo" : "0013",
+"ItemText" : "X"
+}
+],
+"NavToApprove" : [
+{
+"RaceNumber" : " ",
+"FiscalYear" : "2019",
+"Plant" : "JKHO",
+"ItemNo" : "0001",
+"PersonnelNumber" : "00018304",
+"Pernr" : "Initiator[VINAY KUMAR GUPTA]",
+"ItemText" : " ",
+"RaceApprovalAmount" : " "
+},
+{
+"RaceNumber" : " ",
+"FiscalYear" : "2019",
+"Plant" : "JKHO",
+"ItemNo" : "0002",
+"PersonnelNumber" : "00017414",
+"Pernr" : "SR.MANAGER-SYSTEM[DY. MANAGER & BELOW]",
+"ItemText" : " ",
+"RaceApprovalAmount" : " "
+},
+{
+"RaceNumber" : " ",
+"FiscalYear" : "2019",
+"Plant" : "JKHO",
+"ItemNo" : "0003",
+"PersonnelNumber" : "00020335",
+"Pernr" : "SR.MANAGER-SYSTEM[]",
+"ItemText" : "",
+"RaceApprovalAmount" : "0.000"
+},
+{
+"RaceNumber" : " ",
+"FiscalYear" : "2019",
+"Plant" : "JKHO",
+"ItemNo" : "0004",
+"PersonnelNumber" : "00010025",
+"Pernr" : "OFFICER ERP[ANKIT MEHTA]",
+"ItemText" : "",
+"RaceApprovalAmount" : "0.000"
+},
+{
+"RaceNumber" : " ",
+"FiscalYear" : "2019",
+"Plant" : "JKHO",
+"ItemNo" : "0005",
+"PersonnelNumber" : "00010098",
+"Pernr" : "GENERAL MANAGER[VIKAS CHOUDHARY]",
+"ItemText" : "",
+"RaceApprovalAmount" : "0.000"
+},
+{
+"RaceNumber" : " ",
+"FiscalYear" : "2019",
+"Plant" : "JKHO",
+"ItemNo" : "0006",
+"PersonnelNumber" : "00010021",
+"Pernr" : "DEFAULT POSITION[KANKROLI C&G-1 STAFF SUB STAFF]",
+"ItemText" : "",
+"RaceApprovalAmount" : "0.000"
+},
+{
+"RaceNumber" : " ",
+"FiscalYear" : "2019",
+"Plant" : "JKHO",
+"ItemNo" : "0007",
+"PersonnelNumber" : "00010017",
+"Pernr" : "DEFAULT POSITION[]",
+"ItemText" : "",
+"RaceApprovalAmount" : "0.000"
+},
+{
+"RaceNumber" : " ",
+"FiscalYear" : "2019",
+"Plant" : "JKHO",
+"ItemNo" : "0008",
+"PersonnelNumber" : "00010016",
+"Pernr" : "BANBURY OPERATOR[FIRST NAME VTP TIME TESTING]",
+"ItemText" : "",
+"RaceApprovalAmount" : "0.000",
+"ApprovalDate" : null
+}
+],
+"NavToCost" : {
+"RaceNumber" : " ",
+"FiscalYear" : "2019",
+"LandedCost" : "1.100",
+"ErectionCommissioning" : "0.100",
+"AnyOtherExpense" : "0.300",
+"ContigencyExpense" : "0.200",
+"PreOperativeExpense" : "0.300"
+},
+"NavToLText" :[
+{
+"TextLine" : "1",
+"TextDescription" : "lONG tEXT for race cREATION TESTING."
+},
+{
+"TextLine" : "2",
+"TextDescription" : "lONG tEXT for race cREATION TESTING-2."
+}
+]
+}

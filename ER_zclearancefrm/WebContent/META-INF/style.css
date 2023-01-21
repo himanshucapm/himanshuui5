@@ -1,0 +1,115 @@
+.tblHedertext .sapMListHdr {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: larger;
+    background-color: #f7f7f7;
+    font-family: Arial,Helvetica,sans-serif;
+    color: #333333;
+    height: 1.5rem;
+    font-weight: 700;
+    line-height: 1.5rem;
+    padding: 0 35rem;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    border-bottom: 1px solid black;
+}
+
+
+
+.sapUiSizeCompact .sapMInputBase.sapMTextArea .sapMTextAreaInner {
+    line-height: 0.9rem;
+    padding: 0.1875rem 0.5rem;
+}
+
+
+
+.tabbarcss .sapMITH {
+    box-shadow: 0rem 0rem cornsilk;
+    background-color: cornsilk;
+    height: 87px;
+    border-bottom: 0.125rem solid cornsilk;
+}
+
+.sapMLIBShowSeparator>td {
+    border-top: 1px solid cornsilk;
+}
+
+.sapMITB.sapUiResponsiveContentPadding>.sapMITBContainerContent>.sapMITBContent {
+    padding: 0rem 0rem;
+    box-sizing: border-box;
+}
+
+
+.inputlbl .sapMInputBaseInner {
+    color: #000000;
+    background: #fafafa;
+    border: 0px solid #bfbfbf;
+    -webkit-appearance: none;
+    font-size: 0.875rem;
+    font-family: Arial,Helvetica,sans-serif;
+    line-height: normal;
+   height: 100%;
+    box-sizing: border-box;
+}
+.flexExpDetails1 {
+    color: #4682b4 !important;
+    font-size: 16px;
+    font-weight: 730;
+    text-decoration: underline;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-family: Arial,Helvetica,sans-serif;
+    line-height: normal;
+   
+}
+
+.flexExpDetails {
+	    height: 40px;
+	  	margin-left: 5px;
+	  	padding-top: 5px;
+    	margin-right: 5px;
+		background-color: cornsilk !important;
+}
+
+.sapMITBFilter .sapMITBText {
+    line-height: 0.9375rem;
+    overflow: hidden;
+    padding: 0.375rem 0 0;
+    position: relative;
+    text-overflow: ellipsis;
+       width: auto;
+    color: #333333;
+    text-shadow: 0 0 0.125rem #ffffff;
+}
+
+.form .sapUiFormResGrid.sapUiFormBackgrTranslucent>div {
+	padding-top: 0px !important;
+	padding-bottom: 0px !important;
+}
+
+
+.coreTitleHidden .sapUiFormTitle {
+	display: none !important;
+}
+
+	.lab .sapUiRespGridMedia-Std-Phone.sapUiFormResGridCont>.sapUiFormElementLbl:not(.sapUiRespGridSpanS12)>.sapMLabel, .sapUiRespGridMedia-Std-Tablet.sapUiFormResGridCont>.sapUiFormElementLbl:not(.sapUiRespGridSpanM12)>.sapMLabel, .sapUiRespGridMedia-Std-Desktop.sapUiFormResGridCont>.sapUiFormElementLbl:not(.sapUiRespGridSpanL12)>.sapMLabel, .sapUiRespGridMedia-Std-LargeDesktop.sapUiFormResGridCont>.sapUiFormElementLbl:not(.sapUiRespGridSpanXL12)>.sapMLabel {
+    text-align: right !important;
+    float: none !important;
+    font-size:14px !important;
+    position: relative !important;
+}
+
+ .sapUiFormResGrid>div {
+    padding: 0rem 0.00rem;
+    box-sizing: border-box !important; 
+}
+
+
+
+.sapUiForm .sapUiFormTitle {
+    border-width: 1px;
+    border-color: black;
+    font-weight: 700;
+    font-family: Arial,Helvetica,sans-serif;
+}
