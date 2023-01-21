@@ -1,0 +1,36 @@
+.mycustomclass{
+	color:red;
+}
+.tblgrid .sapMListTblCell {
+    vertical-align: middle;
+    /* border: 1.1px solid #d6aeae; */
+    background: #d0d0d2;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px; 
+} 
+
+.tblgrid2 .sapMListTblCell {
+    vertical-align: middle;
+    border: 1.1px solid #f7f7f7;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+} 
+ 
+.cliconset{
+    content: attr(data-sap-ui-icon-content);
+    speak: none;
+    font-weight: bold;
+    -webkit-font-smoothing: antialiased;
+    color: #00803a;
+    height: 20px;
+    font-size: 24px;
+ }
+.classbtn {
+   width: 256px;
+   height: 185px;
+   margin-left: 141px;
+}
