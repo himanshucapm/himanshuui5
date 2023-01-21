@@ -1,0 +1,46 @@
+.tblgrid .sapMListTblCell {
+    vertical-align: middle;
+    border: 1.1px solid #d6aeae;
+    background: #d0d0d2;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+} 
+.sapUiSizeCompact .sapUiFormContainerTitle>.sapUiFormTitle {
+    height: 0rem;
+    line-height: 2rem;
+}
+.sapUiFormTitle 
+{
+	color:black !important;
+	font-weight:bold !important;
+}
+.sapMTitle
+{
+	font-weight:bold !important;
+}
+.sapMListTbl .sapMLabel {
+    padding-top: 1px;
+    font-size: 0.875rem;
+    color: #4d4d53;
+    font-weight: bold !important;
+}
+.copa_sec table tbody tr:nth-child(odd){
+	background:#f9f9f9;
+}
+.sapMITBFilter .sapMITBText {
+    width: 8.5rem !important;
+    color: #f7f7f7 !important;
+}
+.heading{
+	font-weight:bold;
+}
+
+.fragmentdownload .sapUiSizeCompact .sapMTB.sapMListHdrTBar {
+    height: 2rem;
+}
+
+.sapUiSizeCompact .sapMTB.sapMListHdrTBar {
+    height: 1.5rem;
+}

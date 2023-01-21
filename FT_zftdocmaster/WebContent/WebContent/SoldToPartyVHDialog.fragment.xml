@@ -1,0 +1,13 @@
+<core:FragmentDefinition xmlns="sap.m"
+						xmlns:core="sap.ui.core" 
+						xmlns:t="sap.ui.table" 
+						busyIndicatorDelay="0">
+	<SelectDialog title="Sold to Party"
+		class="sapUiPopupWithPadding sapUiSizeCompact" items="{oPageModel>/soldToPartyItems}"
+		liveChange="_handleSoldToPartyVHSearch" confirm="_handleSoldToPartyF4Confirm"
+		cancel="_handleValueHelpClose">
+		<StandardListItem title="{oPageModel>SoldToParty}"
+							info="{oPageModel>Name1}" />
+	</SelectDialog>
+
+</core:FragmentDefinition>

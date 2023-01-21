@@ -1,0 +1,11 @@
+.sapMLIB.sapMObjLItem {
+    padding: 0.5rem;
+    padding-top: 0.3rem;
+    padding-right: 1rem;
+    padding-bottom: 0.1rem;
+    padding-left: 1rem;
+}
+
+.sapMTextNoWrap, .sapMTextMaxLine {
+    color: #12457a !important;
+}

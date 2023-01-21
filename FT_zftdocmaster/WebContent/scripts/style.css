@@ -1,0 +1,45 @@
+.myStateError{
+	border-color: #e52929 !important;
+	border-width: 2px !important;
+}
+.mainPage .sapMBarContainer{
+	background-color: #90a8d2b0 !important;
+	font-size:12px bold;	  
+}
+.mainPage1 .sapMTitle > span{
+	font-weight:700;
+	color: #000000;
+}
+.sapMTitle > span {
+    color: #000000;
+    font-weight: 800;
+}  
+ .sapMText > span{
+text-align: center;
+font-weight: 700;	
+}
+.sapUiFormTitleH5 {
+    font-size: 1.2rem;
+}
+ .sapMText{
+ font-weight: bold;
+ text-shadow: 0px rgba(255,255,255,0.5);
+ }
+.sapUiSizeCompact .sapMTB {
+    height: 2rem;
+   
+}
+.sapMIBar > .sapMBarChild:last-child {
+    margin-right: 0.25rem;
+    font-weight: 900;
+}
+.sapMTB-Transparent-CTX .sapMLabel {
+    text-shadow: 0 0px 0 #ffffff !important;
+}
+
+.viewCQ tbody tr:nth-child(even) {
+    background: rgb(245, 245, 245);
+}
+.toSpace.sapUiRespGridMedia-Std-Desktop.sapUiRespGridHSpace0>.sapUiRespGridSpanL1 {
+    width: 9;
+}

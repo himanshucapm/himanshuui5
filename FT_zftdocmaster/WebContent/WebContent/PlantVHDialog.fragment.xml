@@ -1,0 +1,11 @@
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:t="sap.ui.table" busyIndicatorDelay="0">
+	<SelectDialog title="Plants" class="sapUiPopupWithPadding sapUiSizeCompact"
+		items="{oPageModel>/plantItems}" liveChange="_handlePlantValueHelpSearch" confirm="_handlePlantF4Confirm"
+		cancel="_handleValueHelpClose">
+		<StandardListItem
+			title="{oPageModel>Plant}"
+			info="{oPageModel>PlaneName}" />
+	</SelectDialog>
+	
+</core:FragmentDefinition>

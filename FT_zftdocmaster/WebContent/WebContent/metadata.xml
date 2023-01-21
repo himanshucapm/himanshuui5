@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<edmx:Edmx Version="1.0"
+	xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+	xmlns:sap="http://www.sap.com/Protocols/SAPData">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema Namespace="ZSA_USERS_SRV" xml:lang="en"
+			sap:schema-version="0000" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			
+			
+					<EntityType Name="PurchasingReq" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="PurchaseNo" />
+				</Key>
+				<Property Name="PurchaseNo" Type="Edm.String" Nullable="false"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" />
+				<Property Name="SupplySite" Type="Edm.String" Nullable="false"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false" />
+					<Property Name="ReceivingSite" Type="Edm.String" Nullable="false"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false" />
+					<Property Name="PurchasingGroup" Type="Edm.String" Nullable="false"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false" />
+					<Property Name="DeliveryDate" Type="Edm.String" Nullable="false"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false" />
+					
+				
+				<NavigationProperty Name="PurchaseSet"
+					Relationship="ZSA_USERS_SRV.as_Purchase" FromRole="FromRole_as_Purchase"
+					ToRole="ToRole_as_Purchase" />
+			</EntityType>
+			
+			<Association Name="as_Purchase" sap:content-version="1">
+				<End Type="ZSA_USERS_SRV.PurchasingReq" Multiplicity="1"
+					Role="FromRole_as_Purchase" />
+				<End Type="ZSA_USERS_SRV.orderView" Multiplicity="*"
+					Role="ToRole_as_Purchase" />
+					
+				<ReferentialConstraint>
+					<Principal Role="FromRole_as_Purchase">
+						<PropertyRef Name="PurchaseNo" />
+					</Principal>
+					<Dependent Role="ToRole_as_Purchase">
+						<PropertyRef Name="PurchasefgfNo" />
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<AssociationSet Name="as_Purchaseset" Association="ZTEST_SV_SRV.as_Purchase"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false"
+					sap:content-version="1">
+					<End EntitySet="PurchasingReqSet" Role="FromRole_as_vendor" />
+					<End EntitySet="PurchasingSet" Role="ToRole_as_vendor" />
+				</AssociationSet>
+			<EntityType Name="orderView">
+				<Key>
+					<PropertyRef Name="PurchaseNo"/>
+					
+				</Key>
+				<Property Name="PurchaseNo" Type="Edm.String" Nullable="false"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" />
+				
+					<Property Name="Article" Type="Edm.String" Nullable="false"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false" />
+					<Property Name="Article_Description" Type="Edm.String" Nullable="false"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false" />
+					<Property Name="Quantity" Type="Edm.String" Nullable="false"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false" />
+					<Property Name="UoM" Type="Edm.String" Nullable="false"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false" />
+					
+				</EntityType>
+				<EntityContainer Name="ZSA_USERS_SRV_Entities"
+				m:IsDefaultEntityContainer="true"  xmlns:p6="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+				<EntitySet Name="PurchasingReqSet" EntityType="ZSA_USERS_SRV.PurchasingReq"
+					sap:pageable="false" sap:content-version="1" />
+					<EntitySet Name="orderView" EntityType="ZSA_USERS_SRV.orderView"/>
+			</EntityContainer>
+				
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
