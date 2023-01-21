@@ -1,0 +1,30 @@
+
+
+.clashedCust  .sapMIBar-CTX .sapMLabel {
+    color: #000000;
+    font-weight: 750;
+}
+
+
+
+.tabbar {
+    height: 0rem;
+    line-height: 2rem;
+}
+
+.sapUiSizeCompact .sapUiFormContainerTitle>.sapUiFormTitle {
+    height: 1.5rem;
+    line-height: 2rem;
+    font-weight: 750;
+}
+
+.text {
+    font-weight: bold;
+    text-align: left;
+    color: black;
+}
+
+.tooBar {
+    height: 2rem;
+    background-color: antiquewhite;
+}

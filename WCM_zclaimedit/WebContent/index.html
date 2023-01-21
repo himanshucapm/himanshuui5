@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    	<meta charset="UTF-8">
+    	<title>Create Inspection</title>
+<script src="/sap/public/bc/ui5_ui5/1/resources/sap/ushell_abap/bootstrap/abap.js"></script>
+				<script id="sap-ui-bootstrap"
+			src="/sap/public/bc/ui5_ui5/1/resources/sap-ui-cachebuster/sap-ui-core.js"
+			data-sap-ui-libs="sap.m"
+			data-sap-ui-theme="sap_bluecrystal"
+			data-sap-ui-compatVersion="edge"
+			data-sap-ui-resourceroots='{"com.acute.insp": ""}'>
+ 		</script>  
+<!--     	<script id="sap-ui-bootstrap" -->
+<!--       src="resources/sap-ui-core.js" -->
+<!--       data-sap-ui-libs="sap.m" -->
+<!--       data-sap-ui-compatVersion="edge" -->
+<!--       data-sap-ui-theme="sap_bluecrystal" -->
+<!--       data-sap-ui-xx-bindingSyntax="complex" -->
+<!--       data-sap-ui-resourceroots='{"com.acute.insp": "./"}'> -->
+<!--       </script> -->
+		<script>   
+		    sap.ui.getCore().attachInitEvent(function() {
+		        var oComponentContainer = new sap.ui.core.ComponentContainer({
+		          height : "100%",
+		          name : "com.acute.insp"
+			  }).placeAt("content");
+		    });
+	    </script>
+  	</head>
+    <body class="sapUiBody" id="content"></body>
+</html>
+
+
+

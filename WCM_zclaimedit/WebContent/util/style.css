@@ -1,0 +1,29 @@
+/* Enter your custom styles here */
+.sapUiSizeCompact .sapMTB {
+    height: 0rem;
+    
+}
+
+.myStateError{
+	border-color: #e52929 !important;
+	border-width: 2px !important;
+}
+
+.sapUiSizeCompact .sapMPageWithFooter>section {
+    bottom: 2.5rem;
+    /* background-color:#dff2f3; */
+}
+
+
+.sapUiSizeCompact .sapUiFormContainerTitle > .sapUiFormTitle {
+    height: 2rem;
+    line-height: 2rem;
+    color: gray;
+    font-weight: bold;
+}
+
+.sapMLabel{
+    font-size: 0.900rem;
+    font-weight: bold;
+    color:black !important;
+}

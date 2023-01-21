@@ -1,0 +1,54 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form">
+	<Dialog showHeader="false" class="sapUiSizeCompact" contentWidth="70%">
+		<subHeader>
+			<Bar>
+				<contentMiddle>
+					<Text text="Earliy Failure Details"/>
+				</contentMiddle>
+			</Bar>
+		</subHeader>
+		<content>
+			<f:SimpleForm minWidth="1024" maxContainerCols="2" editable="true" layout="ResponsiveGridLayout" labelSpanL="4" labelSpanM="4"
+				emptySpanL="1" emptySpanM="1" columnsL="3" columnsM="2" class="editableForm">
+				<f:content>
+					<core:Title text=""/>
+					<Label text="Application"/>
+					<Input value="{jModel>/d/Application}" enabled="false" id="idEarApp"/>
+					<Label text="Route"/>
+					<Input value="{jModel>/d/Route}" enabled="false" id="idEarRou"/>
+					<Label text="Lead (Kms)"/>
+					<Input value="{jModel>/d/LeadKms}" enabled="false" id="idEarLed" type="Number"/>
+					<Label text="Speed (Kmph)"/>
+					<Input value="{jModel>/d/Speed}" enabled="false" id="idEarSped" type="Number"/>
+					<Label text="Con/Mfg"/>
+					<Input value="{jModel>/d/Mfg}" enabled="false" id="idEarCon"/>
+					<Label text="Document1"/>
+					<Input value="{jModel>/d/Document01}" enabled="false" id="idDoc01"  maxLength="26"/>
+					<Button id="btnDoc01" press="onbtnDoc01" icon="sap-icon://display" tooltip="Image01"></Button>
+					
+					<core:Title text=""/>
+					<Label text="GVW (MT)"/>
+					<Input value="{jModel>/d/Gvw}" enabled="false" id="idEarGvw" type="Number"/>
+					<Label text="Fitment Position"/>
+					<Select enabled="false" id="idEarFpos" items="{jModel>/d/FitmentPos}">
+						<core:ListItem key="{jModel>/d/FitmentPos}" text="{jModel>/d/FitmentPos}"></core:ListItem>
+					</Select>
+					<Label text="Rim Profile"/>
+					<Input value="{jModel>/d/RimProfile}" enabled="false" id="idEarRim"/>
+					<Label text="IP in PSI"/>
+					<Input value="{jModel>/d/Psi}" enabled="false" id="idEarPSI"/>
+					<Label text="Payload"/>
+					<Input value="{jModel>/d/Payload}" enabled="false" id="idEarPay"/>
+					
+					<Label text="Document2"/>
+					<Input value="{jModel>/d/Document02}" enabled="false" id="idDoc02" maxLength="26"/>
+					<Button id="btnDoc02" press="onbtnDoc02" icon="sap-icon://display" tooltip="Image02"></Button>
+				</f:content>
+			</f:SimpleForm>
+		</content>
+		<buttons>
+			<!-- 		<Button text="Close"  visible="true" press="onTabelFilterClose" />	 -->
+			<Button text="OK" visible="true" press="onTabelFilterOk"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,311 @@
+<mvc:View controllerName="com.insp.zinspec_d.controller.Inspection" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns:u="sap.ui.unified" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout"
+	class="sapUiSizeCompact" xmlns:core="sap.ui.core">
+	<App>
+		<pages>
+			<Page title="{i18n>title}">
+				<customHeader>
+					<Bar>
+						<contentMiddle>
+							<Label text="Display Inspection"></Label>
+						</contentMiddle>
+						<contentRight></contentRight>
+					</Bar>
+				</customHeader>
+				<content>
+					<VBox class="sapUiSmallMargin">
+						<f:SimpleForm id="SimpleFormToolbar0" minWidth="1024" maxContainerCols="2" editable="true" layout="ResponsiveGridLayout" labelSpanL="4"
+							labelSpanM="4" emptySpanL="1" emptySpanM="1" columnsL="3" columnsM="1" class="editableForm">
+							<f:content>
+								<core:Title text="Header Details "/>
+								<Label text="Inspection No"/>
+								<Input enabled="true" id="idClaimno" valueHelpRequest="onClaimF4" valueHelpOnly="true" showValueHelp="true"/>
+								<Label text="Type of Claim"/>
+								<Input enabled="false" id="idClaim" valueHelpRequest="onTypeofClaim" valueHelpOnly="true" showValueHelp="true"
+									value="{parts:[{path:'jModel>/d/ClaimTypDescr'},{path:'jModel>/d/ClaimTyp'}], formatter:'com.acute.insp.util.Formatter.Code'}"/>
+								<Label text="Ticket Number" id="idTnolbl"/>
+								<Input enabled="false" id="idTno" value="{jModel>/d/TicketNo}"/>
+								<Label text="Type Of Cutomer"/>
+								<Input value="{jModel>/d/CustTypeDescr}" enabled="false" id="idCustomer"></Input>
+								<Label text="Inspection Code"/>
+								<Input value="{jModel>/d/InspCode}" enabled="false" id="idinsCode"></Input>
+								<core:Title text=""/>
+								<Label text="Claim Recv Depot"/>
+								<Input id="idClaimRecDepo" enabled="false" value="{jModel>/d/ClaimRecDepo}"/>
+								<Label text="Claim Date"/>
+								<DatePicker id="iddepo" enabled="false" placeholder="Claim Date"
+									dateValue="{path:'jModel>/d/ClaimDate', formatter:'com.acute.insp.util.Formatter.date'}"/>
+								<Label text="Ticket Date" id="idTkDatelbl"/>
+								<DatePicker id="idTkDate" enabled="false" placeholder="Ticket Date"
+									dateValue="{path:'jModel>/d/TicketDate', formatter:'com.acute.insp.util.Formatter.date'}"/>
+								<Label text="Fitment Type"/>
+								<Input enabled="false" id="idFitment" value="{jModel>/d/FitType}"></Input>
+								<Label text="Inspector Name"/>
+								<Input enabled="false" id="idInsName" value="{jModel>/d/InspectName}"></Input>
+								<core:Title text="Customer Details"/>
+								<Label text="Phone No."/>
+								<Input enabled="false" type="Tel" liveChange="NumberValid" id="idPhone1" value="{jModel>/d/CustomerTelf1}"/>
+								<Label text="First Name"/>
+								<Input enabled="false" id="idFname" submit="onEnter" value="{jModel>/d/CustomerFname}" liveChange="validateCharacter"/>
+								<Label text="Last Name"/>
+								<Input id="idLname" enabled="false" value="{jModel>/d/CustomerLname}" liveChange="validateCharacter"/>
+							</f:content>
+						</f:SimpleForm>
+					</VBox>
+					
+					<html:hr/>
+					
+					<VBox id="idVbox" visible="false" class="sapUiSmallMargin">
+						<f:SimpleForm id="SimpleFormToolbar" minWidth="1024" maxContainerCols="2" editable="true" layout="ResponsiveGridLayout" labelSpanL="4"
+							labelSpanM="4" emptySpanL="1" emptySpanM="1" columnsL="2" columnsM="1" class="editableForm">
+							<f:content>
+								<core:Title text="Sales Details"/>
+								<Label text="Dealer Code"/>
+								<Input enabled="false" id="idCountry" value="{jModel>/d/DealerCode} - {jModel>/d/DealerName}"></Input>
+								<Label text="Sales Depo"/>
+								<Input enabled="false" id="idState" valueHelpRequest="onStateHelp" valueHelpOnly="true" showValueHelp="true" value="{jModel>/d/SalesDepot}"/>
+								<Label text="Sales Inv No"/>
+								<Input id="idDistrict" value="{jModel>/d/SalesInvNo}" enabled="false" valueHelpRequest="onDistrictHelp" valueHelpOnly="true"
+									showValueHelp="true"/>
+								<Label text="Sales Inv Dt"/>
+								<DatePicker id="idCity" enabled="false" dateValue="{path:'jModel>/d/SalesInvDt', formatter:'com.acute.insp.util.Formatter.date'}"/>
+								<Label text="Sold to Party"/>
+								<Input id="idCode" value="{jModel>/d/SoldToParty}" enabled="false" liveChange="NumberValid"/>
+								<core:Title text="OEM Details"/>
+								<Label text="Franchise Comp Name" visible="true" id="idFCNameLabel"/>
+								<Input enabled="false" visible="true" id="idFCNameInput" value="{jModel>/d/CompanyName}" valueHelpRequest="onFranch" valueHelpOnly="true"
+									showValueHelp="true"/>
+								<Label text="Franchise Name" visible="true" id="idFNameLabel"/>
+								<Input enabled="false" visible="true" value="{jModel>/d/FranhiseName}" id="idFNameInput"/>
+								<Label text="Franchise Phone Number" visible="true" id="idFPNoLabel"/>
+								<Input enabled="false" visible="true" id="idFPNoInput" value="{jModel>/d/FranhiseContact}"/>
+							</f:content>
+						</f:SimpleForm>
+					</VBox>
+					
+					<html:hr/>
+					
+					<Panel id="IdPanel" visible="false">
+						<f:SimpleForm id="SimpleFormToolbar04" minWidth="1024" maxContainerCols="2" editable="true" layout="ResponsiveGridLayout" labelSpanL="4"
+							labelSpanM="4" emptySpanL="1" emptySpanM="1" columnsL="2" columnsM="1" class="editableForm">
+							<f:content>
+								<core:Title text="Tyre Details"/>
+								<Label text="Item code"/>
+								<Input enabled="false" id="idTyreCode" value="{jModel>/d/ItemCode}" valueHelpRequest="IteamCodeTyre" valueHelpOnly="true"
+									showValueHelp="true"/>
+								<Label text="Stencil Number"/>
+								<Input enabled="false" id="idTyreStn" maxLength="11" value="{jModel>/d/StnclNumber}"/>
+								<Label text="Mould number"/>
+								<Input enabled="false" id="idTyreMDNo" value="{jModel>/d/MouldNo}">
+									<layoutData></layoutData>
+								</Input>
+								<Label text="Vehicle Model"/>
+								<Input id="idTyreVmodel" enabled="false" maxLength="30" value="{jModel>/d/VehModel}"/>
+								<Label text="Registration No"/>
+								<Input id="idTyreRgNo" enabled="false" maxLength="30" value="{jModel>/d/RegNo}"/>
+								<Label text="Product Category"/>
+								<Input id="idTyrePdc" enabled="false" value="{jModel>/d/PrdtCat}"/>
+								<Label text="Product Category Dsc"/>
+								<Input id="idTyrePdcds" enabled="false" value="{jModel>/d/PrdtCatDesc}" valueHelpOnly="true" showValueHelp="true"/>
+								<Label text="Manufacturing Plant"/>
+								<Input id="idTyreMfP" enabled="false" value="{jModel>/d/ManfPlnt}"/>
+								<core:Title text=""/>
+								<Label text="Description"/>
+								<Input enabled="false" id="idTyreodeDsc" value="{jModel>/d/ItemDesc}"/>
+								<Label text="Tally Flag"/>
+								<Input enabled="false" id="idTyreTally" value="{jModel>/d/TlyFlg}"></Input>
+								<Label text="Submission no"/>
+								<Input id="idTyreSubno" enabled="false" value="{jModel>/d/SubmNo}"/>
+								<Label text="Sunmission Reason"/>
+								<Input enabled="false" id="idTyreSubres" value="{jModel>/d/SubmReason}"></Input>
+								<Label text="Chassis No"/>
+								<Input id="idTyreChNo" enabled="false" maxLength="30" valueHelpRequest="onTypeofDepo" valueHelpOnly="true" showValueHelp="false"
+									value="{jModel>/d/ChassisNo}"/>
+								<Label text="Prod month"/>
+								<Input id="idPdMon" enabled="false" valueHelpRequest="onTypeofDepo" valueHelpOnly="true" showValueHelp="true" value="{jModel>/d/PrdMonth}"/>
+								<Label text="Prod Year"/>
+								<Input id="idProdYear" enabled="false" valueHelpRequest="onTypeofDepo" valueHelpOnly="true" showValueHelp="true" value="{jModel>/d/PrdYear}"/>
+							</f:content>
+						</f:SimpleForm>
+					</Panel>
+					<html:hr/>
+					<Panel id="IdPanel11" visible="false">
+						<f:SimpleForm minWidth="1024" maxContainerCols="2" editable="true" layout="ResponsiveGridLayout" labelSpanL="4" labelSpanM="4"
+							emptySpanL="1" emptySpanM="1" columnsL="3" columnsM="1" class="editableForm">
+							<f:content>
+								<core:Title text="Tyre Inspection Details"/>
+								<Label text="NSD" required="true"/>
+								<Input enabled="false" id="idTyreNsd" value="{jModel>/d/Nsd}" valueHelpRequest="onFranch" valueHelpOnly="true" showValueHelp="true"/>
+								<Label text="% Wear"/>
+								<Input enabled="false" id="idTyreWear" value="{jModel>/d/PercentageWear}" valueHelpRequest="IteamCodeTube" valueHelpOnly="true"
+									showValueHelp="true"/>
+								<core:Title text=""/>
+								<Label text="Total Nsd"/>
+								<Input id="idTyreTNSD" enabled="false" value="{jModel>/d/TotalNsd}"/>
+								<Label text="% Discount"/>
+								<Input id="idTyreDis" enabled="false" value=""/>
+								<core:Title text=""/>
+								<Label text=" "/>
+								<Button id="Id_EntButton" press="onFragment" text="Early Failure Details"/>
+								<Label text="Revised Discount"/>
+								<Input id="idTyreRdis" enabled="false" value="{jModel>/d/RevisedDis}"/>
+							</f:content>
+						</f:SimpleForm>
+					</Panel>
+					<html:hr/>
+					<Panel id="IdPanel1" visible="false">
+						<f:SimpleForm id="SimpleFormToolbar05" minWidth="1024" maxContainerCols="2" editable="true" layout="ResponsiveGridLayout" labelSpanL="4"
+							labelSpanM="4" emptySpanL="1" emptySpanM="1" columnsL="2" columnsM="1" class="editableForm">
+							<f:content>
+								<core:Title id="idHeaderTube" text="Tube Details"/>
+								<Label text="Item code"/>
+								<Input enabled="false" id="idTubeCode" value="{jModel>/d/ItemCode}" valueHelpRequest="IteamCodeTube" valueHelpOnly="true"
+									showValueHelp="true"/>
+								<Label text="Stencil Number"/>
+								<Input enabled="false" id="idTyreStnTube" maxLength="11" value="{jModel>/d/StnclNumber}"/>
+								<Label text="Mould number"/>
+								<Input enabled="false" id="idTyreMDNoTube" value="{jModel>/d/MouldNo}">
+									<layoutData></layoutData>
+								</Input>
+								<Label text="Manufacturing Plant"/>
+								<Input id="idTyreMfPTube" enabled="false" value="{jModel>/d/ManfPlnt}"/>
+								<Label text="Product Category"/>
+								<Input id="idTyreMfPCat" enabled="false" value="{jModel>/d/PrdtCat}"/>
+								<core:Title text=""/>
+								<Label text="Description"/>
+								<Input id="idTubePdc" enabled="false" value="{jModel>/d/ItemDesc}"/>
+								<Label text="Prod month"/>
+								<Input id="idPdMonTube" enabled="false" valueHelpRequest="onTypeofDepo" valueHelpOnly="true" showValueHelp="true"
+									value="{jModel>/d/PrdMonth}"/>
+								<Label text="Prod Year"/>
+								<Input id="idProdYearTube" enabled="false" valueHelpRequest="onTypeofDepo" valueHelpOnly="true" showValueHelp="true"
+									value="{jModel>/d/PrdYear}"/>
+							</f:content>
+						</f:SimpleForm>
+					</Panel>
+					<html:hr/>
+					<Panel id="IdPanel2" visible="false">
+						<f:SimpleForm id="SimpleFormToolbar06" minWidth="1024" maxContainerCols="2" editable="true" layout="ResponsiveGridLayout" labelSpanL="4"
+							labelSpanM="4" emptySpanL="1" emptySpanM="1" columnsL="2" columnsM="1" class="editableForm">
+							<f:content>
+								<core:Title id="idDetailsTube" text="Tube Inspection Details"/>
+								<Label text="Revised Discount" required="true"/>
+								<Input enabled="false" id="idInsDic" liveChange="NumberValid" value="{jModel>/d/RevisedDis}" valueHelpRequest="IteamCodeFlap"
+									valueHelpOnly="false" showValueHelp="false" submit="onReviseDis" change="onReviseDis"/>
+								<Label text="% Wear"/>
+								<Input enabled="false" id="idWeInsp" value="{jModel>/d/PercentageWear}" valueHelpRequest="IteamCodeFlap" valueHelpOnly="false"
+									showValueHelp="true"/>
+								<core:Title text=""/>
+								<Label text="Vendor Code" required="true"/>
+								<Input id="idTube_venCode" enabled="false" value="{jModel>/d/VendorCode}" valueHelpRequest="onVend" valueHelpOnly="true"
+									showValueHelp="true"/>
+								<Label text="Mould No" required="true"/>
+								<Input id="idMDNo" enabled="false" liveChange="NumberValid" value="{jModel>/d/MouldNo}" change="onModuleSubmit" submit="onModuleSubmit"
+									maxLength="4"/>
+								<Label text="Prod month" required="true"/>
+								<Input id="idPdMonTubeinsp" value="{jModel>/d/ProdMonth}" enabled="false" maxLength="4"/>
+							</f:content>
+						</f:SimpleForm>
+					</Panel>
+					<Panel id="IdPanel24" visible="false">
+						<f:SimpleForm minWidth="1024" maxContainerCols="2" editable="true" layout="ResponsiveGridLayout" labelSpanL="4" labelSpanM="4"
+							emptySpanL="1" emptySpanM="1" columnsL="2" columnsM="1" class="editableForm">
+							<f:content>
+								<core:Title text="Further Item Details"/>
+								<Label text="Pro. Inspector Mark"/>
+								<Input id="idins_insMrk" maxLength="4" value="{jModel>/d/PrdInspMark}"/>
+								<Label text="Quality Mark"/>
+								<Input id="idins_mark" enabled="false" maxLength="5" value="{jModel>/d/QltInspMark}"/>
+								<Label text="Builder Mark"/>
+								<Input id="idinsp_bldmrk" enabled="false" maxLength="15" value="{jModel>/d/BuilderMark}"/>
+								<core:Title text="SKU Details"/>
+								<Label text="SKU Class" required="true"/>
+								<Select id="idinspSkuClass">
+									<items>
+										<core:Item text="{jModel>/d/SkuClass}" key="{jModel>/d/SkuClass}"/>
+									</items>
+								</Select>
+								<Label text="Batch" required="true"/>
+								<Input id="idins_Batch" enabled="false" maxLength="10" value="{jModel>/d/Charg}"/>
+								<Label text="Revised Discount" required="true"/>
+								<Input id="idinsp_furRevDis" enabled="false" change="onReviseDis" value="{jModel>/d/RevisedDis}"/>
+							</f:content>
+						</f:SimpleForm>
+					</Panel>
+					<Panel id="IdPanelDefect" visible="false">
+						<f:SimpleForm minWidth="1024" maxContainerCols="2" editable="true" layout="ResponsiveGridLayout" labelSpanL="4" labelSpanM="4"
+							emptySpanL="1" emptySpanM="1" columnsL="3" columnsM="1" class="editableForm">
+							<f:content>
+								<core:Title text="Defect Details"/>
+								<Label text="Code Group" required="true"/>
+								<Input enabled="false" id="idinsCdGp" value="{jModel>/d/CodeGrpTxt}" valueHelpRequest="InsGpCodeHelp" valueHelpOnly="true"
+									showValueHelp="true"/>
+								<core:Title text=""/>
+								<Label text="Major Defect Code" required="true"/>
+								<Input enabled="false" id="idinsMjDc" value="{jModel>/d/MajorDefectTxt}" valueHelpRequest="InsMjDCodeHelp" valueHelpOnly="true"
+									showValueHelp="true"/>
+								<core:Title text=""/>
+								<Label text="Minor Defect Code"/>
+								<Input enabled="false" id="idinsMnDc" value="{jModel>/d/MinorDefectTxt}" valueHelpRequest="InsMnDCodeHelp" valueHelpOnly="true"
+									showValueHelp="true"/>
+							</f:content>
+						</f:SimpleForm>
+					</Panel>
+					<Panel id="IdPanelFinal" visible="false">
+						<f:SimpleForm minWidth="1024" maxContainerCols="2" editable="true" layout="ResponsiveGridLayout" labelSpanL="4" labelSpanM="4"
+							emptySpanL="1" emptySpanM="1" columnsL="3" columnsM="1" class="editableForm">
+							<f:content>
+								<core:Title text="Inspector Finding Details"/>
+								<Label text="Disposal Decision" required="true"/>
+								<Select enabled="false" id="idInsDD" items="{jModel>/d/}">
+									<core:Item key="{jModel>/d/DisposlDecision}" text="{jModel>/d/DisposlDecisionDescr}"/>
+								</Select>
+								<Label text="Adjustment Mode"/>
+								<Select enabled="false" id="idInsAdjm" items="{jModel>/d/}">
+									<core:Item key="{jModel>/d/AdjustmentMode}" text="{jModel>/d/AdjustmentModeDescr}"/>
+								</Select>
+								<Label text="Award Mode"/>
+								<Select enabled="false" id="idInsAwdm" items="{jModel>/d/}">
+									<core:Item key="{jModel>/d/AwardMode}" text="{jModel>/d/AwardModeDescr}"/>
+								</Select>
+								<Label text="Approval Reason"/>
+								<Select id="idInsAppRsen" enabled="false" items="{jModel>/d/}">
+									<core:Item key="{jModel>/d/ApprovalReason}" text="{jModel>/d/ApprovalReasonDescr}"/>
+								</Select>
+								<Label text="Rejection Reason"/>
+								<Select id="idInsRegRes" enabled="false" items="{jModel>/d/}">
+									<core:Item key="{jModel>/d/RejectionReason}" text="{jModel>/d/RejectionReasonDescr}"/>
+								</Select>
+								<core:Title text=""/>
+								<Label text="Policy no"/>
+								<Input id="idInsPlc" enabled="false" value="{jModel>/d/PolicyNo}" valueHelpRequest="InsPolicyHelp" valueHelpOnly="true" showValueHelp="true"/>
+								<Button id="btnPolicyDoc" press="onPolicyDoc" icon="sap-icon://display"></Button>
+								<Label text="Under Plcy Dis"/>
+								<Input id="idInsPlcDis" enabled="false" value="{jModel>/d/PolicyDiscount}"/>
+								<Label text="Policy Document"/>
+								<Input id="idPolicyDoc" enabled="false" value="{jModel>/d/PolicyDocument}"/>
+								<Label text="Replacment Item"/>
+								<Input id="idInsRepItm" enabled="false" value="{jModel>/d/ReplaceItemCode}"/>
+								<Label text=""/>
+								<CheckBox id="idInsWar" enabled="false" text="Warranty Req Flag"
+									selected="{path:'jModel>/d/WrntReqFlag', formatter:'com.acute.insp.util.Formatter.Warennt'}"/>
+
+								<core:Title text=""/>
+								<Label text="Final% Discount"/>
+								<Input id="idInsFDis" enabled="false" value="{jModel>/d/FinalAmtDis}"/>
+								<Label text="Sales Document"/>
+								<Input enabled="false" id="idSalesDoc" value="{jModel>/d/Vbeln}"/>
+								<Label text="Goods MVT 311"/>
+								<Input enabled="false" id="idIns311" value="{jModel>/d/Mblnr311}"/>
+								<Label text="Goods MVT 451"/>
+								<Input enabled="false" id="idIns451" value="{jModel>/d/Mblnr451}"/>
+								<Label text="Goods MVT 453"/>
+								<Input enabled="false" id="idIns453" value="{jModel>/d/Mblnr453}"/>
+							</f:content>
+						</f:SimpleForm>
+					</Panel>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

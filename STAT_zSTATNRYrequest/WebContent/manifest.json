@@ -1,0 +1,123 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "zexpoinvoice",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.40.12"
+		}
+	},
+
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+
+	"sap.ui5": {
+		"flexEnabled": false,
+		"rootView": {
+			"viewName": "zexpoinvoice.view.View1",
+			"type": "XML",
+			"async": true,
+			"id": "View1"
+		},
+		"dependencies": {
+			"minUI5Version": "1.65.6",
+			"libs": {
+				"sap.ui.layout": {},
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "zexpoinvoice.i18n.i18n"
+				}
+			}
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/style.css"
+			}]
+		},
+	
+
+		 
+		"routing": {
+					"config": {
+						"routerClass": "sap.m.routing.Router",
+						"viewType": "XML",
+						"viewPath": "zexpoinvoice.view",
+						"controlAggregation": "pages",
+						"controlId": "rootControl",
+						
+						"transition": "flip",
+						"clearControlAggregation": false,
+						"serviceUrl": "/sap/opu/odata/sap/ZFT_FIELDTESTING_SRV/",
+						"async" : true
+					},
+					
+								"routes" : [ 
+                   	 {
+								"name" : "page1",
+								"pattern" : "",
+								"target" : "page1"
+									},
+							{
+								"name" : "page2",
+								"pattern" : "page2/{entity}",
+								"target" : "page2"
+									},
+							{
+								"name" : "page3",
+								"pattern" : "page3/{entity}",
+								"target" : "page3"
+									}
+								],
+								
+		             "targets" : {
+								"page1" : {
+									"viewName" : "View1",
+									"viewLevel" : 1
+				 				},
+								"page2" : {
+									"viewName" : "View2",
+									"viewLevel" : 2
+								},
+								"page3" : {
+									"viewName" : "View3",
+									"viewLevel" : 3
+								}
+					}
+								
+				}
+	 
+	
+	
+	}
+}

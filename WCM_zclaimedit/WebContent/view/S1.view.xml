@@ -1,0 +1,423 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:u="sap.ui.unified" xmlns="sap.m" xmlns:f="sap.ui.layout.form"
+	xmlns:l="sap.ui.layout" controllerName="com.acute.ticketReSn.view.S1"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<html:style>
+	.h1 .sapMIBar-CTX .sapMTitle {
+    color: black;
+    font-weight: 700;
+    font-size: larger;
+	}
+	</html:style>
+	
+	<Page title="Ticket Re-Assign" class="sapUiSizeCompact h1">
+		<content>	
+		<Panel expandable="true" expanded="true" width="auto" id="idPanel1">
+					 
+					<headerToolbar>
+						<Toolbar height="3rem">
+							<Title text="Search By" id="idPT1" />
+							<ToolbarSpacer />
+							
+						</Toolbar>
+					</headerToolbar>
+			<HBox  justifyContent="Center">
+			<RadioButton groupName="GroupA" id="RD1" select="OnSingleSelect" text="Ticket Number" selected="false" />
+			<Label width="1rem"></Label>
+			<RadioButton groupName="GroupA" id="RD2" select="OnUnassigned" text="Un-Assigned Tickets" selected="false" />
+			
+			</HBox>
+			<HBox  justifyContent="Center">
+			<Input width="90%" id="IdSearch" visible="false"  search="OnticketSearch" valueHelpRequest="onTicket"  
+			       valueHelpOnly="true" showValueHelp="true" placeholder="Ticket Number" />
+
+			
+			</HBox>
+
+					</Panel>
+			
+			<Panel expandable="true" expanded="true" width="auto" id="idPanel2"
+					expand="panelExpand" visible="false">
+					<headerToolbar>
+						<Toolbar height="3rem">
+							<Title text="Un-Assigned Tickets" id="ID_Name" />
+							<ToolbarSpacer />
+							
+						</Toolbar>
+					</headerToolbar>
+			
+			<Table id="tblDetail" mode="MultiSelect" select="OnTableSelect">
+				<columns>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Label design="Bold" text="Ticket Number" />
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" >
+						<Label design="Bold" text="Date" />
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" >
+						<Label design="Bold" text="Customer Type" />
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Label design="Bold" text="Phone" visible="true" />
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Label design="Bold" text="Customer Name" visible="true" />
+					</Column>
+				</columns>
+			</Table>
+			</Panel>
+			
+			<Panel expandable="true" expanded="true" width="auto" id="idPanel3"
+					expand="panelExpand" visible="false">
+					<headerToolbar>
+						<Toolbar height="3rem">
+							<Title text="Ticket Details"   />
+							<ToolbarSpacer />
+						</Toolbar>
+					</headerToolbar>
+					
+					
+						<VBox class="sapUiSmallMargin">
+						<f:SimpleForm id="SimpleFormToolbar1" minWidth="1024"
+						maxContainerCols="5" editable="true" layout="ResponsiveGridLayout"
+						labelSpanL="5"
+						labelSpanM="5"
+						emptySpanL="0"
+						emptySpanM="0"
+						columnsL="3"
+						columnsM="1" class="editableForm">
+			
+				<f:content>
+				<core:Title text="Header"/>
+				
+			<Label text="Ticket Number" required="false"/>
+			<Input enabled="false" id="idTno" maxLength="14" submit="onEnter" 
+			valueHelpRequest="onTicket"  valueHelpOnly="true" showValueHelp="true" value="{jModel>/d/TicketNo}"
+			 /> 
+								
+			<Label text="Complain Raised By" required="false"/>
+				<Select selectedKey="{jModel>/d/CustType}"  forceSelection="false" 
+				enabled="false" id="idCustomer1" change="onComplainRaisedChange">
+				</Select>
+						
+			<Label text="Ticket Source" required="false"/>
+			<Select selectedKey="{jModel>/d/TicketSource}" forceSelection="false" 
+			enabled="false" visible="true"  id="idTicketSource" change="onTicketSourceChange">
+
+			</Select>
+								
+				<core:Title text=""/>
+								
+				<Label text="Ticket Date" required="false"/>
+				<DatePicker id="idTkDate" enabled="false" placeholder="Ticket Date" 
+				value="{path:'jModel>/d/TicketDate', formatter:'com.acute.ticketReSn.util.Formatter.date1'}"/>
+				<!-- dateValue="{path:'jModel>/d/TicketDate', formatter:'.formatter.date'}"/> -->
+				
+				
+						
+				<Label text="Tyre Fitment Type"/>
+				<Select selectedKey="{jModel>/d/FitType}" forceSelection="false" enabled="false" 
+						id="idFitment" change="onFitmentChange">
+						<items>
+						<core:Item text="OEM" key="OEM"/>
+						<core:Item text="Replacement" key="Replacement"/>
+						</items>
+						</Select>
+						
+				<Label text="CTI Number"  />								
+				<Input enabled="false"  liveChange="NumberValid"  id="idCTINumber" maxLength="20" 
+				       value="{jModel>/d/CtiNumber}"/>		
+								
+				<core:Title text=""/>
+				<Label text="SE Assigned" required="false"/>
+				<Input id="idSE" enabled="false" value="{jModel>/d/SeName}"/>
+								
+				<Label text="Status" required="false"/>
+				<Input id="idStatus" enabled="false" value="{jModel>/d/StatusDesc}"/>
+
+				<Label text="" />	
+				
+						</f:content>
+						</f:SimpleForm>
+					</VBox>			
+										
+					<html:hr/>
+<!-- ***************************second box*********************************** -->
+					
+	<VBox class="sapUiSmallMargin">
+		<f:SimpleForm id="SimpleFormToolbar2" minWidth="1024"
+					  maxContainerCols="5" editable="true" layout="ResponsiveGridLayout"
+					  labelSpanL="4" labelSpanM="4" emptySpanL="1" emptySpanM="1" columnsL="2"
+					  columnsM="1" class="editableForm">
+		<f:content>
+		  <core:Title text="Customer Details"/>
+			<Label text="Type Of Cutomer" required="true"/>
+			<Select selectedKey="{jModel>/d/CustType}" forceSelection="false" visible="false" enabled="false" id="idCustomer">
+				<layoutData></layoutData>
+			</Select>
+			
+			<Label text="Phone No." required="false"/>
+			<Input value="+91" enabled="false" id="idPhone" submit="onEnter">
+				<layoutData>
+				<l:GridData span="XL2 L1 M3 S4"/>
+				</layoutData>
+			</Input>
+			
+			<Input enabled="false" type="Tel" liveChange="NumberValid" id="idPhone1" 
+				   maxLength="10" value="{path:'jModel>/d/CustomerTelf1', formatter:'.formatter.Mobile'}"/>
+								
+			<Label text="Alternate No."/>
+			<Input value="+91" enabled="false" id="idalter" submit="onEnter">
+				<layoutData>
+				<l:GridData span="XL2 L1 M2 S2"/>
+				</layoutData>
+			</Input>
+			<Input enabled="false" type="Tel"  liveChange="NumberValid" id="idphone2" 
+			       submit="onEnter" maxLength="10" value="{path:'jModel>/d/CustomerTelf2', formatter:'.formatter.Mobile'}"/>
+								
+			<Label text="First Name" required="false" />
+			<Input enabled="false" id="idFname" liveChange="validateCharacter" submit="onEnter" value="{jModel>/d/CustomerFname}"/>
+			
+			<Label text="Last Name"/>
+			<Input id="idLname"  enabled="false" liveChange="validateCharacter" value="{jModel>/d/CustomerLname}"/>
+								
+			<Label text="Address1" required="false"/>
+			<Input id="idAdd1"  enabled="false" value="{jModel>/d/CustomerAddr1}"/>
+			
+			<Label text="Address2"/>
+			<Input id="idAdd2"  enabled="false" value="{jModel>/d/CustomerAddr2}"/>
+			
+			<core:Title text=""/>
+			<Label text="Country" required="false"/>
+			<Select selectedKey="IN" enabled="false" id="idCountry" forceSelection="true">
+				<items>
+				<core:Item text="India" key="IN"/>
+				</items>
+			</Select>
+			
+			<Label text="State" required="false"/>
+			<Input enabled="false" id="idState" valueHelpRequest="onStateHelp" valueHelpOnly="true" showValueHelp="true" value="{jModel>/d/RegionDesc}"/>
+			
+			<Label text="District" required="false"/>
+			<Input id="idDistrict" value="{jModel>/d/CustomerCity2}" enabled="false" valueHelpRequest="onDistrictHelp" valueHelpOnly="true" showValueHelp="true"/>
+			
+			<Label text="Location" required="false"/> 
+			<Input id="idLocation"  enabled="false" value="{jModel>/d/CustomerCity1}"/>
+			
+			<!-- <Label text="Postal Code"/>
+			<Input id="idCode" liveChange="NumberValid" maxLength="6" value="{jModel>/d/CustomerPstlz}" enabled="false"/> -->
+			
+			<Label text="Email Id"/>
+			<Input id="idEmail"  enabled="false" value="{jModel>/d/CustomerEmail}"/>
+		</f:content>
+	</f:SimpleForm>
+</VBox>
+<html:hr/>
+					<!-- ************************third box****************************** -->
+					
+<VBox class="sapUiSmallMargin">
+	<f:SimpleForm id="SimpleFormToolbar3" minWidth="1024"
+				  maxContainerCols="5" editable="true" layout="ResponsiveGridLayout"
+				  labelSpanL="4" labelSpanM="4" emptySpanL="1" emptySpanM="1" columnsL="2"
+				  columnsM="1" class="editableForm">
+	<f:content>
+		<core:Title text="Vehicle Details"/>
+								
+		<Label text="Vehicle Type" required="false"/>
+		<Input id="idVehicle"  enabled="false" value="{jModel>/d/VehicleType}" valueHelpRequest="onVehicleType" valueHelpOnly="true" showValueHelp="true"/>
+								
+		<Label text="Vehicle Make" id="lblVehicleMake"/>
+		<Input id="idVehicleMake" value="{jModel>/d/VehicleMake}" valueHelpRequest="onVehicleMake" enabled="false" valueHelpOnly="true" showValueHelp="true"/>
+								
+		<Label text="Vehicle Reg No" id="idvehicleLabel"/>
+		<Input forceSelection="false"  enabled="false" value="{jModel>/d/RegNo}" liveChange="" maxLength="25" id="idregno"/>
+								
+		<Label text="Chassis Number"  id="idchassisLabel"/>
+		<Input enabled="false" value="{jModel>/d/ChassisNo}" liveChange="" maxLength="25" id="idchassisInput"/>
+								
+				
+		<Label text="Others" class="sapUiLargeMarginEnd" id="idOthersLabel"/>
+		<TextArea value="Others" width="100%" enabled="false" visible="false" id="idOthersInput"/>
+								
+		<core:Title text=""/>
+								
+		<Label id="lblVehModel" text="Vehicle Model"/>
+		<Input id="idModel" value="{jModel>/d/VehicleModel}"  
+		       valueHelpRequest="onVehicleModel" change="vehicleModelChange" 
+		       valueHelpOnly="false" enabled="false" showValueHelp="true"/>
+								
+		<Label id="lblVehVariant" text="Vehicle Variant" required="false"/>
+		<Input id="idVariant" valueHelpRequest="onVehicleVariant" valueHelpOnly="false" 
+		       value="{jModel>/d/VehicleVariant}" enabled="false" showValueHelp="true"/>				
+			
+		<Label text="KMS done/Nos. of Hours" id="lblVehKmsDone"/>
+		<Input id="idHours" enabled="false" type="Number" liveChange="onKmsMaxlength" value="{jModel>/d/KmsDone}"/>
+								
+					
+					<Label text="Purchase Date Month/Year"  id="idpurchaseLabell"/>
+								<Select id="idMonth" change="onMonthChange" 
+								        selectedKey="{jModel>/d/VechPurcMonth}" enabled="false" >				
+									<items>
+										<core:Item text=""    key="00"/>										
+										<core:Item text="JAN" key="01" />
+										<core:Item text="FEB" key="02" />
+										<core:Item text="MAR" key="03" />
+										<core:Item text="APR" key="04" />
+										<core:Item text="MAY" key="05" />
+										<core:Item text="JUN" key="06" />
+										<core:Item text="JUL" key="07" />
+										<core:Item text="AUG" key="08" />
+										<core:Item text="SEP" key="09" />
+										<core:Item text="OCT" key="10" />
+										<core:Item text="NOV" key="11" />
+										<core:Item text="DEC" key="12" />
+									</items>
+									<layoutData>
+										<l:GridData span="XL4 L2 M4 S4"/>
+									</layoutData>
+								</Select>
+								<Input id="idYear" minLength="4" maxLength="4" liveChange="YearValid" enabled="false"
+								           value="{jModel>/d/VechPurcYear}" >
+									<layoutData>
+										<l:GridData span="XL4 L2 M4 S4"/>
+									</layoutData>
+								</Input>	
+					
+		
+	</f:content>
+	</f:SimpleForm>
+</VBox>
+		<html:hr/>				
+<!-- **********************Replecement Hidden Box1***************************** -->
+		<VBox id ="idVboxRep" class="sapUiSmallMargin" visible="false">
+			<f:SimpleForm id="SimpleFormToolbar5" minWidth="1024"
+			              maxContainerCols="5" editable="true"  layout="ResponsiveGridLayout"
+						  labelSpanL="4" labelSpanM="4" emptySpanL="1" emptySpanM="1" columnsL="2"
+						  columnsM="1" class="editableForm">
+					
+			<f:content>
+			  <core:Title text="Replacement Details" class="jhClass" />		
+				<Label text="Dealer Code" visible="true" id="idDealCodeLabel"  />
+					<Input enabled="false" visible="true" id="idDealCodeInput" value="{parts:[{path:'jModel>/d/DealerName'},
+						{path:'jModel>/d/DealerCode'}], formatter:'.formatter.Code'}" valueHelpRequest="onDelarCodeType" 
+						valueHelpOnly="true" showValueHelp="true"/>
+					
+					<Label text="Date of Tyre Purchase" visible="true" id="idDTPLabel"/>
+				<!-- 	<Input enabled="false" id="idDtTyreInput" 
+					 dateValue="{path:'jModel>/d/TyrePurcDate', formatter:'.formatter.date'}"/>
+                -->
+               <DatePicker id="idDtTyreInput" enabled="false" placeholder="Ticket Date" 
+				value="{path:'jModel>/d/TyrePurcDate', formatter:'com.acute.ticketReSn.util.Formatter.date1'}"/>
+				
+					 
+					 
+					 
+					 <Label text="County"  visible="true" id="idDealDescLabel"/>
+					<Input enabled="false" visible="true" id="idDealDescInput" value="{jModel>/d/CountyDesc}" />
+						
+				<core:Title text=""/>
+			</f:content>
+		 </f:SimpleForm>		
+		</VBox>	
+
+		
+	<!-- *****************************Franchise Hidden box****************************** --> 
+		<VBox id ="idVboxOem" visible="false" class="sapUiSmallMargin" >
+			<f:SimpleForm id="SimpleFormToolbar6" minWidth="1024" maxContainerCols="6" editable="true" 
+			 layout="ResponsiveGridLayout" labelSpanL="4" labelSpanM="4" emptySpanL="1" emptySpanM="1"
+			 columnsL="2" columnsM="1" class="editableForm">
+				<f:content>
+
+					<core:Title text="OEM Details" class="jhClass" />
+					<!-- OEM Start -->	
+					<Label text="Name" tooltip="Franchise Name" visible="true" id="idFNameLabel" required="false"/>
+					<Input enabled="false" liveChange="validateChar" visible="true" id="idFNameInput" 
+					       value="{jModel>/d/FranhiseName}"/>
+								
+					<Label text="Person Name" tooltip="Franchise Person Name" visible="true" id="idFPNameLabel"/>
+					<Input enabled="false" liveChange="validateChar" visible="true" id="idFPNameInput" 
+					value="{jModel>/d/FranhisePersonName}"/>
+								
+					<Label text="Email" tooltip="Franchise Email" visible="true" id="idFEmailLabel"/>
+					<Input enabled="false" change="validateFranchiseEmail" type="email" visible="true" 
+					       value="{jModel>/d/FranhiseEmail}" id="idFEmailInput"/>
+								
+					<core:Title text=""/>
+								
+					<Label text="Phone Number" tooltip="Franchise Phone Number" visible="true" id="idFPNoLabel"/>
+					<Input enabled="false" liveChange="NumberValid" maxLength="10" visible="true" 
+					       value="{jModel>/d/FranhiseContact}" id="idFPNoInput"/>
+							
+					<Label text="Location" tooltip="Franchise Location" visible="true" id="idFLocationLabel" required="false"/>
+					<Input enabled="false"  liveChange="validateChar" visible="true" 
+					       value="{jModel>/d/FranhiseLocation}" id="idFLocationInput"/>
+						
+				</f:content>
+			 </f:SimpleForm>						
+		</VBox>
+		<!-- ******************************************** -->							
+						
+<!-- ****************************four box******************************* -->
+	<VBox class="sapUiSmallMargin">
+		<f:SimpleForm id="SimpleFormToolbar4" minWidth="1024" maxContainerCols="5" editable="true" 
+					  layout="ResponsiveGridLayout" labelSpanL="4" labelSpanM="4" emptySpanL="1" emptySpanM="1"
+			          columnsL="1" columnsM="1" class="editableForm">
+		<f:content>
+							
+		<Label text="Nos. of Tyres Purchased(Qty)"/>
+			<Input  id="idTyreInput" type="text" enabled="false" value="{jModel>/d/NoOfTyres}" liveChange="NumberValid">
+			<layoutData>
+			<l:GridData span="XL2 L1 M2 S2"/>
+			</layoutData>
+			</Input>
+								
+			<Label text="Nos. of Products involved under complaint(Qty)" required="false" liveChange="NumberValid"/>
+			<Input  id="idTyreInvolve" type="text" enabled="false" value="{jModel>/d/DefectiveTyres}">
+			<layoutData>
+			<l:GridData span="XL2 L1 M2 S2"/>
+			</layoutData>
+			</Input>
+					
+<!-- 				<Label text="Complain Raised By" required="true"/>
+				<Select selectedKey="{jModel>/d/CustType}"  forceSelection="false" 
+				enabled="false" id="idCustomer1" change="onComplainRaisedChange"> -->
+					
+					
+								
+		   <Label text="Probable Condition" />
+		   <Select selectedKey="{jModel>/d/TyreCond}" forceSelection="false" enabled="false" 
+		   		   id="idCondition">
+			<layoutData>
+			<l:GridData span="XL6 L4 M2 S2"/>
+			</layoutData>
+			</Select> 
+								
+			<Label text="Tyre Description/Application"/>
+			<TextArea id="idText" enabled="false" value="{jModel>/d/TyreDesrc}"/>
+			
+			<Label text="Description of Complaint by Customer"/>
+			<TextArea id="idDescComp" enabled="false" value="{jModel>/d/ComplDescr}"/>
+			
+			<Label text="Remarks"/>
+			<TextArea id="idRemarks" enabled="false" value="{jModel>/d/Remarks}"/>
+								
+		</f:content>
+	</f:SimpleForm>
+</VBox>						
+					
+					</Panel>
+		</content>
+		<footer>
+			<Bar>
+				<contentLeft>
+			<!-- 		<Button id="btnDownload" visible="false" text="Download Format"
+						press="downloadExcel" type="Emphasized" /> -->
+				</contentLeft>
+				<contentRight>
+					<Button text="Re-Assign Ticket" press="onTicketSingle" type="Accept" id="Id_bt1" visible="false" />
+					<Button text="Assign Tickets" press="onTickets" type="Emphasized" id="Id_bt2" visible="false" />
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</core:View>
