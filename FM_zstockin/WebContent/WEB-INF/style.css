@@ -1,0 +1,170 @@
+/* .sapUiFormTitle 
+{
+	color:black !important;
+	font-weight:bold !important;
+}
+
+.sapMTitle
+{
+	font-weight:bold !important;
+}
+
+.sapMListTbl .sapMLabel {
+    padding-top: 1px;
+    font-size: 0.875rem;
+    color: #4d4d53;
+    font-weight: bold !important;
+}
+
+.copa_sec table tbody tr:nth-child(odd){
+	background:#f9f9f9;
+}
+
+.SrStatus{
+		color: #4d4d53;
+		font-weight:bold !important;
+		} rks
+		
+.SrRprt{
+		color:black !important;
+		font-weight:bold !important;
+		} rks
+
+.copa_sec table thead tr th{
+		background:#d5e7f3;
+		text-align:center !important;
+		border:1px solid #ddd; 
+		} rks
+ */
+ 
+ 
+ .sapUiSizeCompact .sapMTB.sapMListHdrTBar {
+    height: 1rem;
+}
+
+.flexExpDetails{
+background-color : #cornsilk !important;	
+}
+
+/* .sapUiSizeCompact .sapUiFormContainerTitle>.sapUiFormTitle {
+    height: 0rem !important;
+    line-height: 2rem !important;
+} */
+
+.col .sapMListTbl th {
+   border-bottom: 1px solid #e5e5e5 !important;
+    background: darkcyan;
+}
+
+ .border .sapMITBContent {
+    border-bottom: 0rem;
+}
+
+/* .sapMListTbl th {
+    background: #012e57 !important;
+    border-bottom: 1px solid #e5e5e5 !important;
+} */
+
+
+.tab .sapMListTbl .sapMText, .sapMListTbl .sapMLabel {
+    font-size: 1rem !important;
+    color: black !important;
+    font-weight: normal !important;
+}
+
+.sapMTB-Transparent-CTX .sapMLabel {
+    font-weight: 700 !important;
+    font-family: Arial,Helvetica,sans-serif !important;
+    color: #333333 !important;
+    font-size: larger !important;
+}
+
+
+
+.head1 .sapUiForm .sapUiFormTitle {
+    border-width: 1px;
+    text-align: center;
+    font-size: larger;
+    border-color: black;
+    font-family: Arial,Helvetica,sans-serif;
+	}
+
+	
+	 .sapUiFormContainerTitle>.sapUiFormTitle {
+    height: 2rem !important;
+    line-height: 2rem !important;
+    margin-bottom: unset !important;
+    text-align: -webkit-center !important;
+    font-size: larger !important;
+    font-weight: 700 !important;
+    /* -webkit-margin-bottom-collapse: separate; */
+    /* -webkit-border-horizontal-spacing: inherit; */
+    /* padding-bottom: 10px; */
+	}
+	
+	
+	
+	.space .sapUiFormContainerTitle>.sapUiFormTitle {
+    height: 0rem !important;
+    line-height: 2rem !important;
+    margin-bottom: unset !important;
+    text-align: -webkit-center !important;
+    font-size: larger !important;
+    font-weight: 700 !important;
+    /* -webkit-margin-bottom-collapse: separate; */
+    /* -webkit-border-horizontal-spacing: inherit; */
+    /* padding-bottom: 10px; */
+	}
+	
+	.font1 .sapMLabel {
+    color: black;
+    font-size: 0.875rem;
+    font-family: Arial,Helvetica,sans-serif;
+    font-weight: normal;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: text;
+	}
+
+	.pading .sapMITB.sapUiResponsiveContentPadding>.sapMITBContainerContent>.sapMITBContent {
+    padding: 0rem 0rem;
+    box-sizing: border-box;
+}
+	
+	
+	.frg .sapUiCompFilterBar {
+    background-color: white;
+    border-bottom: 1px solid white;
+}
+
+	.lab .sapUiRespGridMedia-Std-Phone.sapUiFormResGridCont>.sapUiFormElementLbl:not(.sapUiRespGridSpanS12)>.sapMLabel, .sapUiRespGridMedia-Std-Tablet.sapUiFormResGridCont>.sapUiFormElementLbl:not(.sapUiRespGridSpanM12)>.sapMLabel, .sapUiRespGridMedia-Std-Desktop.sapUiFormResGridCont>.sapUiFormElementLbl:not(.sapUiRespGridSpanL12)>.sapMLabel, .sapUiRespGridMedia-Std-LargeDesktop.sapUiFormResGridCont>.sapUiFormElementLbl:not(.sapUiRespGridSpanXL12)>.sapMLabel {
+    text-align: right !important;
+    float: none !important;
+    font-size:14px !important;
+    position: relative !important;
+}
+
+.titlee .sapMTB {
+    white-space: nowrap;
+    overflow: hidden;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    align-items: center;
+    box-sizing: border-box;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    height: 3rem;
+    background: transparent;
+     border-bottom: 0px solid #cccccc; 
+}
+
+
+.ABC{
+     font-size:18px !important;
+   	 color:black; /* darkcyan; */
+   	 font-weight: 700;
+     font-style: initial;
+   	}
